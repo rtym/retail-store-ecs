@@ -1,0 +1,16 @@
+@startuml view-module-application
+!include plantuml-theme.puml
+title Module view — application modules and «use» dependencies (UML component diagram)
+package "retail-store-sample-app 1.6.3 (upstream images)" {
+  component "ui\n<size:11>Java / Spring Boot · storefront web UI</size>" <<module>> as ui
+  component "catalog\n<size:11>Go · product catalogue and search API</size>" <<module>> as catalog
+  component "carts\n<size:11>Java / Spring Boot · cart API</size>" <<module>> as carts
+  component "checkout\n<size:11>Node.js · checkout orchestration API</size>" <<module>> as checkout
+  component "orders\n<size:11>Java / Spring Boot · order API and events</size>" <<module>> as orders
+}
+ui ..> catalog : <<use>>\nproduct API
+ui ..> carts : <<use>>\ncart API
+ui ..> checkout : <<use>>\ncheckout API
+ui ..> orders : <<use>>\norder API
+checkout ..> orders : <<use>>\nsubmit order
+@enduml

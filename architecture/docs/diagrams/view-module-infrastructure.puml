@@ -1,0 +1,18 @@
+@startuml view-module-infrastructure
+!include plantuml-theme.puml
+left to right direction
+title Module view — infrastructure units of retail-store-ecs (Terraform-created, derived)
+package "retail-store-ecs environment" {
+  component "Service unit ×5\n<size:11>ECS service, task definition,</size>\n<size:11>task + execution IAM roles, security group</size>" <<infrastructure unit>> as svc
+  component "Cluster unit\n<size:11>ECS cluster, Cloud Map namespace</size>\n<size:11>retailstore.local, log group</size>" <<infrastructure unit>> as cluster
+  component "Ingress unit\n<size:11>Application Load Balancer retail-store-ecs-ui</size>" <<infrastructure unit>> as lb
+  component "Dependency units ×6\n<size:11>Aurora ×2, DynamoDB, ElastiCache,</size>\n<size:11>Amazon MQ, OpenSearch + secrets</size>" <<infrastructure unit>> as deps #E4F0E9
+  component "Network unit\n<size:11>VPC 10.0.0.0/16, 6 subnets,</size>\n<size:11>Internet Gateway, 1 NAT Gateway</size>" <<infrastructure unit>> as net
+}
+svc ..> cluster : <<use>>\nis deployed into
+svc ..> lb : <<use>>\nui registers targets
+svc ..> deps : <<use>>\nendpoints and secrets
+cluster ..> net : <<use>>\nprivate subnets
+lb ..> net : <<use>>\npublic subnets
+deps ..> net : <<use>>\nprivate subnets
+@enduml

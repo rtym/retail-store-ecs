@@ -1,0 +1,29 @@
+@startuml reconstruction-cnc
+!include plantuml-theme.puml
+skinparam componentStyle uml2
+skinparam dpi 200
+skinparam defaultFontSize 13
+skinparam ArrowFontSize 12
+skinparam nodesep 45
+skinparam ranksep 70
+left to right direction
+title C&C view — tool-supported architecture reconstruction of an observed system
+
+actor "Reconstruction\narchitect" as architect
+component "AI reconstruction agent" <<orchestrator>> as agent
+component "AWS analysis\nplugin" <<evidence collection>> as aws
+component "SEI architecture\nplugin" <<architecture recovery>> as sei
+database "Evidence\nstore" as evidence
+database "Architecture\npackage" as pkg
+interface "Read-only\ncloud API" as api
+component "Observed\nsystem" <<external system>> as observed #F5EEE3
+
+architect --> agent : prompts, reviews
+agent --> aws : invokes skills
+agent --> sei : invokes skills
+aws --( api : queries
+api -- observed
+aws --> evidence : writes
+evidence --> sei : reads
+sei --> pkg : writes
+@enduml

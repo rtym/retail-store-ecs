@@ -1,0 +1,40 @@
+@startuml view-deploy-network
+!include plantuml-theme.puml
+skinparam node {
+  BackgroundColor #FBFCFE
+  BorderColor #9AA7B4
+}
+title Deployment view — network and compute, eu-central-1 (UML deployment diagram)
+cloud "Public internet" as internet
+node "VPC vpc-017ca4c95f83c00a0 · 10.0.0.0/16" <<AWS VPC>> as vpc {
+  node "Internet Gateway\n<size:11>igw-075278e856a392ec0</size>" <<gateway>> as igw #EDF2F8
+  node "Public subnets 10.0.0.0/24, .1.0/24, .2.0/24\n<size:11>route table rtb-0e9271639c0504441</size>" <<subnet ×3>> as pub {
+    node "Application Load Balancer\n<size:11>retail-store-ecs-ui · nodes in 1a, 1b, 1c</size>" <<AWS ELB>> as alb #EDF2F8
+    node "NAT Gateway\n<size:11>nat-03d1c11b310995aba · 1a only</size>" <<gateway>> as nat #F6E4E4
+  }
+  node "Private subnets · route table rtb-013112e10818c1489 (0.0.0.0/0 → NAT Gateway)" <<subnet ×3>> as priv {
+    node "1c · 10.0.12.0/24" <<subnet>> as p1c {
+      artifact "ui task" as tui
+      artifact "carts task" as tcarts
+    }
+    node "1a · 10.0.10.0/24" <<subnet>> as p1a {
+      artifact "catalog task" as tcat
+      artifact "checkout task" as tchk
+      artifact "orders task" as tord
+    }
+    node "1b · 10.0.11.0/24" <<subnet>> as p1b {
+      artifact "(no task placed)" as tnone
+    }
+  }
+}
+internet -down-> igw : HTTP 80 inbound
+igw -down-> alb : to load balancer nodes
+alb -down-> tui : HTTP 8080
+p1a -up-> nat : 0.0.0.0/0, same AZ
+p1b -up-> nat : 0.0.0.0/0, cross-AZ
+p1c -up-> nat : 0.0.0.0/0, cross-AZ
+nat -up-> igw : egress as 198.51.100.11
+alb -[hidden]right- nat
+p1c -[hidden]right- p1a
+p1a -[hidden]right- p1b
+@enduml

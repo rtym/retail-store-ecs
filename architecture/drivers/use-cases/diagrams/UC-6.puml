@@ -1,0 +1,15 @@
+@startuml UC-6
+!include plantuml-theme.puml
+skinparam actorStyle awesome
+left to right direction
+title Use case diagram — UC-6 Deploy a new service version
+actor "Operator" as primary
+rectangle "Amazon ECR Public\n<size:10>image registry public.ecr.aws/aws-containers</size>" << system >> as supp0
+rectangle "Terraform\n<size:10>infrastructure as code (derived)</size>" << system >> as supp1
+rectangle "retail-store-ecs" {
+  usecase "UC-6\nDeploy a new service version" as uc
+}
+primary --> uc
+uc --> supp0
+uc --> supp1
+@enduml

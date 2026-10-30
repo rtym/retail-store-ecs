@@ -1,0 +1,5484 @@
+{
+  "Environment": "retail-store-ecs",
+  "Region": "eu-central-1",
+  "CollectedAt": "2026-10-09T15:49:35.970626Z",
+  "Ecs": {
+    "Cluster": [
+      {
+        "clusterArn": "arn:aws:ecs:eu-central-1:111122223333:cluster/retail-store-ecs-cluster",
+        "clusterName": "retail-store-ecs-cluster",
+        "status": "ACTIVE",
+        "registeredContainerInstancesCount": 0,
+        "runningTasksCount": 5,
+        "pendingTasksCount": 0,
+        "activeServicesCount": 5,
+        "statistics": [
+          {
+            "name": "runningEC2TasksCount",
+            "value": "0"
+          },
+          {
+            "name": "runningFargateTasksCount",
+            "value": "5"
+          },
+          {
+            "name": "pendingEC2TasksCount",
+            "value": "0"
+          },
+          {
+            "name": "pendingFargateTasksCount",
+            "value": "0"
+          },
+          {
+            "name": "runningExternalTasksCount",
+            "value": "0"
+          },
+          {
+            "name": "pendingExternalTasksCount",
+            "value": "0"
+          },
+          {
+            "name": "runningManagedInstancesTasksCount",
+            "value": "0"
+          },
+          {
+            "name": "pendingManagedInstancesTasksCount",
+            "value": "0"
+          },
+          {
+            "name": "activeEC2ServiceCount",
+            "value": "0"
+          },
+          {
+            "name": "activeFargateServiceCount",
+            "value": "5"
+          },
+          {
+            "name": "drainingEC2ServiceCount",
+            "value": "0"
+          },
+          {
+            "name": "drainingFargateServiceCount",
+            "value": "0"
+          },
+          {
+            "name": "activeExternalServiceCount",
+            "value": "0"
+          },
+          {
+            "name": "drainingExternalServiceCount",
+            "value": "0"
+          },
+          {
+            "name": "activeManagedInstancesServiceCount",
+            "value": "0"
+          },
+          {
+            "name": "drainingManagedInstancesServiceCount",
+            "value": "0"
+          }
+        ],
+        "tags": [],
+        "settings": [
+          {
+            "name": "containerInsights",
+            "value": "enhanced"
+          }
+        ],
+        "capacityProviders": [],
+        "defaultCapacityProviderStrategy": []
+      }
+    ],
+    "Services": [
+      {
+        "serviceArn": "arn:aws:ecs:eu-central-1:111122223333:service/retail-store-ecs-cluster/checkout",
+        "serviceName": "checkout",
+        "clusterArn": "arn:aws:ecs:eu-central-1:111122223333:cluster/retail-store-ecs-cluster",
+        "loadBalancers": [],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 1,
+        "runningCount": 1,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-checkout:1",
+        "deploymentConfiguration": {
+          "deploymentCircuitBreaker": {
+            "enable": false,
+            "rollback": false,
+            "resetOnHealthyTask": true,
+            "thresholdConfiguration": {
+              "type": "BOUNDED_PERCENT",
+              "value": 50
+            }
+          },
+          "maximumPercent": 200,
+          "minimumHealthyPercent": 100,
+          "strategy": "ROLLING",
+          "bakeTimeInMinutes": 0
+        },
+        "deployments": [
+          {
+            "id": "ecs-svc/8897163148725050504",
+            "status": "PRIMARY",
+            "taskDefinition": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-checkout:1",
+            "desiredCount": 1,
+            "pendingCount": 0,
+            "runningCount": 1,
+            "failedTasks": 0,
+            "createdAt": "2026-10-09 18:32:50.920000+03:00",
+            "updatedAt": "2026-10-09 18:34:56.473000+03:00",
+            "launchType": "FARGATE",
+            "platformVersion": "1.4.0",
+            "platformFamily": "Linux",
+            "networkConfiguration": {
+              "awsvpcConfiguration": {
+                "subnets": [
+                  "subnet-0b1990f186b77134f",
+                  "subnet-07e1b5ad204e73d39",
+                  "subnet-00a26e86f984d5b2a"
+                ],
+                "securityGroups": [
+                  "sg-0095c5c4e962d6d3c"
+                ],
+                "assignPublicIp": "DISABLED"
+              }
+            },
+            "rolloutState": "COMPLETED",
+            "rolloutStateReason": "ECS deployment ecs-svc/8897163148725050504 completed.",
+            "serviceConnectConfiguration": {
+              "enabled": true,
+              "namespace": "arn:aws:servicediscovery:eu-central-1:111122223333:namespace/ns-kramyhdavda6vfjs",
+              "services": [
+                {
+                  "portName": "checkout-service",
+                  "discoveryName": "checkout",
+                  "clientAliases": [
+                    {
+                      "port": 80,
+                      "dnsName": "checkout"
+                    }
+                  ]
+                }
+              ]
+            },
+            "serviceConnectResources": [
+              {
+                "discoveryName": "checkout",
+                "discoveryArn": "arn:aws:servicediscovery:eu-central-1:111122223333:service/srv-dzbpqnt2ewliggdn"
+              }
+            ]
+          }
+        ],
+        "roleArn": "arn:aws:iam::111122223333:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [
+          {
+            "id": "035cb74b-a6b8-44f1-ab62-81eadc06fd38",
+            "createdAt": "2026-10-09 18:34:56.500000+03:00",
+            "message": "(service checkout) has reached a steady state."
+          },
+          {
+            "id": "e0e2e910-5346-492e-aa5a-d3d402e7f6de",
+            "createdAt": "2026-10-09 18:34:56.499000+03:00",
+            "message": "(service checkout) (deployment ecs-svc/8897163148725050504) deployment completed."
+          },
+          {
+            "id": "afbbaa0e-e68b-4733-b13b-139c8f01ecfe",
+            "createdAt": "2026-10-09 18:33:35.626000+03:00",
+            "message": "(service checkout) has started 1 tasks: (task e616c0ea7d63447899ed4f0d35113726)."
+          }
+        ],
+        "createdAt": "2026-10-09 18:32:50.920000+03:00",
+        "currentServiceRevisions": [
+          {
+            "arn": "arn:aws:ecs:eu-central-1:111122223333:service-revision/retail-store-ecs-cluster/checkout/8897163148725050504",
+            "requestedTaskCount": 1,
+            "runningTaskCount": 1,
+            "pendingTaskCount": 0
+          }
+        ],
+        "placementConstraints": [],
+        "placementStrategy": [],
+        "networkConfiguration": {
+          "awsvpcConfiguration": {
+            "subnets": [
+              "subnet-0b1990f186b77134f",
+              "subnet-07e1b5ad204e73d39",
+              "subnet-00a26e86f984d5b2a"
+            ],
+            "securityGroups": [
+              "sg-0095c5c4e962d6d3c"
+            ],
+            "assignPublicIp": "DISABLED"
+          }
+        },
+        "healthCheckGracePeriodSeconds": 0,
+        "schedulingStrategy": "REPLICA",
+        "deploymentController": {
+          "type": "ECS"
+        },
+        "tags": [
+          {
+            "key": "environment-name",
+            "value": "retail-store-ecs"
+          },
+          {
+            "key": "created-by",
+            "value": "retail-store-sample-app"
+          }
+        ],
+        "createdBy": "arn:aws:iam::111122223333:user/iam-user-1",
+        "enableECSManagedTags": false,
+        "propagateTags": "NONE",
+        "enableExecuteCommand": true,
+        "availabilityZoneRebalancing": "DISABLED",
+        "resourceManagementType": "CUSTOMER"
+      },
+      {
+        "serviceArn": "arn:aws:ecs:eu-central-1:111122223333:service/retail-store-ecs-cluster/ui",
+        "serviceName": "ui",
+        "clusterArn": "arn:aws:ecs:eu-central-1:111122223333:cluster/retail-store-ecs-cluster",
+        "loadBalancers": [
+          {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:targetgroup/ui-application/de0587869440dfdd",
+            "containerName": "ui-service",
+            "containerPort": 8080
+          }
+        ],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 1,
+        "runningCount": 1,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-ui:1",
+        "deploymentConfiguration": {
+          "deploymentCircuitBreaker": {
+            "enable": false,
+            "rollback": false,
+            "resetOnHealthyTask": true,
+            "thresholdConfiguration": {
+              "type": "BOUNDED_PERCENT",
+              "value": 50
+            }
+          },
+          "maximumPercent": 200,
+          "minimumHealthyPercent": 100,
+          "strategy": "ROLLING",
+          "bakeTimeInMinutes": 0
+        },
+        "deployments": [
+          {
+            "id": "ecs-svc/8445935713198398776",
+            "status": "PRIMARY",
+            "taskDefinition": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-ui:1",
+            "desiredCount": 1,
+            "pendingCount": 0,
+            "runningCount": 1,
+            "failedTasks": 0,
+            "createdAt": "2026-10-09 18:34:58.745000+03:00",
+            "updatedAt": "2026-10-09 18:37:18.237000+03:00",
+            "launchType": "FARGATE",
+            "platformVersion": "1.4.0",
+            "platformFamily": "Linux",
+            "networkConfiguration": {
+              "awsvpcConfiguration": {
+                "subnets": [
+                  "subnet-0b1990f186b77134f",
+                  "subnet-07e1b5ad204e73d39",
+                  "subnet-00a26e86f984d5b2a"
+                ],
+                "securityGroups": [
+                  "sg-0e0e2272b9ea01935"
+                ],
+                "assignPublicIp": "DISABLED"
+              }
+            },
+            "rolloutState": "COMPLETED",
+            "rolloutStateReason": "ECS deployment ecs-svc/8445935713198398776 completed.",
+            "serviceConnectConfiguration": {
+              "enabled": true,
+              "namespace": "arn:aws:servicediscovery:eu-central-1:111122223333:namespace/ns-kramyhdavda6vfjs",
+              "services": [
+                {
+                  "portName": "ui-service",
+                  "discoveryName": "ui",
+                  "clientAliases": [
+                    {
+                      "port": 80,
+                      "dnsName": "ui"
+                    }
+                  ]
+                }
+              ]
+            },
+            "serviceConnectResources": [
+              {
+                "discoveryName": "ui",
+                "discoveryArn": "arn:aws:servicediscovery:eu-central-1:111122223333:service/srv-j5yqxt47rt33jni5"
+              }
+            ]
+          }
+        ],
+        "roleArn": "arn:aws:iam::111122223333:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [
+          {
+            "id": "d36a57c4-d8d5-4b6e-8a94-2047f0862239",
+            "createdAt": "2026-10-09 18:37:18.263000+03:00",
+            "message": "(service ui) has reached a steady state."
+          },
+          {
+            "id": "4d01dcd0-9ecf-403b-bb4f-2474e0b31c8a",
+            "createdAt": "2026-10-09 18:37:18.262000+03:00",
+            "message": "(service ui) (deployment ecs-svc/8445935713198398776) deployment completed."
+          },
+          {
+            "id": "e89a1a43-ce29-4740-b2bf-bc3375e29582",
+            "createdAt": "2026-10-09 18:36:26.609000+03:00",
+            "message": "(service ui) registered 1 targets in (target-group arn:aws:elasticloadbalancing:eu-central-1:111122223333:targetgroup/ui-application/de0587869440dfdd)"
+          },
+          {
+            "id": "aa3d36e3-a89d-46b6-96e9-3ab366aa53bc",
+            "createdAt": "2026-10-09 18:35:44.107000+03:00",
+            "message": "(service ui) has started 1 tasks: (task cf1d6168722543fdb142c5bbbac5bb31)."
+          }
+        ],
+        "createdAt": "2026-10-09 18:34:58.745000+03:00",
+        "currentServiceRevisions": [
+          {
+            "arn": "arn:aws:ecs:eu-central-1:111122223333:service-revision/retail-store-ecs-cluster/ui/8445935713198398776",
+            "requestedTaskCount": 1,
+            "runningTaskCount": 1,
+            "pendingTaskCount": 0
+          }
+        ],
+        "placementConstraints": [],
+        "placementStrategy": [],
+        "networkConfiguration": {
+          "awsvpcConfiguration": {
+            "subnets": [
+              "subnet-0b1990f186b77134f",
+              "subnet-07e1b5ad204e73d39",
+              "subnet-00a26e86f984d5b2a"
+            ],
+            "securityGroups": [
+              "sg-0e0e2272b9ea01935"
+            ],
+            "assignPublicIp": "DISABLED"
+          }
+        },
+        "healthCheckGracePeriodSeconds": 0,
+        "schedulingStrategy": "REPLICA",
+        "deploymentController": {
+          "type": "ECS"
+        },
+        "tags": [
+          {
+            "key": "environment-name",
+            "value": "retail-store-ecs"
+          },
+          {
+            "key": "created-by",
+            "value": "retail-store-sample-app"
+          }
+        ],
+        "createdBy": "arn:aws:iam::111122223333:user/iam-user-1",
+        "enableECSManagedTags": false,
+        "propagateTags": "NONE",
+        "enableExecuteCommand": true,
+        "availabilityZoneRebalancing": "DISABLED",
+        "resourceManagementType": "CUSTOMER"
+      },
+      {
+        "serviceArn": "arn:aws:ecs:eu-central-1:111122223333:service/retail-store-ecs-cluster/carts",
+        "serviceName": "carts",
+        "clusterArn": "arn:aws:ecs:eu-central-1:111122223333:cluster/retail-store-ecs-cluster",
+        "loadBalancers": [],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 1,
+        "runningCount": 1,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-carts:1",
+        "deploymentConfiguration": {
+          "deploymentCircuitBreaker": {
+            "enable": false,
+            "rollback": false,
+            "resetOnHealthyTask": true,
+            "thresholdConfiguration": {
+              "type": "BOUNDED_PERCENT",
+              "value": 50
+            }
+          },
+          "maximumPercent": 200,
+          "minimumHealthyPercent": 100,
+          "strategy": "ROLLING",
+          "bakeTimeInMinutes": 0
+        },
+        "deployments": [
+          {
+            "id": "ecs-svc/1150734667303161148",
+            "status": "PRIMARY",
+            "taskDefinition": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-carts:1",
+            "desiredCount": 1,
+            "pendingCount": 0,
+            "runningCount": 1,
+            "failedTasks": 0,
+            "createdAt": "2026-10-09 18:30:22.899000+03:00",
+            "updatedAt": "2026-10-09 18:32:50.933000+03:00",
+            "launchType": "FARGATE",
+            "platformVersion": "1.4.0",
+            "platformFamily": "Linux",
+            "networkConfiguration": {
+              "awsvpcConfiguration": {
+                "subnets": [
+                  "subnet-0b1990f186b77134f",
+                  "subnet-07e1b5ad204e73d39",
+                  "subnet-00a26e86f984d5b2a"
+                ],
+                "securityGroups": [
+                  "sg-0da8eca938cda3bab"
+                ],
+                "assignPublicIp": "DISABLED"
+              }
+            },
+            "rolloutState": "COMPLETED",
+            "rolloutStateReason": "ECS deployment ecs-svc/1150734667303161148 completed.",
+            "serviceConnectConfiguration": {
+              "enabled": true,
+              "namespace": "arn:aws:servicediscovery:eu-central-1:111122223333:namespace/ns-kramyhdavda6vfjs",
+              "services": [
+                {
+                  "portName": "carts-service",
+                  "discoveryName": "carts",
+                  "clientAliases": [
+                    {
+                      "port": 80,
+                      "dnsName": "carts"
+                    }
+                  ]
+                }
+              ]
+            },
+            "serviceConnectResources": [
+              {
+                "discoveryName": "carts",
+                "discoveryArn": "arn:aws:servicediscovery:eu-central-1:111122223333:service/srv-ptqpyv4tlnrjq2do"
+              }
+            ]
+          }
+        ],
+        "roleArn": "arn:aws:iam::111122223333:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [
+          {
+            "id": "9355aed2-4a4f-4969-aff0-44037a594f24",
+            "createdAt": "2026-10-09 18:32:50.959000+03:00",
+            "message": "(service carts) has reached a steady state."
+          },
+          {
+            "id": "419a8fec-2b6c-4f4e-97d4-3ee50c9374a8",
+            "createdAt": "2026-10-09 18:32:50.958000+03:00",
+            "message": "(service carts) (deployment ecs-svc/1150734667303161148) deployment completed."
+          },
+          {
+            "id": "250b82fa-e02d-4138-8959-b8bd29839aff",
+            "createdAt": "2026-10-09 18:31:07.995000+03:00",
+            "message": "(service carts) has started 1 tasks: (task 7ded2c031df84634a9b86d8aedb896c2)."
+          }
+        ],
+        "createdAt": "2026-10-09 18:30:22.899000+03:00",
+        "currentServiceRevisions": [
+          {
+            "arn": "arn:aws:ecs:eu-central-1:111122223333:service-revision/retail-store-ecs-cluster/carts/1150734667303161148",
+            "requestedTaskCount": 1,
+            "runningTaskCount": 1,
+            "pendingTaskCount": 0
+          }
+        ],
+        "placementConstraints": [],
+        "placementStrategy": [],
+        "networkConfiguration": {
+          "awsvpcConfiguration": {
+            "subnets": [
+              "subnet-0b1990f186b77134f",
+              "subnet-07e1b5ad204e73d39",
+              "subnet-00a26e86f984d5b2a"
+            ],
+            "securityGroups": [
+              "sg-0da8eca938cda3bab"
+            ],
+            "assignPublicIp": "DISABLED"
+          }
+        },
+        "healthCheckGracePeriodSeconds": 0,
+        "schedulingStrategy": "REPLICA",
+        "deploymentController": {
+          "type": "ECS"
+        },
+        "tags": [
+          {
+            "key": "environment-name",
+            "value": "retail-store-ecs"
+          },
+          {
+            "key": "created-by",
+            "value": "retail-store-sample-app"
+          }
+        ],
+        "createdBy": "arn:aws:iam::111122223333:user/iam-user-1",
+        "enableECSManagedTags": false,
+        "propagateTags": "NONE",
+        "enableExecuteCommand": true,
+        "availabilityZoneRebalancing": "DISABLED",
+        "resourceManagementType": "CUSTOMER"
+      },
+      {
+        "serviceArn": "arn:aws:ecs:eu-central-1:111122223333:service/retail-store-ecs-cluster/catalog",
+        "serviceName": "catalog",
+        "clusterArn": "arn:aws:ecs:eu-central-1:111122223333:cluster/retail-store-ecs-cluster",
+        "loadBalancers": [],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 1,
+        "runningCount": 1,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-catalog:1",
+        "deploymentConfiguration": {
+          "deploymentCircuitBreaker": {
+            "enable": false,
+            "rollback": false,
+            "resetOnHealthyTask": true,
+            "thresholdConfiguration": {
+              "type": "BOUNDED_PERCENT",
+              "value": 50
+            }
+          },
+          "maximumPercent": 200,
+          "minimumHealthyPercent": 100,
+          "strategy": "ROLLING",
+          "bakeTimeInMinutes": 0
+        },
+        "deployments": [
+          {
+            "id": "ecs-svc/0062082738678689889",
+            "status": "PRIMARY",
+            "taskDefinition": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-catalog:1",
+            "desiredCount": 1,
+            "pendingCount": 0,
+            "runningCount": 1,
+            "failedTasks": 0,
+            "createdAt": "2026-10-09 18:30:22.892000+03:00",
+            "updatedAt": "2026-10-09 18:32:11.077000+03:00",
+            "launchType": "FARGATE",
+            "platformVersion": "1.4.0",
+            "platformFamily": "Linux",
+            "networkConfiguration": {
+              "awsvpcConfiguration": {
+                "subnets": [
+                  "subnet-0b1990f186b77134f",
+                  "subnet-07e1b5ad204e73d39",
+                  "subnet-00a26e86f984d5b2a"
+                ],
+                "securityGroups": [
+                  "sg-040b3a46ff959179a"
+                ],
+                "assignPublicIp": "DISABLED"
+              }
+            },
+            "rolloutState": "COMPLETED",
+            "rolloutStateReason": "ECS deployment ecs-svc/0062082738678689889 completed.",
+            "serviceConnectConfiguration": {
+              "enabled": true,
+              "namespace": "arn:aws:servicediscovery:eu-central-1:111122223333:namespace/ns-kramyhdavda6vfjs",
+              "services": [
+                {
+                  "portName": "catalog-service",
+                  "discoveryName": "catalog",
+                  "clientAliases": [
+                    {
+                      "port": 80,
+                      "dnsName": "catalog"
+                    }
+                  ]
+                }
+              ]
+            },
+            "serviceConnectResources": [
+              {
+                "discoveryName": "catalog",
+                "discoveryArn": "arn:aws:servicediscovery:eu-central-1:111122223333:service/srv-zhnisf4kuruenooq"
+              }
+            ]
+          }
+        ],
+        "roleArn": "arn:aws:iam::111122223333:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [
+          {
+            "id": "dd6d6955-222c-462f-a83f-cdea517457ef",
+            "createdAt": "2026-10-09 18:32:11.104000+03:00",
+            "message": "(service catalog) has reached a steady state."
+          },
+          {
+            "id": "810f46c7-4509-4794-994a-a8e6bd9fe98e",
+            "createdAt": "2026-10-09 18:32:11.103000+03:00",
+            "message": "(service catalog) (deployment ecs-svc/0062082738678689889) deployment completed."
+          },
+          {
+            "id": "c7c40f60-18f5-4a57-b3d2-340c31c25f0c",
+            "createdAt": "2026-10-09 18:31:11.125000+03:00",
+            "message": "(service catalog) has started 1 tasks: (task 73db5501784f4c248ba5d15a6378c5ee)."
+          }
+        ],
+        "createdAt": "2026-10-09 18:30:22.892000+03:00",
+        "currentServiceRevisions": [
+          {
+            "arn": "arn:aws:ecs:eu-central-1:111122223333:service-revision/retail-store-ecs-cluster/catalog/0062082738678689889",
+            "requestedTaskCount": 1,
+            "runningTaskCount": 1,
+            "pendingTaskCount": 0
+          }
+        ],
+        "placementConstraints": [],
+        "placementStrategy": [],
+        "networkConfiguration": {
+          "awsvpcConfiguration": {
+            "subnets": [
+              "subnet-0b1990f186b77134f",
+              "subnet-07e1b5ad204e73d39",
+              "subnet-00a26e86f984d5b2a"
+            ],
+            "securityGroups": [
+              "sg-040b3a46ff959179a"
+            ],
+            "assignPublicIp": "DISABLED"
+          }
+        },
+        "healthCheckGracePeriodSeconds": 0,
+        "schedulingStrategy": "REPLICA",
+        "deploymentController": {
+          "type": "ECS"
+        },
+        "tags": [
+          {
+            "key": "environment-name",
+            "value": "retail-store-ecs"
+          },
+          {
+            "key": "created-by",
+            "value": "retail-store-sample-app"
+          }
+        ],
+        "createdBy": "arn:aws:iam::111122223333:user/iam-user-1",
+        "enableECSManagedTags": false,
+        "propagateTags": "NONE",
+        "enableExecuteCommand": true,
+        "availabilityZoneRebalancing": "DISABLED",
+        "resourceManagementType": "CUSTOMER"
+      },
+      {
+        "serviceArn": "arn:aws:ecs:eu-central-1:111122223333:service/retail-store-ecs-cluster/orders",
+        "serviceName": "orders",
+        "clusterArn": "arn:aws:ecs:eu-central-1:111122223333:cluster/retail-store-ecs-cluster",
+        "loadBalancers": [],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 1,
+        "runningCount": 1,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-orders:1",
+        "deploymentConfiguration": {
+          "deploymentCircuitBreaker": {
+            "enable": false,
+            "rollback": false,
+            "resetOnHealthyTask": true,
+            "thresholdConfiguration": {
+              "type": "BOUNDED_PERCENT",
+              "value": 50
+            }
+          },
+          "maximumPercent": 200,
+          "minimumHealthyPercent": 100,
+          "strategy": "ROLLING",
+          "bakeTimeInMinutes": 0
+        },
+        "deployments": [
+          {
+            "id": "ecs-svc/2766896460993968648",
+            "status": "PRIMARY",
+            "taskDefinition": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-orders:1",
+            "desiredCount": 1,
+            "pendingCount": 0,
+            "runningCount": 1,
+            "failedTasks": 0,
+            "createdAt": "2026-10-09 18:30:22.987000+03:00",
+            "updatedAt": "2026-10-09 18:32:52.674000+03:00",
+            "launchType": "FARGATE",
+            "platformVersion": "1.4.0",
+            "platformFamily": "Linux",
+            "networkConfiguration": {
+              "awsvpcConfiguration": {
+                "subnets": [
+                  "subnet-0b1990f186b77134f",
+                  "subnet-07e1b5ad204e73d39",
+                  "subnet-00a26e86f984d5b2a"
+                ],
+                "securityGroups": [
+                  "sg-07200dd8c1cd91664"
+                ],
+                "assignPublicIp": "DISABLED"
+              }
+            },
+            "rolloutState": "COMPLETED",
+            "rolloutStateReason": "ECS deployment ecs-svc/2766896460993968648 completed.",
+            "serviceConnectConfiguration": {
+              "enabled": true,
+              "namespace": "arn:aws:servicediscovery:eu-central-1:111122223333:namespace/ns-kramyhdavda6vfjs",
+              "services": [
+                {
+                  "portName": "orders-service",
+                  "discoveryName": "orders",
+                  "clientAliases": [
+                    {
+                      "port": 80,
+                      "dnsName": "orders"
+                    }
+                  ]
+                }
+              ]
+            },
+            "serviceConnectResources": [
+              {
+                "discoveryName": "orders",
+                "discoveryArn": "arn:aws:servicediscovery:eu-central-1:111122223333:service/srv-7rqnr4bto2z6dwaw"
+              }
+            ]
+          }
+        ],
+        "roleArn": "arn:aws:iam::111122223333:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [
+          {
+            "id": "7d31c220-6fba-41ab-91b6-802ea926ebe7",
+            "createdAt": "2026-10-09 18:32:52.724000+03:00",
+            "message": "(service orders) has reached a steady state."
+          },
+          {
+            "id": "38093aae-53ee-47bb-a3cd-dcde510eba4c",
+            "createdAt": "2026-10-09 18:32:52.723000+03:00",
+            "message": "(service orders) (deployment ecs-svc/2766896460993968648) deployment completed."
+          },
+          {
+            "id": "1249616b-62c1-445b-9ac5-699d3eac43ec",
+            "createdAt": "2026-10-09 18:31:09.864000+03:00",
+            "message": "(service orders) has started 1 tasks: (task 7e704fc624a24bab8047d723760f47bb)."
+          }
+        ],
+        "createdAt": "2026-10-09 18:30:22.987000+03:00",
+        "currentServiceRevisions": [
+          {
+            "arn": "arn:aws:ecs:eu-central-1:111122223333:service-revision/retail-store-ecs-cluster/orders/2766896460993968648",
+            "requestedTaskCount": 1,
+            "runningTaskCount": 1,
+            "pendingTaskCount": 0
+          }
+        ],
+        "placementConstraints": [],
+        "placementStrategy": [],
+        "networkConfiguration": {
+          "awsvpcConfiguration": {
+            "subnets": [
+              "subnet-0b1990f186b77134f",
+              "subnet-07e1b5ad204e73d39",
+              "subnet-00a26e86f984d5b2a"
+            ],
+            "securityGroups": [
+              "sg-07200dd8c1cd91664"
+            ],
+            "assignPublicIp": "DISABLED"
+          }
+        },
+        "healthCheckGracePeriodSeconds": 0,
+        "schedulingStrategy": "REPLICA",
+        "deploymentController": {
+          "type": "ECS"
+        },
+        "tags": [
+          {
+            "key": "environment-name",
+            "value": "retail-store-ecs"
+          },
+          {
+            "key": "created-by",
+            "value": "retail-store-sample-app"
+          }
+        ],
+        "createdBy": "arn:aws:iam::111122223333:user/iam-user-1",
+        "enableECSManagedTags": false,
+        "propagateTags": "NONE",
+        "enableExecuteCommand": true,
+        "availabilityZoneRebalancing": "DISABLED",
+        "resourceManagementType": "CUSTOMER"
+      }
+    ],
+    "TaskDefinitions": {
+      "checkout": {
+        "taskDefinitionArn": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-checkout:1",
+        "containerDefinitions": [
+          {
+            "name": "checkout-service",
+            "image": "public.ecr.aws/aws-containers/retail-store-sample-checkout:1.6.3",
+            "cpu": 0,
+            "portMappings": [
+              {
+                "containerPort": 8080,
+                "hostPort": 8080,
+                "protocol": "tcp",
+                "name": "checkout-service"
+              }
+            ],
+            "essential": true,
+            "environment": [
+              {
+                "name": "RETAIL_CHECKOUT_ENDPOINTS_ORDERS",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_CHECKOUT_PERSISTENCE_REDIS_URL",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_CHECKOUT_PERSISTENCE_PROVIDER",
+                "value": "<redacted>"
+              }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [],
+            "readonlyRootFilesystem": false,
+            "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                "awslogs-group": "retail-store-ecs-tasks",
+                "awslogs-region": "eu-central-1",
+                "awslogs-stream-prefix": "checkout-service"
+              }
+            },
+            "healthCheck": {
+              "command": [
+                "CMD-SHELL",
+                "curl -f http://localhost:8080/health || exit 1"
+              ],
+              "interval": 10,
+              "timeout": 5,
+              "retries": 3,
+              "startPeriod": 60
+            },
+            "systemControls": []
+          }
+        ],
+        "family": "retail-store-ecs-checkout",
+        "taskRoleArn": "arn:aws:iam::111122223333:role/retail-store-ecs-checkout-task",
+        "executionRoleArn": "arn:aws:iam::111122223333:role/retail-store-ecs-checkout-te",
+        "networkMode": "awsvpc",
+        "revision": 1,
+        "volumes": [],
+        "status": "ACTIVE",
+        "requiresAttributes": [
+          {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+          },
+          {
+            "name": "ecs.capability.execution-role-awslogs"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+          },
+          {
+            "name": "ecs.capability.container-health-check"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+          },
+          {
+            "name": "ecs.capability.task-eni"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+          }
+        ],
+        "placementConstraints": [],
+        "compatibilities": [
+          "EC2",
+          "MANAGED_INSTANCES",
+          "FARGATE"
+        ],
+        "requiresCompatibilities": [
+          "FARGATE"
+        ],
+        "cpu": "1024",
+        "memory": "2048",
+        "registeredAt": "2026-10-09 18:32:49.731000+03:00",
+        "registeredBy": "arn:aws:iam::111122223333:user/iam-user-1"
+      },
+      "ui": {
+        "taskDefinitionArn": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-ui:1",
+        "containerDefinitions": [
+          {
+            "name": "ui-service",
+            "image": "public.ecr.aws/aws-containers/retail-store-sample-ui:1.6.3",
+            "cpu": 0,
+            "portMappings": [
+              {
+                "containerPort": 8080,
+                "hostPort": 8080,
+                "protocol": "tcp",
+                "name": "ui-service"
+              }
+            ],
+            "essential": true,
+            "environment": [
+              {
+                "name": "RETAIL_UI_ENDPOINTS_CARTS",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_UI_ENDPOINTS_CATALOG",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_UI_ENDPOINTS_ORDERS",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_UI_SEARCH_ENABLED",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_UI_ENDPOINTS_CHECKOUT",
+                "value": "<redacted>"
+              }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [],
+            "readonlyRootFilesystem": false,
+            "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                "awslogs-group": "retail-store-ecs-tasks",
+                "awslogs-region": "eu-central-1",
+                "awslogs-stream-prefix": "ui-service"
+              }
+            },
+            "healthCheck": {
+              "command": [
+                "CMD-SHELL",
+                "curl -f http://localhost:8080/actuator/health || exit 1"
+              ],
+              "interval": 10,
+              "timeout": 5,
+              "retries": 3,
+              "startPeriod": 60
+            },
+            "systemControls": []
+          }
+        ],
+        "family": "retail-store-ecs-ui",
+        "taskRoleArn": "arn:aws:iam::111122223333:role/retail-store-ecs-ui-task",
+        "executionRoleArn": "arn:aws:iam::111122223333:role/retail-store-ecs-ui-te",
+        "networkMode": "awsvpc",
+        "revision": 1,
+        "volumes": [],
+        "status": "ACTIVE",
+        "requiresAttributes": [
+          {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+          },
+          {
+            "name": "ecs.capability.execution-role-awslogs"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+          },
+          {
+            "name": "ecs.capability.container-health-check"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+          },
+          {
+            "name": "ecs.capability.task-eni"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+          }
+        ],
+        "placementConstraints": [],
+        "compatibilities": [
+          "EC2",
+          "MANAGED_INSTANCES",
+          "FARGATE"
+        ],
+        "requiresCompatibilities": [
+          "FARGATE"
+        ],
+        "cpu": "1024",
+        "memory": "2048",
+        "registeredAt": "2026-10-09 18:34:57.450000+03:00",
+        "registeredBy": "arn:aws:iam::111122223333:user/iam-user-1"
+      },
+      "carts": {
+        "taskDefinitionArn": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-carts:1",
+        "containerDefinitions": [
+          {
+            "name": "carts-service",
+            "image": "public.ecr.aws/aws-containers/retail-store-sample-cart:1.6.3",
+            "cpu": 0,
+            "portMappings": [
+              {
+                "containerPort": 8080,
+                "hostPort": 8080,
+                "protocol": "tcp",
+                "name": "carts-service"
+              }
+            ],
+            "essential": true,
+            "environment": [
+              {
+                "name": "RETAIL_CART_PERSISTENCE_DYNAMODB_TABLE_NAME",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_CART_PERSISTENCE_PROVIDER",
+                "value": "<redacted>"
+              }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [],
+            "readonlyRootFilesystem": false,
+            "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                "awslogs-group": "retail-store-ecs-tasks",
+                "awslogs-region": "eu-central-1",
+                "awslogs-stream-prefix": "carts-service"
+              }
+            },
+            "healthCheck": {
+              "command": [
+                "CMD-SHELL",
+                "curl -f http://localhost:8080/actuator/health || exit 1"
+              ],
+              "interval": 10,
+              "timeout": 5,
+              "retries": 3,
+              "startPeriod": 60
+            },
+            "systemControls": []
+          }
+        ],
+        "family": "retail-store-ecs-carts",
+        "taskRoleArn": "arn:aws:iam::111122223333:role/retail-store-ecs-carts-task",
+        "executionRoleArn": "arn:aws:iam::111122223333:role/retail-store-ecs-carts-te",
+        "networkMode": "awsvpc",
+        "revision": 1,
+        "volumes": [],
+        "status": "ACTIVE",
+        "requiresAttributes": [
+          {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+          },
+          {
+            "name": "ecs.capability.execution-role-awslogs"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+          },
+          {
+            "name": "ecs.capability.container-health-check"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+          },
+          {
+            "name": "ecs.capability.task-eni"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+          }
+        ],
+        "placementConstraints": [],
+        "compatibilities": [
+          "EC2",
+          "MANAGED_INSTANCES",
+          "FARGATE"
+        ],
+        "requiresCompatibilities": [
+          "FARGATE"
+        ],
+        "cpu": "1024",
+        "memory": "2048",
+        "registeredAt": "2026-10-09 18:30:21.819000+03:00",
+        "registeredBy": "arn:aws:iam::111122223333:user/iam-user-1"
+      },
+      "catalog": {
+        "taskDefinitionArn": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-catalog:1",
+        "containerDefinitions": [
+          {
+            "name": "catalog-service",
+            "image": "public.ecr.aws/aws-containers/retail-store-sample-catalog:1.6.3",
+            "cpu": 0,
+            "portMappings": [
+              {
+                "containerPort": 8080,
+                "hostPort": 8080,
+                "protocol": "tcp",
+                "name": "catalog-service"
+              }
+            ],
+            "essential": true,
+            "environment": [
+              {
+                "name": "RETAIL_CATALOG_PERSISTENCE_DB_NAME",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_CATALOG_PERSISTENCE_PROVIDER",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_CATALOG_SEARCH_OS_ENDPOINT",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_CATALOG_SEARCH_ENABLED",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_CATALOG_SEARCH_OS_INDEX",
+                "value": "<redacted>"
+              }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [
+              {
+                "name": "RETAIL_CATALOG_PERSISTENCE_ENDPOINT",
+                "valueFrom": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-catalog-db-PxNs-aS0lpg:host::"
+              },
+              {
+                "name": "RETAIL_CATALOG_PERSISTENCE_PASSWORD",
+                "valueFrom": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-catalog-db-PxNs-aS0lpg:password::"
+              },
+              {
+                "name": "RETAIL_CATALOG_PERSISTENCE_USER",
+                "valueFrom": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-catalog-db-PxNs-aS0lpg:username::"
+              },
+              {
+                "name": "RETAIL_CATALOG_SEARCH_OS_PASSWORD",
+                "valueFrom": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-catalog-opensearch-PxNs-1lKy7s:password::"
+              },
+              {
+                "name": "RETAIL_CATALOG_SEARCH_OS_USERNAME",
+                "valueFrom": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-catalog-opensearch-PxNs-1lKy7s:username::"
+              }
+            ],
+            "readonlyRootFilesystem": false,
+            "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                "awslogs-group": "retail-store-ecs-tasks",
+                "awslogs-region": "eu-central-1",
+                "awslogs-stream-prefix": "catalog-service"
+              }
+            },
+            "healthCheck": {
+              "command": [
+                "CMD-SHELL",
+                "curl -f http://localhost:8080/health || exit 1"
+              ],
+              "interval": 10,
+              "timeout": 5,
+              "retries": 3,
+              "startPeriod": 60
+            },
+            "systemControls": []
+          }
+        ],
+        "family": "retail-store-ecs-catalog",
+        "taskRoleArn": "arn:aws:iam::111122223333:role/retail-store-ecs-catalog-task",
+        "executionRoleArn": "arn:aws:iam::111122223333:role/retail-store-ecs-catalog-te",
+        "networkMode": "awsvpc",
+        "revision": 1,
+        "volumes": [],
+        "status": "ACTIVE",
+        "requiresAttributes": [
+          {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+          },
+          {
+            "name": "ecs.capability.execution-role-awslogs"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+          },
+          {
+            "name": "ecs.capability.secrets.asm.environment-variables"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+          },
+          {
+            "name": "ecs.capability.container-health-check"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+          },
+          {
+            "name": "ecs.capability.task-eni"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+          }
+        ],
+        "placementConstraints": [],
+        "compatibilities": [
+          "EC2",
+          "FARGATE",
+          "MANAGED_INSTANCES"
+        ],
+        "requiresCompatibilities": [
+          "FARGATE"
+        ],
+        "cpu": "1024",
+        "memory": "2048",
+        "registeredAt": "2026-10-09 18:30:21.816000+03:00",
+        "registeredBy": "arn:aws:iam::111122223333:user/iam-user-1"
+      },
+      "orders": {
+        "taskDefinitionArn": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-orders:1",
+        "containerDefinitions": [
+          {
+            "name": "orders-service",
+            "image": "public.ecr.aws/aws-containers/retail-store-sample-orders:1.6.3",
+            "cpu": 0,
+            "portMappings": [
+              {
+                "containerPort": 8080,
+                "hostPort": 8080,
+                "protocol": "tcp",
+                "name": "orders-service"
+              }
+            ],
+            "essential": true,
+            "environment": [
+              {
+                "name": "RETAIL_ORDERS_MESSAGING_PROVIDER",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_ORDERS_PERSISTENCE_NAME",
+                "value": "<redacted>"
+              },
+              {
+                "name": "RETAIL_ORDERS_PERSISTENCE_PROVIDER",
+                "value": "<redacted>"
+              }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [
+              {
+                "name": "RETAIL_ORDERS_MESSAGING_RABBITMQ_ADDRESSES",
+                "valueFrom": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-mq-1ehc-w1ROcP:host::"
+              },
+              {
+                "name": "RETAIL_ORDERS_MESSAGING_RABBITMQ_PASSWORD",
+                "valueFrom": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-mq-1ehc-w1ROcP:password::"
+              },
+              {
+                "name": "RETAIL_ORDERS_MESSAGING_RABBITMQ_USERNAME",
+                "valueFrom": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-mq-1ehc-w1ROcP:username::"
+              },
+              {
+                "name": "RETAIL_ORDERS_PERSISTENCE_ENDPOINT",
+                "valueFrom": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-orders-db-w9tI-RPybW7:host::"
+              },
+              {
+                "name": "RETAIL_ORDERS_PERSISTENCE_PASSWORD",
+                "valueFrom": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-orders-db-w9tI-RPybW7:password::"
+              },
+              {
+                "name": "RETAIL_ORDERS_PERSISTENCE_USERNAME",
+                "valueFrom": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-orders-db-w9tI-RPybW7:username::"
+              }
+            ],
+            "readonlyRootFilesystem": false,
+            "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                "awslogs-group": "retail-store-ecs-tasks",
+                "awslogs-region": "eu-central-1",
+                "awslogs-stream-prefix": "orders-service"
+              }
+            },
+            "healthCheck": {
+              "command": [
+                "CMD-SHELL",
+                "curl -f http://localhost:8080/actuator/health || exit 1"
+              ],
+              "interval": 10,
+              "timeout": 5,
+              "retries": 3,
+              "startPeriod": 60
+            },
+            "systemControls": []
+          }
+        ],
+        "family": "retail-store-ecs-orders",
+        "taskRoleArn": "arn:aws:iam::111122223333:role/retail-store-ecs-orders-task",
+        "executionRoleArn": "arn:aws:iam::111122223333:role/retail-store-ecs-orders-te",
+        "networkMode": "awsvpc",
+        "revision": 1,
+        "volumes": [],
+        "status": "ACTIVE",
+        "requiresAttributes": [
+          {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+          },
+          {
+            "name": "ecs.capability.execution-role-awslogs"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+          },
+          {
+            "name": "ecs.capability.secrets.asm.environment-variables"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+          },
+          {
+            "name": "ecs.capability.container-health-check"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+          },
+          {
+            "name": "ecs.capability.task-eni"
+          },
+          {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+          }
+        ],
+        "placementConstraints": [],
+        "compatibilities": [
+          "EC2",
+          "FARGATE",
+          "MANAGED_INSTANCES"
+        ],
+        "requiresCompatibilities": [
+          "FARGATE"
+        ],
+        "cpu": "1024",
+        "memory": "2048",
+        "registeredAt": "2026-10-09 18:30:21.813000+03:00",
+        "registeredBy": "arn:aws:iam::111122223333:user/iam-user-1"
+      }
+    },
+    "Tasks": [
+      {
+        "attachments": [
+          {
+            "id": "789506c8-852d-44f5-b1b5-a088dcbbea4d",
+            "type": "ElasticNetworkInterface",
+            "status": "ATTACHED",
+            "details": [
+              {
+                "name": "subnetId",
+                "value": "subnet-07e1b5ad204e73d39"
+              },
+              {
+                "name": "networkInterfaceId",
+                "value": "eni-0c975ff19a93ff073"
+              },
+              {
+                "name": "macAddress",
+                "value": "02:ff:f8:93:c8:cb"
+              },
+              {
+                "name": "privateDnsName",
+                "value": "ip-10-0-10-188.eu-central-1.compute.internal"
+              },
+              {
+                "name": "privateIPv4Address",
+                "value": "10.0.10.188"
+              }
+            ]
+          },
+          {
+            "id": "e2f27c80-dc6f-4e63-9a0a-2c89c410f4be",
+            "type": "ServiceConnect",
+            "status": "ATTACHED",
+            "details": [
+              {
+                "name": "ContainerName",
+                "value": "ecs-service-connect-g6gQzFV"
+              }
+            ]
+          }
+        ],
+        "attributes": [
+          {
+            "name": "ecs.cpu-architecture",
+            "value": "x86_64"
+          }
+        ],
+        "availabilityZone": "eu-central-1a",
+        "clusterArn": "arn:aws:ecs:eu-central-1:111122223333:cluster/retail-store-ecs-cluster",
+        "connectivity": "CONNECTED",
+        "connectivityAt": "2026-10-09 18:31:15.006000+03:00",
+        "containers": [
+          {
+            "containerArn": "arn:aws:ecs:eu-central-1:111122223333:container/retail-store-ecs-cluster/73db5501784f4c248ba5d15a6378c5ee/972a4268-a651-49a1-b941-50921dbd0c59",
+            "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/73db5501784f4c248ba5d15a6378c5ee",
+            "name": "ecs-service-connect-g6gQzFV",
+            "lastStatus": "RUNNING",
+            "networkInterfaces": [
+              {
+                "attachmentId": "789506c8-852d-44f5-b1b5-a088dcbbea4d",
+                "privateIpv4Address": "10.0.10.188"
+              }
+            ],
+            "healthStatus": "HEALTHY"
+          },
+          {
+            "containerArn": "arn:aws:ecs:eu-central-1:111122223333:container/retail-store-ecs-cluster/73db5501784f4c248ba5d15a6378c5ee/e9eb9638-0f82-41b7-a4a9-54aa54f7dad6",
+            "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/73db5501784f4c248ba5d15a6378c5ee",
+            "name": "catalog-service",
+            "image": "public.ecr.aws/aws-containers/retail-store-sample-catalog:1.6.3",
+            "imageDigest": "sha256:acd81a9508834925815586693d097c689d1f1f428b2e448ac474628513e71740",
+            "runtimeId": "73db5501784f4c248ba5d15a6378c5ee-3561047634",
+            "lastStatus": "RUNNING",
+            "networkBindings": [],
+            "networkInterfaces": [
+              {
+                "attachmentId": "789506c8-852d-44f5-b1b5-a088dcbbea4d",
+                "privateIpv4Address": "10.0.10.188"
+              }
+            ],
+            "healthStatus": "HEALTHY",
+            "managedAgents": [
+              {
+                "lastStartedAt": "2026-10-09 18:31:45.768000+03:00",
+                "name": "ExecuteCommandAgent",
+                "lastStatus": "RUNNING"
+              }
+            ],
+            "cpu": "0"
+          }
+        ],
+        "cpu": "1024",
+        "createdAt": "2026-10-09 18:31:11.071000+03:00",
+        "desiredStatus": "RUNNING",
+        "enableExecuteCommand": true,
+        "group": "service:catalog",
+        "healthStatus": "HEALTHY",
+        "lastStatus": "RUNNING",
+        "launchType": "FARGATE",
+        "memory": "2048",
+        "overrides": {
+          "containerOverrides": [
+            {
+              "name": "ecs-service-connect-g6gQzFV",
+              "environment": [
+                {
+                  "name": "ENVOY_CONCURRENCY",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "ENVOY_ADMIN_MODE",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "AWS_REGION",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "ENABLE_STATS_SNAPSHOT",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPMESH_METRIC_EXTENSION_VERSION",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPNET_ENVOY_RESTART_COUNT",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "HC_DISCONNECTED_TIMEOUT_S",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPNET_AGENT_ADMIN_MODE",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPMESH_RESOURCE_ARN",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "NAMESPACE_NAME",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "NAMESPACE_ARN",
+                  "value": "<redacted>"
+                }
+              ]
+            },
+            {
+              "name": "catalog-service"
+            }
+          ],
+          "inferenceAcceleratorOverrides": []
+        },
+        "platformVersion": "1.4.0",
+        "platformFamily": "Linux",
+        "pullStartedAt": "2026-10-09 18:31:21.955000+03:00",
+        "pullStoppedAt": "2026-10-09 18:31:31.502000+03:00",
+        "startedAt": "2026-10-09 18:32:02.235000+03:00",
+        "startedBy": "ecs-svc/0062082738678689889",
+        "tags": [],
+        "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/73db5501784f4c248ba5d15a6378c5ee",
+        "taskDefinitionArn": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-catalog:1",
+        "version": 5,
+        "ephemeralStorage": {
+          "sizeInGiB": 20
+        },
+        "fargateEphemeralStorage": {
+          "sizeInGiB": 20
+        }
+      },
+      {
+        "attachments": [
+          {
+            "id": "4a0afcdc-b18b-404e-9756-bc2d4ad698f9",
+            "type": "ElasticNetworkInterface",
+            "status": "ATTACHED",
+            "details": [
+              {
+                "name": "subnetId",
+                "value": "subnet-0b1990f186b77134f"
+              },
+              {
+                "name": "networkInterfaceId",
+                "value": "eni-0ca80dd2af62a649f"
+              },
+              {
+                "name": "macAddress",
+                "value": "0a:ff:fb:d2:eb:4b"
+              },
+              {
+                "name": "privateDnsName",
+                "value": "ip-10-0-12-71.eu-central-1.compute.internal"
+              },
+              {
+                "name": "privateIPv4Address",
+                "value": "10.0.12.71"
+              }
+            ]
+          },
+          {
+            "id": "7378cf8b-cc15-45ab-964e-78f289eb901a",
+            "type": "ServiceConnect",
+            "status": "ATTACHED",
+            "details": [
+              {
+                "name": "ContainerName",
+                "value": "ecs-service-connect-Ntva8N"
+              }
+            ]
+          }
+        ],
+        "attributes": [
+          {
+            "name": "ecs.cpu-architecture",
+            "value": "x86_64"
+          }
+        ],
+        "availabilityZone": "eu-central-1c",
+        "clusterArn": "arn:aws:ecs:eu-central-1:111122223333:cluster/retail-store-ecs-cluster",
+        "connectivity": "CONNECTED",
+        "connectivityAt": "2026-10-09 18:31:14.751000+03:00",
+        "containers": [
+          {
+            "containerArn": "arn:aws:ecs:eu-central-1:111122223333:container/retail-store-ecs-cluster/7ded2c031df84634a9b86d8aedb896c2/29565803-e721-49d2-85ff-878b50e8e517",
+            "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/7ded2c031df84634a9b86d8aedb896c2",
+            "name": "carts-service",
+            "image": "public.ecr.aws/aws-containers/retail-store-sample-cart:1.6.3",
+            "imageDigest": "sha256:9ab627ec637bde4f9578e9dd9cdb0c58ff25a39a982cc83bf5d2baadc32958bb",
+            "runtimeId": "7ded2c031df84634a9b86d8aedb896c2-2292227582",
+            "lastStatus": "RUNNING",
+            "networkBindings": [],
+            "networkInterfaces": [
+              {
+                "attachmentId": "4a0afcdc-b18b-404e-9756-bc2d4ad698f9",
+                "privateIpv4Address": "10.0.12.71"
+              }
+            ],
+            "healthStatus": "HEALTHY",
+            "managedAgents": [
+              {
+                "lastStartedAt": "2026-10-09 18:31:59.753000+03:00",
+                "name": "ExecuteCommandAgent",
+                "lastStatus": "RUNNING"
+              }
+            ],
+            "cpu": "0"
+          },
+          {
+            "containerArn": "arn:aws:ecs:eu-central-1:111122223333:container/retail-store-ecs-cluster/7ded2c031df84634a9b86d8aedb896c2/edc8eee6-fe65-47a8-8249-7eb81902bcbc",
+            "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/7ded2c031df84634a9b86d8aedb896c2",
+            "name": "ecs-service-connect-Ntva8N",
+            "lastStatus": "RUNNING",
+            "networkInterfaces": [
+              {
+                "attachmentId": "4a0afcdc-b18b-404e-9756-bc2d4ad698f9",
+                "privateIpv4Address": "10.0.12.71"
+              }
+            ],
+            "healthStatus": "HEALTHY"
+          }
+        ],
+        "cpu": "1024",
+        "createdAt": "2026-10-09 18:31:07.940000+03:00",
+        "desiredStatus": "RUNNING",
+        "enableExecuteCommand": true,
+        "group": "service:carts",
+        "healthStatus": "HEALTHY",
+        "lastStatus": "RUNNING",
+        "launchType": "FARGATE",
+        "memory": "2048",
+        "overrides": {
+          "containerOverrides": [
+            {
+              "name": "carts-service"
+            },
+            {
+              "name": "ecs-service-connect-Ntva8N",
+              "environment": [
+                {
+                  "name": "ENVOY_CONCURRENCY",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "ENVOY_ADMIN_MODE",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "AWS_REGION",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "ENABLE_STATS_SNAPSHOT",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPMESH_METRIC_EXTENSION_VERSION",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPNET_ENVOY_RESTART_COUNT",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "HC_DISCONNECTED_TIMEOUT_S",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPNET_AGENT_ADMIN_MODE",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPMESH_RESOURCE_ARN",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "NAMESPACE_NAME",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "NAMESPACE_ARN",
+                  "value": "<redacted>"
+                }
+              ]
+            }
+          ],
+          "inferenceAcceleratorOverrides": []
+        },
+        "platformVersion": "1.4.0",
+        "platformFamily": "Linux",
+        "pullStartedAt": "2026-10-09 18:31:21.940000+03:00",
+        "pullStoppedAt": "2026-10-09 18:31:34.622000+03:00",
+        "startedAt": "2026-10-09 18:32:42.930000+03:00",
+        "startedBy": "ecs-svc/1150734667303161148",
+        "tags": [],
+        "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/7ded2c031df84634a9b86d8aedb896c2",
+        "taskDefinitionArn": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-carts:1",
+        "version": 5,
+        "ephemeralStorage": {
+          "sizeInGiB": 20
+        },
+        "fargateEphemeralStorage": {
+          "sizeInGiB": 20
+        }
+      },
+      {
+        "attachments": [
+          {
+            "id": "d5317eb0-3919-4598-b12f-2da5fc569394",
+            "type": "ServiceConnect",
+            "status": "ATTACHED",
+            "details": [
+              {
+                "name": "ContainerName",
+                "value": "ecs-service-connect-lWqQfq"
+              }
+            ]
+          },
+          {
+            "id": "e811cf84-f1fc-4afd-af03-c65649ddd81b",
+            "type": "ElasticNetworkInterface",
+            "status": "ATTACHED",
+            "details": [
+              {
+                "name": "subnetId",
+                "value": "subnet-07e1b5ad204e73d39"
+              },
+              {
+                "name": "networkInterfaceId",
+                "value": "eni-0a8a82abd192b71ec"
+              },
+              {
+                "name": "macAddress",
+                "value": "02:ff:ce:7a:36:a1"
+              },
+              {
+                "name": "privateDnsName",
+                "value": "ip-10-0-10-196.eu-central-1.compute.internal"
+              },
+              {
+                "name": "privateIPv4Address",
+                "value": "10.0.10.196"
+              }
+            ]
+          }
+        ],
+        "attributes": [
+          {
+            "name": "ecs.cpu-architecture",
+            "value": "x86_64"
+          }
+        ],
+        "availabilityZone": "eu-central-1a",
+        "clusterArn": "arn:aws:ecs:eu-central-1:111122223333:cluster/retail-store-ecs-cluster",
+        "connectivity": "CONNECTED",
+        "connectivityAt": "2026-10-09 18:31:12.354000+03:00",
+        "containers": [
+          {
+            "containerArn": "arn:aws:ecs:eu-central-1:111122223333:container/retail-store-ecs-cluster/7e704fc624a24bab8047d723760f47bb/1cb99f4e-b0c4-40c2-bc31-52894d9f9625",
+            "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/7e704fc624a24bab8047d723760f47bb",
+            "name": "ecs-service-connect-lWqQfq",
+            "lastStatus": "RUNNING",
+            "networkInterfaces": [
+              {
+                "attachmentId": "e811cf84-f1fc-4afd-af03-c65649ddd81b",
+                "privateIpv4Address": "10.0.10.196"
+              }
+            ],
+            "healthStatus": "HEALTHY"
+          },
+          {
+            "containerArn": "arn:aws:ecs:eu-central-1:111122223333:container/retail-store-ecs-cluster/7e704fc624a24bab8047d723760f47bb/3c263ff4-ccd3-4082-a026-aeb99e487716",
+            "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/7e704fc624a24bab8047d723760f47bb",
+            "name": "orders-service",
+            "image": "public.ecr.aws/aws-containers/retail-store-sample-orders:1.6.3",
+            "imageDigest": "sha256:923efb4eb893c12dc41fb419d30250a38c65724666815d398d47bd4cb6a2656f",
+            "runtimeId": "7e704fc624a24bab8047d723760f47bb-1418509014",
+            "lastStatus": "RUNNING",
+            "networkBindings": [],
+            "networkInterfaces": [
+              {
+                "attachmentId": "e811cf84-f1fc-4afd-af03-c65649ddd81b",
+                "privateIpv4Address": "10.0.10.196"
+              }
+            ],
+            "healthStatus": "HEALTHY",
+            "managedAgents": [
+              {
+                "lastStartedAt": "2026-10-09 18:32:03.819000+03:00",
+                "name": "ExecuteCommandAgent",
+                "lastStatus": "RUNNING"
+              }
+            ],
+            "cpu": "0"
+          }
+        ],
+        "cpu": "1024",
+        "createdAt": "2026-10-09 18:31:09.804000+03:00",
+        "desiredStatus": "RUNNING",
+        "enableExecuteCommand": true,
+        "group": "service:orders",
+        "healthStatus": "HEALTHY",
+        "lastStatus": "RUNNING",
+        "launchType": "FARGATE",
+        "memory": "2048",
+        "overrides": {
+          "containerOverrides": [
+            {
+              "name": "orders-service"
+            },
+            {
+              "name": "ecs-service-connect-lWqQfq",
+              "environment": [
+                {
+                  "name": "ENVOY_CONCURRENCY",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "ENVOY_ADMIN_MODE",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "AWS_REGION",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "ENABLE_STATS_SNAPSHOT",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPMESH_METRIC_EXTENSION_VERSION",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPNET_ENVOY_RESTART_COUNT",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "HC_DISCONNECTED_TIMEOUT_S",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPNET_AGENT_ADMIN_MODE",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPMESH_RESOURCE_ARN",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "NAMESPACE_NAME",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "NAMESPACE_ARN",
+                  "value": "<redacted>"
+                }
+              ]
+            }
+          ],
+          "inferenceAcceleratorOverrides": []
+        },
+        "platformVersion": "1.4.0",
+        "platformFamily": "Linux",
+        "pullStartedAt": "2026-10-09 18:31:22.410000+03:00",
+        "pullStoppedAt": "2026-10-09 18:31:36.108000+03:00",
+        "startedAt": "2026-10-09 18:32:45.619000+03:00",
+        "startedBy": "ecs-svc/2766896460993968648",
+        "tags": [],
+        "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/7e704fc624a24bab8047d723760f47bb",
+        "taskDefinitionArn": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-orders:1",
+        "version": 6,
+        "ephemeralStorage": {
+          "sizeInGiB": 20
+        },
+        "fargateEphemeralStorage": {
+          "sizeInGiB": 20
+        }
+      },
+      {
+        "attachments": [
+          {
+            "id": "84d69750-2de9-4f9e-a440-cf087aff864c",
+            "type": "ServiceConnect",
+            "status": "ATTACHED",
+            "details": [
+              {
+                "name": "ContainerName",
+                "value": "ecs-service-connect-q15Ze"
+              }
+            ]
+          },
+          {
+            "id": "e47b5827-de4f-4397-af85-3bf29253cd3a",
+            "type": "ElasticNetworkInterface",
+            "status": "ATTACHED",
+            "details": [
+              {
+                "name": "subnetId",
+                "value": "subnet-0b1990f186b77134f"
+              },
+              {
+                "name": "networkInterfaceId",
+                "value": "eni-06f2f0f4eb478e23a"
+              },
+              {
+                "name": "macAddress",
+                "value": "0a:ff:e1:4e:44:39"
+              },
+              {
+                "name": "privateDnsName",
+                "value": "ip-10-0-12-129.eu-central-1.compute.internal"
+              },
+              {
+                "name": "privateIPv4Address",
+                "value": "10.0.12.129"
+              }
+            ]
+          }
+        ],
+        "attributes": [
+          {
+            "name": "ecs.cpu-architecture",
+            "value": "x86_64"
+          }
+        ],
+        "availabilityZone": "eu-central-1c",
+        "clusterArn": "arn:aws:ecs:eu-central-1:111122223333:cluster/retail-store-ecs-cluster",
+        "connectivity": "CONNECTED",
+        "connectivityAt": "2026-10-09 18:35:47.113000+03:00",
+        "containers": [
+          {
+            "containerArn": "arn:aws:ecs:eu-central-1:111122223333:container/retail-store-ecs-cluster/cf1d6168722543fdb142c5bbbac5bb31/c6e47bd9-71c3-4b10-99b6-f89de241e802",
+            "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/cf1d6168722543fdb142c5bbbac5bb31",
+            "name": "ui-service",
+            "image": "public.ecr.aws/aws-containers/retail-store-sample-ui:1.6.3",
+            "imageDigest": "sha256:e5936e5286f55bb6eb6c8bc1746a67b5c8890bf1cd3699795598856a9f0590a0",
+            "runtimeId": "cf1d6168722543fdb142c5bbbac5bb31-0496640617",
+            "lastStatus": "RUNNING",
+            "networkBindings": [],
+            "networkInterfaces": [
+              {
+                "attachmentId": "e47b5827-de4f-4397-af85-3bf29253cd3a",
+                "privateIpv4Address": "10.0.12.129"
+              }
+            ],
+            "healthStatus": "HEALTHY",
+            "managedAgents": [
+              {
+                "lastStartedAt": "2026-10-09 18:36:24.659000+03:00",
+                "name": "ExecuteCommandAgent",
+                "lastStatus": "RUNNING"
+              }
+            ],
+            "cpu": "0"
+          },
+          {
+            "containerArn": "arn:aws:ecs:eu-central-1:111122223333:container/retail-store-ecs-cluster/cf1d6168722543fdb142c5bbbac5bb31/e4b3491a-002d-4267-b885-42caff291850",
+            "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/cf1d6168722543fdb142c5bbbac5bb31",
+            "name": "ecs-service-connect-q15Ze",
+            "lastStatus": "RUNNING",
+            "networkInterfaces": [
+              {
+                "attachmentId": "e47b5827-de4f-4397-af85-3bf29253cd3a",
+                "privateIpv4Address": "10.0.12.129"
+              }
+            ],
+            "healthStatus": "HEALTHY"
+          }
+        ],
+        "cpu": "1024",
+        "createdAt": "2026-10-09 18:35:44.053000+03:00",
+        "desiredStatus": "RUNNING",
+        "enableExecuteCommand": true,
+        "group": "service:ui",
+        "healthStatus": "HEALTHY",
+        "lastStatus": "RUNNING",
+        "launchType": "FARGATE",
+        "memory": "2048",
+        "overrides": {
+          "containerOverrides": [
+            {
+              "name": "ecs-service-connect-q15Ze",
+              "environment": [
+                {
+                  "name": "ENVOY_CONCURRENCY",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "ENVOY_ADMIN_MODE",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "AWS_REGION",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "ENABLE_STATS_SNAPSHOT",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPMESH_METRIC_EXTENSION_VERSION",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPNET_ENVOY_RESTART_COUNT",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "HC_DISCONNECTED_TIMEOUT_S",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPNET_AGENT_ADMIN_MODE",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPMESH_RESOURCE_ARN",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "NAMESPACE_NAME",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "NAMESPACE_ARN",
+                  "value": "<redacted>"
+                }
+              ]
+            },
+            {
+              "name": "ui-service"
+            }
+          ],
+          "inferenceAcceleratorOverrides": []
+        },
+        "platformVersion": "1.4.0",
+        "platformFamily": "Linux",
+        "pullStartedAt": "2026-10-09 18:35:54.846000+03:00",
+        "pullStoppedAt": "2026-10-09 18:36:11.006000+03:00",
+        "startedAt": "2026-10-09 18:37:17.807000+03:00",
+        "startedBy": "ecs-svc/8445935713198398776",
+        "tags": [],
+        "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/cf1d6168722543fdb142c5bbbac5bb31",
+        "taskDefinitionArn": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-ui:1",
+        "version": 6,
+        "ephemeralStorage": {
+          "sizeInGiB": 20
+        },
+        "fargateEphemeralStorage": {
+          "sizeInGiB": 20
+        }
+      },
+      {
+        "attachments": [
+          {
+            "id": "0cc4f8a3-97bd-4f71-9de7-05ae9fce3a82",
+            "type": "ServiceConnect",
+            "status": "ATTACHED",
+            "details": [
+              {
+                "name": "ContainerName",
+                "value": "ecs-service-connect-Nt7kHb"
+              }
+            ]
+          },
+          {
+            "id": "8ecb7075-bb73-423a-a80e-e63a1bcec882",
+            "type": "ElasticNetworkInterface",
+            "status": "ATTACHED",
+            "details": [
+              {
+                "name": "subnetId",
+                "value": "subnet-07e1b5ad204e73d39"
+              },
+              {
+                "name": "networkInterfaceId",
+                "value": "eni-03e2d0cb32182e694"
+              },
+              {
+                "name": "macAddress",
+                "value": "02:ff:e8:3a:db:67"
+              },
+              {
+                "name": "privateDnsName",
+                "value": "ip-10-0-10-214.eu-central-1.compute.internal"
+              },
+              {
+                "name": "privateIPv4Address",
+                "value": "10.0.10.214"
+              }
+            ]
+          }
+        ],
+        "attributes": [
+          {
+            "name": "ecs.cpu-architecture",
+            "value": "x86_64"
+          }
+        ],
+        "availabilityZone": "eu-central-1a",
+        "clusterArn": "arn:aws:ecs:eu-central-1:111122223333:cluster/retail-store-ecs-cluster",
+        "connectivity": "CONNECTED",
+        "connectivityAt": "2026-10-09 18:33:40.685000+03:00",
+        "containers": [
+          {
+            "containerArn": "arn:aws:ecs:eu-central-1:111122223333:container/retail-store-ecs-cluster/e616c0ea7d63447899ed4f0d35113726/5da19c72-2ec9-4821-b248-62a5364652ef",
+            "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/e616c0ea7d63447899ed4f0d35113726",
+            "name": "ecs-service-connect-Nt7kHb",
+            "lastStatus": "RUNNING",
+            "networkInterfaces": [
+              {
+                "attachmentId": "8ecb7075-bb73-423a-a80e-e63a1bcec882",
+                "privateIpv4Address": "10.0.10.214"
+              }
+            ],
+            "healthStatus": "HEALTHY"
+          },
+          {
+            "containerArn": "arn:aws:ecs:eu-central-1:111122223333:container/retail-store-ecs-cluster/e616c0ea7d63447899ed4f0d35113726/60ec04b6-ab26-4ce6-8892-607fe04aa607",
+            "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/e616c0ea7d63447899ed4f0d35113726",
+            "name": "checkout-service",
+            "image": "public.ecr.aws/aws-containers/retail-store-sample-checkout:1.6.3",
+            "imageDigest": "sha256:9ceb704a2443b7a53ee4de76d25e1cdab38dbcf9abc310e64521d0edf4c2a77e",
+            "runtimeId": "e616c0ea7d63447899ed4f0d35113726-3759127119",
+            "lastStatus": "RUNNING",
+            "networkBindings": [],
+            "networkInterfaces": [
+              {
+                "attachmentId": "8ecb7075-bb73-423a-a80e-e63a1bcec882",
+                "privateIpv4Address": "10.0.10.214"
+              }
+            ],
+            "healthStatus": "HEALTHY",
+            "managedAgents": [
+              {
+                "lastStartedAt": "2026-10-09 18:34:31.701000+03:00",
+                "name": "ExecuteCommandAgent",
+                "lastStatus": "RUNNING"
+              }
+            ],
+            "cpu": "0"
+          }
+        ],
+        "cpu": "1024",
+        "createdAt": "2026-10-09 18:33:35.567000+03:00",
+        "desiredStatus": "RUNNING",
+        "enableExecuteCommand": true,
+        "group": "service:checkout",
+        "healthStatus": "HEALTHY",
+        "lastStatus": "RUNNING",
+        "launchType": "FARGATE",
+        "memory": "2048",
+        "overrides": {
+          "containerOverrides": [
+            {
+              "name": "checkout-service"
+            },
+            {
+              "name": "ecs-service-connect-Nt7kHb",
+              "environment": [
+                {
+                  "name": "ENVOY_CONCURRENCY",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "ENVOY_ADMIN_MODE",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "AWS_REGION",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "ENABLE_STATS_SNAPSHOT",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPMESH_METRIC_EXTENSION_VERSION",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPNET_ENVOY_RESTART_COUNT",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "HC_DISCONNECTED_TIMEOUT_S",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPNET_AGENT_ADMIN_MODE",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "APPMESH_RESOURCE_ARN",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "NAMESPACE_NAME",
+                  "value": "<redacted>"
+                },
+                {
+                  "name": "NAMESPACE_ARN",
+                  "value": "<redacted>"
+                }
+              ]
+            }
+          ],
+          "inferenceAcceleratorOverrides": []
+        },
+        "platformVersion": "1.4.0",
+        "platformFamily": "Linux",
+        "pullStartedAt": "2026-10-09 18:33:48.808000+03:00",
+        "pullStoppedAt": "2026-10-09 18:34:07.155000+03:00",
+        "startedAt": "2026-10-09 18:34:53.395000+03:00",
+        "startedBy": "ecs-svc/8897163148725050504",
+        "tags": [],
+        "taskArn": "arn:aws:ecs:eu-central-1:111122223333:task/retail-store-ecs-cluster/e616c0ea7d63447899ed4f0d35113726",
+        "taskDefinitionArn": "arn:aws:ecs:eu-central-1:111122223333:task-definition/retail-store-ecs-checkout:1",
+        "version": 6,
+        "ephemeralStorage": {
+          "sizeInGiB": 20
+        },
+        "fargateEphemeralStorage": {
+          "sizeInGiB": 20
+        }
+      }
+    ]
+  },
+  "Network": {
+    "Vpcs": [
+      {
+        "OwnerId": "111122223333",
+        "InstanceTenancy": "default",
+        "CidrBlockAssociationSet": [
+          {
+            "AssociationId": "vpc-cidr-assoc-04a97fa1b2896f526",
+            "CidrBlock": "10.0.0.0/16",
+            "CidrBlockState": {
+              "State": "associated"
+            }
+          }
+        ],
+        "IsDefault": false,
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "BlockPublicAccessStates": {
+          "InternetGatewayBlockMode": "off"
+        },
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "State": "available",
+        "CidrBlock": "10.0.0.0/16",
+        "DhcpOptionsId": "dopt-0b321c2a89fb5702e"
+      }
+    ],
+    "Subnets": [
+      {
+        "AvailabilityZoneId": "euc1-az1",
+        "MapCustomerOwnedIpOnLaunch": false,
+        "OwnerId": "111122223333",
+        "AssignIpv6AddressOnCreation": false,
+        "Ipv6CidrBlockAssociationSet": [],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-public-eu-central-1c"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          }
+        ],
+        "SubnetArn": "arn:aws:ec2:eu-central-1:111122223333:subnet/subnet-0f20ee5dff6606cd1",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "PrivateDnsNameOptionsOnLaunch": {
+          "HostnameType": "ip-name",
+          "EnableResourceNameDnsARecord": false,
+          "EnableResourceNameDnsAAAARecord": false
+        },
+        "BlockPublicAccessStates": {
+          "InternetGatewayBlockMode": "off"
+        },
+        "SubnetId": "subnet-0f20ee5dff6606cd1",
+        "State": "available",
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "CidrBlock": "10.0.2.0/24",
+        "AvailableIpAddressCount": 250,
+        "AvailabilityZone": "eu-central-1c",
+        "DefaultForAz": false,
+        "MapPublicIpOnLaunch": false
+      },
+      {
+        "AvailabilityZoneId": "euc1-az1",
+        "MapCustomerOwnedIpOnLaunch": false,
+        "OwnerId": "111122223333",
+        "AssignIpv6AddressOnCreation": false,
+        "Ipv6CidrBlockAssociationSet": [],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-private-eu-central-1c"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "SubnetArn": "arn:aws:ec2:eu-central-1:111122223333:subnet/subnet-0b1990f186b77134f",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "PrivateDnsNameOptionsOnLaunch": {
+          "HostnameType": "ip-name",
+          "EnableResourceNameDnsARecord": false,
+          "EnableResourceNameDnsAAAARecord": false
+        },
+        "BlockPublicAccessStates": {
+          "InternetGatewayBlockMode": "off"
+        },
+        "SubnetId": "subnet-0b1990f186b77134f",
+        "State": "available",
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "CidrBlock": "10.0.12.0/24",
+        "AvailableIpAddressCount": 247,
+        "AvailabilityZone": "eu-central-1c",
+        "DefaultForAz": false,
+        "MapPublicIpOnLaunch": false
+      },
+      {
+        "AvailabilityZoneId": "euc1-az3",
+        "MapCustomerOwnedIpOnLaunch": false,
+        "OwnerId": "111122223333",
+        "AssignIpv6AddressOnCreation": false,
+        "Ipv6CidrBlockAssociationSet": [],
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-public-eu-central-1b"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "SubnetArn": "arn:aws:ec2:eu-central-1:111122223333:subnet/subnet-0fce95bd1339941f7",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "PrivateDnsNameOptionsOnLaunch": {
+          "HostnameType": "ip-name",
+          "EnableResourceNameDnsARecord": false,
+          "EnableResourceNameDnsAAAARecord": false
+        },
+        "BlockPublicAccessStates": {
+          "InternetGatewayBlockMode": "off"
+        },
+        "SubnetId": "subnet-0fce95bd1339941f7",
+        "State": "available",
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "CidrBlock": "10.0.1.0/24",
+        "AvailableIpAddressCount": 250,
+        "AvailabilityZone": "eu-central-1b",
+        "DefaultForAz": false,
+        "MapPublicIpOnLaunch": false
+      },
+      {
+        "AvailabilityZoneId": "euc1-az2",
+        "MapCustomerOwnedIpOnLaunch": false,
+        "OwnerId": "111122223333",
+        "AssignIpv6AddressOnCreation": false,
+        "Ipv6CidrBlockAssociationSet": [],
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-public-eu-central-1a"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "SubnetArn": "arn:aws:ec2:eu-central-1:111122223333:subnet/subnet-0401eea22adf8e451",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "PrivateDnsNameOptionsOnLaunch": {
+          "HostnameType": "ip-name",
+          "EnableResourceNameDnsARecord": false,
+          "EnableResourceNameDnsAAAARecord": false
+        },
+        "BlockPublicAccessStates": {
+          "InternetGatewayBlockMode": "off"
+        },
+        "SubnetId": "subnet-0401eea22adf8e451",
+        "State": "available",
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "CidrBlock": "10.0.0.0/24",
+        "AvailableIpAddressCount": 250,
+        "AvailabilityZone": "eu-central-1a",
+        "DefaultForAz": false,
+        "MapPublicIpOnLaunch": false
+      },
+      {
+        "AvailabilityZoneId": "euc1-az2",
+        "MapCustomerOwnedIpOnLaunch": false,
+        "OwnerId": "111122223333",
+        "AssignIpv6AddressOnCreation": false,
+        "Ipv6CidrBlockAssociationSet": [],
+        "Tags": [
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-private-eu-central-1a"
+          }
+        ],
+        "SubnetArn": "arn:aws:ec2:eu-central-1:111122223333:subnet/subnet-07e1b5ad204e73d39",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "PrivateDnsNameOptionsOnLaunch": {
+          "HostnameType": "ip-name",
+          "EnableResourceNameDnsARecord": false,
+          "EnableResourceNameDnsAAAARecord": false
+        },
+        "BlockPublicAccessStates": {
+          "InternetGatewayBlockMode": "off"
+        },
+        "SubnetId": "subnet-07e1b5ad204e73d39",
+        "State": "available",
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "CidrBlock": "10.0.10.0/24",
+        "AvailableIpAddressCount": 243,
+        "AvailabilityZone": "eu-central-1a",
+        "DefaultForAz": false,
+        "MapPublicIpOnLaunch": false
+      },
+      {
+        "AvailabilityZoneId": "euc1-az3",
+        "MapCustomerOwnedIpOnLaunch": false,
+        "OwnerId": "111122223333",
+        "AssignIpv6AddressOnCreation": false,
+        "Ipv6CidrBlockAssociationSet": [],
+        "Tags": [
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          },
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-private-eu-central-1b"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          }
+        ],
+        "SubnetArn": "arn:aws:ec2:eu-central-1:111122223333:subnet/subnet-00a26e86f984d5b2a",
+        "EnableDns64": false,
+        "Ipv6Native": false,
+        "PrivateDnsNameOptionsOnLaunch": {
+          "HostnameType": "ip-name",
+          "EnableResourceNameDnsARecord": false,
+          "EnableResourceNameDnsAAAARecord": false
+        },
+        "BlockPublicAccessStates": {
+          "InternetGatewayBlockMode": "off"
+        },
+        "SubnetId": "subnet-00a26e86f984d5b2a",
+        "State": "available",
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "CidrBlock": "10.0.11.0/24",
+        "AvailableIpAddressCount": 251,
+        "AvailabilityZone": "eu-central-1b",
+        "DefaultForAz": false,
+        "MapPublicIpOnLaunch": false
+      }
+    ],
+    "RouteTables": [
+      {
+        "Associations": [
+          {
+            "Main": true,
+            "RouteTableAssociationId": "rtbassoc-05a69431f6beca343",
+            "RouteTableId": "rtb-0c05d546b32228208",
+            "AssociationState": {
+              "State": "associated"
+            }
+          }
+        ],
+        "PropagatingVgws": [],
+        "RouteTableId": "rtb-0c05d546b32228208",
+        "Routes": [
+          {
+            "DestinationCidrBlock": "10.0.0.0/16",
+            "GatewayId": "local",
+            "Origin": "CreateRouteTable",
+            "State": "active"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-default"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "OwnerId": "111122223333"
+      },
+      {
+        "Associations": [
+          {
+            "Main": false,
+            "RouteTableAssociationId": "rtbassoc-0b1cedf9f228813eb",
+            "RouteTableId": "rtb-0e9271639c0504441",
+            "SubnetId": "subnet-0f20ee5dff6606cd1",
+            "AssociationState": {
+              "State": "associated"
+            }
+          },
+          {
+            "Main": false,
+            "RouteTableAssociationId": "rtbassoc-0cfc8c73bbcf0d622",
+            "RouteTableId": "rtb-0e9271639c0504441",
+            "SubnetId": "subnet-0401eea22adf8e451",
+            "AssociationState": {
+              "State": "associated"
+            }
+          },
+          {
+            "Main": false,
+            "RouteTableAssociationId": "rtbassoc-0c53213857d65662f",
+            "RouteTableId": "rtb-0e9271639c0504441",
+            "SubnetId": "subnet-0fce95bd1339941f7",
+            "AssociationState": {
+              "State": "associated"
+            }
+          }
+        ],
+        "PropagatingVgws": [],
+        "RouteTableId": "rtb-0e9271639c0504441",
+        "Routes": [
+          {
+            "DestinationCidrBlock": "10.0.0.0/16",
+            "GatewayId": "local",
+            "Origin": "CreateRouteTable",
+            "State": "active"
+          },
+          {
+            "DestinationCidrBlock": "0.0.0.0/0",
+            "GatewayId": "igw-075278e856a392ec0",
+            "Origin": "CreateRoute",
+            "State": "active"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-public"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "OwnerId": "111122223333"
+      },
+      {
+        "Associations": [
+          {
+            "Main": false,
+            "RouteTableAssociationId": "rtbassoc-0d403b909f7e072c5",
+            "RouteTableId": "rtb-013112e10818c1489",
+            "SubnetId": "subnet-0b1990f186b77134f",
+            "AssociationState": {
+              "State": "associated"
+            }
+          },
+          {
+            "Main": false,
+            "RouteTableAssociationId": "rtbassoc-045fe9592baa037e8",
+            "RouteTableId": "rtb-013112e10818c1489",
+            "SubnetId": "subnet-00a26e86f984d5b2a",
+            "AssociationState": {
+              "State": "associated"
+            }
+          },
+          {
+            "Main": false,
+            "RouteTableAssociationId": "rtbassoc-072ae963830abd286",
+            "RouteTableId": "rtb-013112e10818c1489",
+            "SubnetId": "subnet-07e1b5ad204e73d39",
+            "AssociationState": {
+              "State": "associated"
+            }
+          }
+        ],
+        "PropagatingVgws": [],
+        "RouteTableId": "rtb-013112e10818c1489",
+        "Routes": [
+          {
+            "DestinationCidrBlock": "10.0.0.0/16",
+            "GatewayId": "local",
+            "Origin": "CreateRouteTable",
+            "State": "active"
+          },
+          {
+            "DestinationCidrBlock": "0.0.0.0/0",
+            "NatGatewayId": "nat-03d1c11b310995aba",
+            "Origin": "CreateRoute",
+            "State": "active"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          },
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-private"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "OwnerId": "111122223333"
+      }
+    ],
+    "InternetGateways": [
+      {
+        "Attachments": [
+          {
+            "State": "available",
+            "VpcId": "vpc-017ca4c95f83c00a0"
+          }
+        ],
+        "InternetGatewayId": "igw-075278e856a392ec0",
+        "OwnerId": "111122223333",
+        "Tags": [
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs"
+          }
+        ]
+      }
+    ],
+    "NatGateways": [
+      {
+        "CreateTime": "2026-10-09 14:48:34+00:00",
+        "NatGatewayAddresses": [
+          {
+            "AllocationId": "eipalloc-0fcad4b9b6ec3d198",
+            "NetworkInterfaceId": "eni-0fc20a25420bfcfe3",
+            "PrivateIp": "10.0.0.222",
+            "PublicIp": "198.51.100.11",
+            "AssociationId": "eipassoc-03e2cb292e1205fc0",
+            "IsPrimary": true,
+            "Status": "succeeded"
+          }
+        ],
+        "NatGatewayId": "nat-03d1c11b310995aba",
+        "State": "available",
+        "SubnetId": "subnet-0401eea22adf8e451",
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          },
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-eu-central-1a"
+          }
+        ],
+        "ConnectivityType": "public",
+        "AvailabilityMode": "zonal",
+        "AttachedAppliances": []
+      }
+    ],
+    "VpcEndpoints": [
+      {
+        "VpcEndpointId": "vpce-0a8852d3896b2e53d",
+        "VpcEndpointType": "Interface",
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "ServiceName": "com.amazonaws.vpce.eu-central-1.vpce-svc-014cd657e5fdb8b2f",
+        "State": "available",
+        "PolicyDocument": "{\n  \"Statement\": [\n    {\n      \"Action\": \"*\",\n      \"Effect\": \"Allow\",\n      \"Principal\": \"*\",\n      \"Resource\": \"*\"\n    }\n  ]\n}",
+        "RouteTableIds": [],
+        "SubnetIds": [
+          "subnet-07e1b5ad204e73d39"
+        ],
+        "Groups": [
+          {
+            "GroupId": "sg-065189381aa8e7c39",
+            "GroupName": "retail-store-ecs-orders-broker"
+          }
+        ],
+        "IpAddressType": "ipv4",
+        "DnsOptions": {
+          "DnsRecordIpType": "ipv4"
+        },
+        "PrivateDnsEnabled": false,
+        "RequesterManaged": true,
+        "NetworkInterfaceIds": [
+          "eni-0870ec6f3da6b18c7"
+        ],
+        "DnsEntries": [
+          {
+            "DnsName": "vpce-0a8852d3896b2e53d-pa480gnr.vpce-svc-014cd657e5fdb8b2f.eu-central-1.vpce.amazonaws.com",
+            "HostedZoneId": "Z273ZU8SZ5RJPC"
+          },
+          {
+            "DnsName": "vpce-0a8852d3896b2e53d-pa480gnr-eu-central-1a.vpce-svc-014cd657e5fdb8b2f.eu-central-1.vpce.amazonaws.com",
+            "HostedZoneId": "Z273ZU8SZ5RJPC"
+          }
+        ],
+        "CreationTimestamp": "2026-10-09 14:55:41.572000+00:00",
+        "Tags": [
+          {
+            "Key": "AMQManaged",
+            "Value": "true"
+          },
+          {
+            "Key": "Broker",
+            "Value": "b-263acd88-67fd-4d03-8bf1-3d61d191b25d"
+          }
+        ],
+        "OwnerId": "111122223333",
+        "ServiceRegion": "eu-central-1"
+      }
+    ],
+    "SecurityGroups": [
+      {
+        "GroupId": "sg-089fe6fbd4d9a9033",
+        "IpPermissionsEgress": [
+          {
+            "IpProtocol": "-1",
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "Description": "All protocols",
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [
+              {
+                "Description": "All protocols",
+                "CidrIpv6": "::/0"
+              }
+            ],
+            "PrefixListIds": []
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-ui"
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-089fe6fbd4d9a9033",
+        "OwnerId": "111122223333",
+        "GroupName": "retail-store-ecs-ui-2026100914502131600000001e",
+        "Description": "UI ALB security group",
+        "IpPermissions": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 80,
+            "ToPort": 80,
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "Description": "HTTP",
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ]
+      },
+      {
+        "GroupId": "sg-0796835a07e6dc412",
+        "IpPermissionsEgress": [],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-ui"
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-0796835a07e6dc412",
+        "OwnerId": "111122223333",
+        "GroupName": "retail-store-ecs-ui-2026100914502137660000001f",
+        "Description": "Managed by Terraform",
+        "IpPermissions": []
+      },
+      {
+        "GroupId": "sg-040b3a46ff959179a",
+        "IpPermissionsEgress": [
+          {
+            "IpProtocol": "-1",
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-040b3a46ff959179a",
+        "OwnerId": "111122223333",
+        "GroupName": "retail-store-ecs-catalog-task",
+        "Description": "Managed by Terraform",
+        "IpPermissions": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 8080,
+            "ToPort": 8080,
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ]
+      },
+      {
+        "GroupId": "sg-0f71c87c4e6803b4d",
+        "IpPermissionsEgress": [
+          {
+            "IpProtocol": "-1",
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "Description": "Allow all egress",
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [
+              {
+                "Description": "Allow all egress",
+                "CidrIpv6": "::/0"
+              }
+            ],
+            "PrefixListIds": []
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          },
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-checkout"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-0f71c87c4e6803b4d",
+        "OwnerId": "111122223333",
+        "GroupName": "retail-store-ecs-checkout-20261009145022866800000021",
+        "Description": "Security group for Elasticache Redis",
+        "IpPermissions": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 6379,
+            "ToPort": 6379,
+            "UserIdGroupPairs": [
+              {
+                "Description": "Selectively allow inbound traffic",
+                "UserId": "111122223333",
+                "GroupId": "sg-0095c5c4e962d6d3c"
+              }
+            ],
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ]
+      },
+      {
+        "GroupId": "sg-0d699b165b0fd5d62",
+        "IpPermissionsEgress": [],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-orders"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-0d699b165b0fd5d62",
+        "OwnerId": "111122223333",
+        "GroupName": "retail-store-ecs-orders-2026100914501960110000001c",
+        "Description": "Control traffic to/from RDS Aurora retail-store-ecs-orders",
+        "IpPermissions": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 5432,
+            "ToPort": 5432,
+            "UserIdGroupPairs": [
+              {
+                "Description": "From allowed SGs",
+                "UserId": "111122223333",
+                "GroupId": "sg-07200dd8c1cd91664"
+              }
+            ],
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ]
+      },
+      {
+        "GroupId": "sg-07200dd8c1cd91664",
+        "IpPermissionsEgress": [
+          {
+            "IpProtocol": "-1",
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-07200dd8c1cd91664",
+        "OwnerId": "111122223333",
+        "GroupName": "retail-store-ecs-orders-task",
+        "Description": "Managed by Terraform",
+        "IpPermissions": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 8080,
+            "ToPort": 8080,
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ]
+      },
+      {
+        "GroupId": "sg-09c7a14effce5b90a",
+        "IpPermissionsEgress": [],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-catalog"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-09c7a14effce5b90a",
+        "OwnerId": "111122223333",
+        "GroupName": "retail-store-ecs-catalog-2026100914502095350000001d",
+        "Description": "Control traffic to/from RDS Aurora retail-store-ecs-catalog",
+        "IpPermissions": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 3306,
+            "ToPort": 3306,
+            "UserIdGroupPairs": [
+              {
+                "Description": "From allowed SGs",
+                "UserId": "111122223333",
+                "GroupId": "sg-040b3a46ff959179a"
+              }
+            ],
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ]
+      },
+      {
+        "GroupId": "sg-0da8eca938cda3bab",
+        "IpPermissionsEgress": [
+          {
+            "IpProtocol": "-1",
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-0da8eca938cda3bab",
+        "OwnerId": "111122223333",
+        "GroupName": "retail-store-ecs-carts-task",
+        "Description": "Managed by Terraform",
+        "IpPermissions": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 8080,
+            "ToPort": 8080,
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ]
+      },
+      {
+        "GroupId": "sg-0291d8a66cf6e4899",
+        "IpPermissionsEgress": [],
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-default"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-0291d8a66cf6e4899",
+        "OwnerId": "111122223333",
+        "GroupName": "default",
+        "Description": "default VPC security group",
+        "IpPermissions": []
+      },
+      {
+        "GroupId": "sg-0f311a84fbd640ebb",
+        "IpPermissionsEgress": [],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-0f311a84fbd640ebb",
+        "OwnerId": "111122223333",
+        "GroupName": "catalog_opensearch_sg",
+        "Description": "Security group for OpenSearch",
+        "IpPermissions": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 443,
+            "ToPort": 443,
+            "UserIdGroupPairs": [
+              {
+                "Description": "Allow HTTPS from client",
+                "UserId": "111122223333",
+                "GroupId": "sg-040b3a46ff959179a"
+              }
+            ],
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ]
+      },
+      {
+        "GroupId": "sg-0e0e2272b9ea01935",
+        "IpPermissionsEgress": [
+          {
+            "IpProtocol": "-1",
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-0e0e2272b9ea01935",
+        "OwnerId": "111122223333",
+        "GroupName": "retail-store-ecs-ui-task",
+        "Description": "Managed by Terraform",
+        "IpPermissions": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 8080,
+            "ToPort": 8080,
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ]
+      },
+      {
+        "GroupId": "sg-0095c5c4e962d6d3c",
+        "IpPermissionsEgress": [
+          {
+            "IpProtocol": "-1",
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-0095c5c4e962d6d3c",
+        "OwnerId": "111122223333",
+        "GroupName": "retail-store-ecs-checkout-task",
+        "Description": "Managed by Terraform",
+        "IpPermissions": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 8080,
+            "ToPort": 8080,
+            "UserIdGroupPairs": [],
+            "IpRanges": [
+              {
+                "CidrIp": "0.0.0.0/0"
+              }
+            ],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ]
+      },
+      {
+        "GroupId": "sg-065189381aa8e7c39",
+        "IpPermissionsEgress": [],
+        "Tags": [
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-orders-broker"
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "SecurityGroupArn": "arn:aws:ec2:eu-central-1:111122223333:security-group/sg-065189381aa8e7c39",
+        "OwnerId": "111122223333",
+        "GroupName": "retail-store-ecs-orders-broker",
+        "Description": "Secure traffic to Rabbit MQ",
+        "IpPermissions": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": 5671,
+            "ToPort": 5671,
+            "UserIdGroupPairs": [
+              {
+                "UserId": "111122223333",
+                "GroupId": "sg-07200dd8c1cd91664"
+              }
+            ],
+            "IpRanges": [],
+            "Ipv6Ranges": [],
+            "PrefixListIds": []
+          }
+        ]
+      }
+    ],
+    "NetworkAcls": [
+      {
+        "Associations": [
+          {
+            "NetworkAclAssociationId": "aclassoc-06404144a5ece7389",
+            "NetworkAclId": "acl-0ba0014ab877c7b12",
+            "SubnetId": "subnet-07e1b5ad204e73d39"
+          },
+          {
+            "NetworkAclAssociationId": "aclassoc-0e98bb7d605722141",
+            "NetworkAclId": "acl-0ba0014ab877c7b12",
+            "SubnetId": "subnet-0f20ee5dff6606cd1"
+          },
+          {
+            "NetworkAclAssociationId": "aclassoc-017930281fe0def7f",
+            "NetworkAclId": "acl-0ba0014ab877c7b12",
+            "SubnetId": "subnet-0b1990f186b77134f"
+          },
+          {
+            "NetworkAclAssociationId": "aclassoc-082391ac70eb78eac",
+            "NetworkAclId": "acl-0ba0014ab877c7b12",
+            "SubnetId": "subnet-0401eea22adf8e451"
+          },
+          {
+            "NetworkAclAssociationId": "aclassoc-0d63716a92b6c935c",
+            "NetworkAclId": "acl-0ba0014ab877c7b12",
+            "SubnetId": "subnet-00a26e86f984d5b2a"
+          },
+          {
+            "NetworkAclAssociationId": "aclassoc-0a93d65cde4d5e750",
+            "NetworkAclId": "acl-0ba0014ab877c7b12",
+            "SubnetId": "subnet-0fce95bd1339941f7"
+          }
+        ],
+        "Entries": [
+          {
+            "CidrBlock": "0.0.0.0/0",
+            "Egress": true,
+            "Protocol": "-1",
+            "RuleAction": "allow",
+            "RuleNumber": 100
+          },
+          {
+            "Egress": true,
+            "Ipv6CidrBlock": "::/0",
+            "Protocol": "-1",
+            "RuleAction": "allow",
+            "RuleNumber": 101
+          },
+          {
+            "CidrBlock": "0.0.0.0/0",
+            "Egress": true,
+            "Protocol": "-1",
+            "RuleAction": "deny",
+            "RuleNumber": 32767
+          },
+          {
+            "CidrBlock": "0.0.0.0/0",
+            "Egress": false,
+            "Protocol": "-1",
+            "RuleAction": "allow",
+            "RuleNumber": 100
+          },
+          {
+            "Egress": false,
+            "Ipv6CidrBlock": "::/0",
+            "Protocol": "-1",
+            "RuleAction": "allow",
+            "RuleNumber": 101
+          },
+          {
+            "CidrBlock": "0.0.0.0/0",
+            "Egress": false,
+            "Protocol": "-1",
+            "RuleAction": "deny",
+            "RuleNumber": 32767
+          }
+        ],
+        "IsDefault": true,
+        "NetworkAclId": "acl-0ba0014ab877c7b12",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "retail-store-ecs-default"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "OwnerId": "111122223333"
+      }
+    ],
+    "FlowLogs": [],
+    "NetworkInterfaces": [
+      {
+        "NetworkInterfaceId": "eni-07f15b6db116169b1",
+        "SubnetId": "subnet-0f20ee5dff6606cd1",
+        "AvailabilityZone": "eu-central-1c",
+        "Description": "ELB app/retail-store-ecs-ui/673a8ff8fafd121d",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.2.209",
+        "Groups": [
+          {
+            "GroupId": "sg-089fe6fbd4d9a9033",
+            "GroupName": "retail-store-ecs-ui-2026100914502131600000001e"
+          },
+          {
+            "GroupId": "sg-0796835a07e6dc412",
+            "GroupName": "retail-store-ecs-ui-2026100914502137660000001f"
+          }
+        ],
+        "RequesterId": "amazon-elb"
+      },
+      {
+        "NetworkInterfaceId": "eni-0ca80dd2af62a649f",
+        "SubnetId": "subnet-0b1990f186b77134f",
+        "AvailabilityZone": "eu-central-1c",
+        "Description": "arn:aws:ecs:eu-central-1:111122223333:attachment/4a0afcdc-b18b-404e-9756-bc2d4ad698f9",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.12.71",
+        "Groups": [
+          {
+            "GroupId": "sg-0da8eca938cda3bab",
+            "GroupName": "retail-store-ecs-carts-task"
+          }
+        ],
+        "RequesterId": "628676013162"
+      },
+      {
+        "NetworkInterfaceId": "eni-0fe223d231f48a196",
+        "SubnetId": "subnet-0b1990f186b77134f",
+        "AvailabilityZone": "eu-central-1c",
+        "Description": "RDSNetworkInterface",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.12.115",
+        "Groups": [
+          {
+            "GroupId": "sg-0d699b165b0fd5d62",
+            "GroupName": "retail-store-ecs-orders-2026100914501960110000001c"
+          }
+        ],
+        "RequesterId": "547236950347"
+      },
+      {
+        "NetworkInterfaceId": "eni-06f2f0f4eb478e23a",
+        "SubnetId": "subnet-0b1990f186b77134f",
+        "AvailabilityZone": "eu-central-1c",
+        "Description": "arn:aws:ecs:eu-central-1:111122223333:attachment/e47b5827-de4f-4397-af85-3bf29253cd3a",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.12.129",
+        "Groups": [
+          {
+            "GroupId": "sg-0e0e2272b9ea01935",
+            "GroupName": "retail-store-ecs-ui-task"
+          }
+        ],
+        "RequesterId": "628676013162"
+      },
+      {
+        "NetworkInterfaceId": "eni-06d60da6d62d2cc92",
+        "SubnetId": "subnet-0b1990f186b77134f",
+        "AvailabilityZone": "eu-central-1c",
+        "Description": "RDSNetworkInterface",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.12.77",
+        "Groups": [
+          {
+            "GroupId": "sg-09c7a14effce5b90a",
+            "GroupName": "retail-store-ecs-catalog-2026100914502095350000001d"
+          }
+        ],
+        "RequesterId": "321202669680"
+      },
+      {
+        "NetworkInterfaceId": "eni-0ac3f3b10a3f67535",
+        "SubnetId": "subnet-0fce95bd1339941f7",
+        "AvailabilityZone": "eu-central-1b",
+        "Description": "ELB app/retail-store-ecs-ui/673a8ff8fafd121d",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.1.231",
+        "Groups": [
+          {
+            "GroupId": "sg-089fe6fbd4d9a9033",
+            "GroupName": "retail-store-ecs-ui-2026100914502131600000001e"
+          },
+          {
+            "GroupId": "sg-0796835a07e6dc412",
+            "GroupName": "retail-store-ecs-ui-2026100914502137660000001f"
+          }
+        ],
+        "RequesterId": "amazon-elb"
+      },
+      {
+        "NetworkInterfaceId": "eni-0a8a82abd192b71ec",
+        "SubnetId": "subnet-07e1b5ad204e73d39",
+        "AvailabilityZone": "eu-central-1a",
+        "Description": "arn:aws:ecs:eu-central-1:111122223333:attachment/e811cf84-f1fc-4afd-af03-c65649ddd81b",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.10.196",
+        "Groups": [
+          {
+            "GroupId": "sg-07200dd8c1cd91664",
+            "GroupName": "retail-store-ecs-orders-task"
+          }
+        ],
+        "RequesterId": "628676013162"
+      },
+      {
+        "NetworkInterfaceId": "eni-0fc20a25420bfcfe3",
+        "SubnetId": "subnet-0401eea22adf8e451",
+        "AvailabilityZone": "eu-central-1a",
+        "Description": "Interface for NAT Gateway nat-03d1c11b310995aba",
+        "InterfaceType": "nat_gateway",
+        "PrivateIpAddress": "10.0.0.222",
+        "Groups": [],
+        "RequesterId": "221919444556"
+      },
+      {
+        "NetworkInterfaceId": "eni-05cf9c19a05e6b7bf",
+        "SubnetId": "subnet-07e1b5ad204e73d39",
+        "AvailabilityZone": "eu-central-1a",
+        "Description": "ES retail-store-ecs-catalog",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.10.121",
+        "Groups": [
+          {
+            "GroupId": "sg-0f311a84fbd640ebb",
+            "GroupName": "catalog_opensearch_sg"
+          }
+        ],
+        "RequesterId": "amazon-elasticsearch"
+      },
+      {
+        "NetworkInterfaceId": "eni-0870ec6f3da6b18c7",
+        "SubnetId": "subnet-07e1b5ad204e73d39",
+        "AvailabilityZone": "eu-central-1a",
+        "Description": "VPC Endpoint Interface vpce-0a8852d3896b2e53d",
+        "InterfaceType": "vpc_endpoint",
+        "PrivateIpAddress": "10.0.10.25",
+        "Groups": [
+          {
+            "GroupId": "sg-065189381aa8e7c39",
+            "GroupName": "retail-store-ecs-orders-broker"
+          }
+        ],
+        "RequesterId": "727180483921"
+      },
+      {
+        "NetworkInterfaceId": "eni-0c975ff19a93ff073",
+        "SubnetId": "subnet-07e1b5ad204e73d39",
+        "AvailabilityZone": "eu-central-1a",
+        "Description": "arn:aws:ecs:eu-central-1:111122223333:attachment/789506c8-852d-44f5-b1b5-a088dcbbea4d",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.10.188",
+        "Groups": [
+          {
+            "GroupId": "sg-040b3a46ff959179a",
+            "GroupName": "retail-store-ecs-catalog-task"
+          }
+        ],
+        "RequesterId": "628676013162"
+      },
+      {
+        "NetworkInterfaceId": "eni-064753bcaa6d06ea5",
+        "SubnetId": "subnet-07e1b5ad204e73d39",
+        "AvailabilityZone": "eu-central-1a",
+        "Description": "ES retail-store-ecs-catalog",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.10.234",
+        "Groups": [
+          {
+            "GroupId": "sg-0f311a84fbd640ebb",
+            "GroupName": "catalog_opensearch_sg"
+          }
+        ],
+        "RequesterId": "amazon-elasticsearch"
+      },
+      {
+        "NetworkInterfaceId": "eni-0a14601d9f53dd0c7",
+        "SubnetId": "subnet-07e1b5ad204e73d39",
+        "AvailabilityZone": "eu-central-1a",
+        "Description": "ElastiCache retail-store-ecs-checkout-001",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.10.65",
+        "Groups": [
+          {
+            "GroupId": "sg-0f71c87c4e6803b4d",
+            "GroupName": "retail-store-ecs-checkout-20261009145022866800000021"
+          }
+        ],
+        "RequesterId": "amazon-elasticache"
+      },
+      {
+        "NetworkInterfaceId": "eni-03e2d0cb32182e694",
+        "SubnetId": "subnet-07e1b5ad204e73d39",
+        "AvailabilityZone": "eu-central-1a",
+        "Description": "arn:aws:ecs:eu-central-1:111122223333:attachment/8ecb7075-bb73-423a-a80e-e63a1bcec882",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.10.214",
+        "Groups": [
+          {
+            "GroupId": "sg-0095c5c4e962d6d3c",
+            "GroupName": "retail-store-ecs-checkout-task"
+          }
+        ],
+        "RequesterId": "628676013162"
+      },
+      {
+        "NetworkInterfaceId": "eni-06163f04ae66f28cd",
+        "SubnetId": "subnet-07e1b5ad204e73d39",
+        "AvailabilityZone": "eu-central-1a",
+        "Description": "ES retail-store-ecs-catalog",
+        "InterfaceType": "interface",
+        "PrivateIpAddress": "10.0.10.87",
+        "Groups": [
+          {
+            "GroupId": "sg-0f311a84fbd640ebb",
+            "GroupName": "catalog_opensearch_sg"
+          }
+        ],
+        "RequesterId": "amazon-elasticsearch"
+      }
+    ]
+  },
+  "LoadBalancers": [
+    {
+      "LoadBalancer": {
+        "LoadBalancerArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:loadbalancer/app/retail-store-ecs-ui/673a8ff8fafd121d",
+        "DNSName": "retail-store-ecs-ui-0000000000.eu-central-1.elb.amazonaws.com",
+        "CanonicalHostedZoneId": "Z215JYRZR1TBD5",
+        "CreatedTime": "2026-10-09 14:50:24.034000+00:00",
+        "LoadBalancerName": "retail-store-ecs-ui",
+        "Scheme": "internet-facing",
+        "VpcId": "vpc-017ca4c95f83c00a0",
+        "State": {
+          "Code": "active"
+        },
+        "Type": "application",
+        "AvailabilityZones": [
+          {
+            "ZoneName": "eu-central-1a",
+            "SubnetId": "subnet-0401eea22adf8e451",
+            "LoadBalancerAddresses": []
+          },
+          {
+            "ZoneName": "eu-central-1c",
+            "SubnetId": "subnet-0f20ee5dff6606cd1",
+            "LoadBalancerAddresses": []
+          },
+          {
+            "ZoneName": "eu-central-1b",
+            "SubnetId": "subnet-0fce95bd1339941f7",
+            "LoadBalancerAddresses": []
+          }
+        ],
+        "SecurityGroups": [
+          "sg-0796835a07e6dc412",
+          "sg-089fe6fbd4d9a9033"
+        ],
+        "IpAddressType": "ipv4",
+        "EnablePrefixForIpv6SourceNat": "off"
+      },
+      "Attributes": [
+        {
+          "Key": "access_logs.s3.enabled",
+          "Value": "false"
+        },
+        {
+          "Key": "access_logs.s3.bucket",
+          "Value": ""
+        },
+        {
+          "Key": "access_logs.s3.prefix",
+          "Value": ""
+        },
+        {
+          "Key": "health_check_logs.s3.enabled",
+          "Value": "false"
+        },
+        {
+          "Key": "health_check_logs.s3.bucket",
+          "Value": ""
+        },
+        {
+          "Key": "health_check_logs.s3.prefix",
+          "Value": ""
+        },
+        {
+          "Key": "idle_timeout.timeout_seconds",
+          "Value": "60"
+        },
+        {
+          "Key": "deletion_protection.enabled",
+          "Value": "false"
+        },
+        {
+          "Key": "routing.http2.enabled",
+          "Value": "true"
+        },
+        {
+          "Key": "routing.http.drop_invalid_header_fields.enabled",
+          "Value": "false"
+        },
+        {
+          "Key": "routing.http.xff_client_port.enabled",
+          "Value": "true"
+        },
+        {
+          "Key": "routing.http.preserve_host_header.enabled",
+          "Value": "false"
+        },
+        {
+          "Key": "routing.http.xff_header_processing.mode",
+          "Value": "append"
+        },
+        {
+          "Key": "load_balancing.cross_zone.enabled",
+          "Value": "true"
+        },
+        {
+          "Key": "routing.http.desync_mitigation_mode",
+          "Value": "defensive"
+        },
+        {
+          "Key": "client_keep_alive.seconds",
+          "Value": "3600"
+        },
+        {
+          "Key": "waf.fail_open.enabled",
+          "Value": "false"
+        },
+        {
+          "Key": "routing.http.x_amzn_tls_version_and_cipher_suite.enabled",
+          "Value": "false"
+        },
+        {
+          "Key": "zonal_shift.config.enabled",
+          "Value": "false"
+        },
+        {
+          "Key": "connection_logs.s3.enabled",
+          "Value": "false"
+        },
+        {
+          "Key": "connection_logs.s3.bucket",
+          "Value": ""
+        },
+        {
+          "Key": "connection_logs.s3.prefix",
+          "Value": ""
+        }
+      ],
+      "Listeners": [
+        {
+          "ListenerArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:listener/app/retail-store-ecs-ui/673a8ff8fafd121d/e81573c186553483",
+          "LoadBalancerArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:loadbalancer/app/retail-store-ecs-ui/673a8ff8fafd121d",
+          "Port": 80,
+          "Protocol": "HTTP",
+          "DefaultActions": [
+            {
+              "Type": "forward",
+              "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:targetgroup/ui-application/de0587869440dfdd",
+              "Order": 1,
+              "ForwardConfig": {
+                "TargetGroups": [
+                  {
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:targetgroup/ui-application/de0587869440dfdd",
+                    "Weight": 1
+                  }
+                ],
+                "TargetGroupStickinessConfig": {
+                  "Enabled": false
+                }
+              }
+            }
+          ],
+          "Rules": [
+            {
+              "RuleArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:listener-rule/app/retail-store-ecs-ui/673a8ff8fafd121d/e81573c186553483/b2ac14071121aa21",
+              "Priority": "default",
+              "Conditions": [],
+              "Actions": [
+                {
+                  "Type": "forward",
+                  "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:targetgroup/ui-application/de0587869440dfdd",
+                  "Order": 1,
+                  "ForwardConfig": {
+                    "TargetGroups": [
+                      {
+                        "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:targetgroup/ui-application/de0587869440dfdd",
+                        "Weight": 1
+                      }
+                    ],
+                    "TargetGroupStickinessConfig": {
+                      "Enabled": false
+                    }
+                  }
+                }
+              ],
+              "IsDefault": true,
+              "Transforms": []
+            }
+          ]
+        }
+      ],
+      "TargetGroups": [
+        {
+          "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:targetgroup/ui-application/de0587869440dfdd",
+          "TargetGroupName": "ui-application",
+          "Protocol": "HTTP",
+          "Port": 8080,
+          "VpcId": "vpc-017ca4c95f83c00a0",
+          "HealthCheckProtocol": "HTTP",
+          "HealthCheckPort": "traffic-port",
+          "HealthCheckEnabled": true,
+          "HealthCheckIntervalSeconds": 30,
+          "HealthCheckTimeoutSeconds": 5,
+          "HealthyThresholdCount": 2,
+          "UnhealthyThresholdCount": 3,
+          "HealthCheckPath": "/actuator/health",
+          "Matcher": {
+            "HttpCode": "200"
+          },
+          "LoadBalancerArns": [
+            "arn:aws:elasticloadbalancing:eu-central-1:111122223333:loadbalancer/app/retail-store-ecs-ui/673a8ff8fafd121d"
+          ],
+          "TargetType": "ip",
+          "ProtocolVersion": "HTTP1",
+          "IpAddressType": "ipv4",
+          "Health": [
+            {
+              "Target": {
+                "Id": "10.0.12.129",
+                "Port": 8080,
+                "AvailabilityZone": "eu-central-1c"
+              },
+              "HealthCheckPort": "8080",
+              "TargetHealth": {
+                "State": "healthy"
+              },
+              "AdministrativeOverride": {
+                "State": "no_override",
+                "Reason": "AdministrativeOverride.NoOverride",
+                "Description": "No override is currently active on target"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "DataStores": {
+    "RdsClusters": [
+      {
+        "AllocatedStorage": 1,
+        "AvailabilityZones": [
+          "eu-central-1a",
+          "eu-central-1c",
+          "eu-central-1b"
+        ],
+        "BackupRetentionPeriod": 7,
+        "DatabaseName": "catalog",
+        "DBClusterIdentifier": "retail-store-ecs-catalog",
+        "DBClusterParameterGroup": "retail-store-ecs-catalog-20261009144820368700000005",
+        "DBSubnetGroup": "retail-store-ecs-catalog",
+        "Status": "available",
+        "EarliestRestorableTime": "2026-10-09 14:50:36.202000+00:00",
+        "Endpoint": "retail-store-ecs-catalog.cluster-xxxxxxxxxxxx.eu-central-1.rds.amazonaws.com",
+        "ReaderEndpoint": "retail-store-ecs-catalog.cluster-ro-xxxxxxxxxxxx.eu-central-1.rds.amazonaws.com",
+        "MultiAZ": false,
+        "Engine": "aurora-mysql",
+        "EngineVersion": "8.0.mysql_aurora.3.10.3",
+        "LatestRestorableTime": "2026-10-09 15:47:21.401000+00:00",
+        "Port": 3306,
+        "MasterUsername": "root",
+        "PreferredBackupWindow": "02:00-03:00",
+        "PreferredMaintenanceWindow": "sun:05:00-sun:06:00",
+        "UpgradeRolloutOrder": "second",
+        "ReadReplicaIdentifiers": [],
+        "DBClusterMembers": [
+          {
+            "DBInstanceIdentifier": "retail-store-ecs-catalog-one",
+            "IsClusterWriter": true,
+            "DBClusterParameterGroupStatus": "in-sync",
+            "PromotionTier": 0
+          }
+        ],
+        "VpcSecurityGroups": [
+          {
+            "VpcSecurityGroupId": "sg-09c7a14effce5b90a",
+            "Status": "active"
+          }
+        ],
+        "HostedZoneId": "Z1RLNUO7B9Q6NB",
+        "StorageEncrypted": true,
+        "StorageEncryptionType": "sse-kms",
+        "KmsKeyId": "arn:aws:kms:eu-central-1:111122223333:key/285b14d0-ed49-428f-b760-f8e087bf74c2",
+        "DbClusterResourceId": "cluster-EOQQZEOXPF42QD5TBJ4FWTCZW4",
+        "DBClusterArn": "arn:aws:rds:eu-central-1:111122223333:cluster:retail-store-ecs-catalog",
+        "AssociatedRoles": [],
+        "IAMDatabaseAuthenticationEnabled": false,
+        "ClusterCreateTime": "2026-10-09 14:50:24.375000+00:00",
+        "EngineMode": "provisioned",
+        "AutoMinorVersionUpgrade": true,
+        "DeletionProtection": false,
+        "HttpEndpointEnabled": false,
+        "ActivityStreamStatus": "stopped",
+        "CopyTagsToSnapshot": false,
+        "CrossAccountClone": false,
+        "DomainMemberships": [],
+        "TagList": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "NetworkType": "IPV4",
+        "DatabaseInsightsMode": "standard",
+        "LocalWriteForwardingStatus": "disabled",
+        "EngineLifecycleSupport": "open-source-rds-extended-support",
+        "VPCNetworkingEnabled": true,
+        "InternetAccessGatewayEnabled": false
+      },
+      {
+        "AllocatedStorage": 1,
+        "AvailabilityZones": [
+          "eu-central-1a",
+          "eu-central-1c",
+          "eu-central-1b"
+        ],
+        "BackupRetentionPeriod": 7,
+        "DatabaseName": "orders",
+        "DBClusterIdentifier": "retail-store-ecs-orders",
+        "DBClusterParameterGroup": "retail-store-ecs-orders-20261009144819388200000001",
+        "DBSubnetGroup": "retail-store-ecs-orders",
+        "Status": "available",
+        "EarliestRestorableTime": "2026-10-09 14:50:44.398000+00:00",
+        "Endpoint": "retail-store-ecs-orders.cluster-xxxxxxxxxxxx.eu-central-1.rds.amazonaws.com",
+        "ReaderEndpoint": "retail-store-ecs-orders.cluster-ro-xxxxxxxxxxxx.eu-central-1.rds.amazonaws.com",
+        "MultiAZ": false,
+        "Engine": "aurora-postgresql",
+        "EngineVersion": "15.10",
+        "LatestRestorableTime": "2026-10-09 15:47:32.869000+00:00",
+        "Port": 5432,
+        "MasterUsername": "root",
+        "PreferredBackupWindow": "02:00-03:00",
+        "PreferredMaintenanceWindow": "sun:05:00-sun:06:00",
+        "UpgradeRolloutOrder": "second",
+        "ReadReplicaIdentifiers": [],
+        "DBClusterMembers": [
+          {
+            "DBInstanceIdentifier": "retail-store-ecs-orders-one",
+            "IsClusterWriter": true,
+            "DBClusterParameterGroupStatus": "in-sync",
+            "PromotionTier": 0
+          }
+        ],
+        "VpcSecurityGroups": [
+          {
+            "VpcSecurityGroupId": "sg-0d699b165b0fd5d62",
+            "Status": "active"
+          }
+        ],
+        "HostedZoneId": "Z1RLNUO7B9Q6NB",
+        "StorageEncrypted": true,
+        "StorageEncryptionType": "sse-kms",
+        "KmsKeyId": "arn:aws:kms:eu-central-1:111122223333:key/285b14d0-ed49-428f-b760-f8e087bf74c2",
+        "DbClusterResourceId": "cluster-Y72MRE4HZVPBEO6T3GSNBAVT2U",
+        "DBClusterArn": "arn:aws:rds:eu-central-1:111122223333:cluster:retail-store-ecs-orders",
+        "AssociatedRoles": [],
+        "IAMDatabaseAuthenticationEnabled": false,
+        "ClusterCreateTime": "2026-10-09 14:50:23.736000+00:00",
+        "EngineMode": "provisioned",
+        "AutoMinorVersionUpgrade": true,
+        "DeletionProtection": false,
+        "HttpEndpointEnabled": false,
+        "ActivityStreamStatus": "stopped",
+        "CopyTagsToSnapshot": false,
+        "CrossAccountClone": false,
+        "DomainMemberships": [],
+        "TagList": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "NetworkType": "IPV4",
+        "DatabaseInsightsMode": "standard",
+        "LocalWriteForwardingStatus": "disabled",
+        "EngineLifecycleSupport": "open-source-rds-extended-support",
+        "VPCNetworkingEnabled": true,
+        "InternetAccessGatewayEnabled": false
+      }
+    ],
+    "RdsInstances": [
+      {
+        "DBInstanceIdentifier": "retail-store-ecs-catalog-one",
+        "DBInstanceClass": "db.t3.medium",
+        "Engine": "aurora-mysql",
+        "DBInstanceStatus": "available",
+        "MasterUsername": "root",
+        "DBName": "catalog",
+        "Endpoint": {
+          "Address": "retail-store-ecs-catalog-one.xxxxxxxxxxxx.eu-central-1.rds.amazonaws.com",
+          "Port": 3306,
+          "HostedZoneId": "Z1RLNUO7B9Q6NB"
+        },
+        "AllocatedStorage": 1,
+        "InstanceCreateTime": "2026-10-09 14:55:47.520000+00:00",
+        "PreferredBackupWindow": "02:00-03:00",
+        "BackupRetentionPeriod": 7,
+        "DBSecurityGroups": [],
+        "VpcSecurityGroups": [
+          {
+            "VpcSecurityGroupId": "sg-09c7a14effce5b90a",
+            "Status": "active"
+          }
+        ],
+        "DBParameterGroups": [
+          {
+            "DBParameterGroupName": "retail-store-ecs-catalog-20261009144819390700000004",
+            "ParameterApplyStatus": "in-sync"
+          }
+        ],
+        "AvailabilityZone": "eu-central-1c",
+        "DBSubnetGroup": {
+          "DBSubnetGroupName": "retail-store-ecs-catalog",
+          "DBSubnetGroupDescription": "For Aurora cluster retail-store-ecs-catalog",
+          "VpcId": "vpc-017ca4c95f83c00a0",
+          "SubnetGroupStatus": "Complete",
+          "Subnets": [
+            {
+              "SubnetIdentifier": "subnet-0b1990f186b77134f",
+              "SubnetAvailabilityZone": {
+                "Name": "eu-central-1c"
+              },
+              "SubnetOutpost": {},
+              "SubnetStatus": "Active"
+            },
+            {
+              "SubnetIdentifier": "subnet-07e1b5ad204e73d39",
+              "SubnetAvailabilityZone": {
+                "Name": "eu-central-1a"
+              },
+              "SubnetOutpost": {},
+              "SubnetStatus": "Active"
+            },
+            {
+              "SubnetIdentifier": "subnet-00a26e86f984d5b2a",
+              "SubnetAvailabilityZone": {
+                "Name": "eu-central-1b"
+              },
+              "SubnetOutpost": {},
+              "SubnetStatus": "Active"
+            }
+          ]
+        },
+        "PreferredMaintenanceWindow": "sun:05:00-sun:06:00",
+        "UpgradeRolloutOrder": "second",
+        "PendingModifiedValues": {},
+        "MultiAZ": false,
+        "EngineVersion": "8.0.mysql_aurora.3.10.3",
+        "AutoMinorVersionUpgrade": true,
+        "ReadReplicaDBInstanceIdentifiers": [],
+        "LicenseModel": "general-public-license",
+        "StorageThroughput": 0,
+        "OptionGroupMemberships": [
+          {
+            "OptionGroupName": "default:aurora-mysql-8-0",
+            "Status": "in-sync"
+          }
+        ],
+        "PubliclyAccessible": false,
+        "StorageType": "aurora",
+        "StorageEncryptionType": "sse-kms",
+        "DbInstancePort": 0,
+        "DBClusterIdentifier": "retail-store-ecs-catalog",
+        "StorageEncrypted": true,
+        "KmsKeyId": "arn:aws:kms:eu-central-1:111122223333:key/285b14d0-ed49-428f-b760-f8e087bf74c2",
+        "DbiResourceId": "db-JQ3BTEGLOJ76S3DT5YRYPAFZNI",
+        "CACertificateIdentifier": "rds-ca-rsa2048-g1",
+        "DomainMemberships": [],
+        "CopyTagsToSnapshot": false,
+        "MonitoringInterval": 0,
+        "PromotionTier": 0,
+        "DBInstanceArn": "arn:aws:rds:eu-central-1:111122223333:db:retail-store-ecs-catalog-one",
+        "IAMDatabaseAuthenticationEnabled": false,
+        "DatabaseInsightsMode": "standard",
+        "PerformanceInsightsEnabled": false,
+        "DeletionProtection": false,
+        "AssociatedRoles": [],
+        "TagList": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "CustomerOwnedIpEnabled": false,
+        "NetworkType": "IPV4",
+        "BackupTarget": "region",
+        "CertificateDetails": {
+          "CAIdentifier": "rds-ca-rsa2048-g1",
+          "ValidTill": "2027-10-09 14:53:18+00:00"
+        },
+        "DedicatedLogVolume": false,
+        "EngineLifecycleSupport": "open-source-rds-extended-support"
+      },
+      {
+        "DBInstanceIdentifier": "retail-store-ecs-orders-one",
+        "DBInstanceClass": "db.t3.medium",
+        "Engine": "aurora-postgresql",
+        "DBInstanceStatus": "available",
+        "MasterUsername": "root",
+        "DBName": "orders",
+        "Endpoint": {
+          "Address": "retail-store-ecs-orders-one.xxxxxxxxxxxx.eu-central-1.rds.amazonaws.com",
+          "Port": 5432,
+          "HostedZoneId": "Z1RLNUO7B9Q6NB"
+        },
+        "AllocatedStorage": 1,
+        "InstanceCreateTime": "2026-10-09 14:55:27.324000+00:00",
+        "PreferredBackupWindow": "02:00-03:00",
+        "BackupRetentionPeriod": 7,
+        "DBSecurityGroups": [],
+        "VpcSecurityGroups": [
+          {
+            "VpcSecurityGroupId": "sg-0d699b165b0fd5d62",
+            "Status": "active"
+          }
+        ],
+        "DBParameterGroups": [
+          {
+            "DBParameterGroupName": "retail-store-ecs-orders-20261009144819388300000002",
+            "ParameterApplyStatus": "in-sync"
+          }
+        ],
+        "AvailabilityZone": "eu-central-1c",
+        "DBSubnetGroup": {
+          "DBSubnetGroupName": "retail-store-ecs-orders",
+          "DBSubnetGroupDescription": "For Aurora cluster retail-store-ecs-orders",
+          "VpcId": "vpc-017ca4c95f83c00a0",
+          "SubnetGroupStatus": "Complete",
+          "Subnets": [
+            {
+              "SubnetIdentifier": "subnet-0b1990f186b77134f",
+              "SubnetAvailabilityZone": {
+                "Name": "eu-central-1c"
+              },
+              "SubnetOutpost": {},
+              "SubnetStatus": "Active"
+            },
+            {
+              "SubnetIdentifier": "subnet-07e1b5ad204e73d39",
+              "SubnetAvailabilityZone": {
+                "Name": "eu-central-1a"
+              },
+              "SubnetOutpost": {},
+              "SubnetStatus": "Active"
+            },
+            {
+              "SubnetIdentifier": "subnet-00a26e86f984d5b2a",
+              "SubnetAvailabilityZone": {
+                "Name": "eu-central-1b"
+              },
+              "SubnetOutpost": {},
+              "SubnetStatus": "Active"
+            }
+          ]
+        },
+        "PreferredMaintenanceWindow": "sun:05:00-sun:06:00",
+        "UpgradeRolloutOrder": "second",
+        "PendingModifiedValues": {},
+        "MultiAZ": false,
+        "EngineVersion": "15.10",
+        "AutoMinorVersionUpgrade": true,
+        "ReadReplicaDBInstanceIdentifiers": [],
+        "LicenseModel": "postgresql-license",
+        "StorageThroughput": 0,
+        "OptionGroupMemberships": [
+          {
+            "OptionGroupName": "default:aurora-postgresql-15",
+            "Status": "in-sync"
+          }
+        ],
+        "PubliclyAccessible": false,
+        "StorageType": "aurora",
+        "StorageEncryptionType": "sse-kms",
+        "DbInstancePort": 0,
+        "DBClusterIdentifier": "retail-store-ecs-orders",
+        "StorageEncrypted": true,
+        "KmsKeyId": "arn:aws:kms:eu-central-1:111122223333:key/285b14d0-ed49-428f-b760-f8e087bf74c2",
+        "DbiResourceId": "db-QOWZJYEFONCE4Z3SG5RPZX53RI",
+        "CACertificateIdentifier": "rds-ca-rsa2048-g1",
+        "DomainMemberships": [],
+        "CopyTagsToSnapshot": false,
+        "MonitoringInterval": 0,
+        "PromotionTier": 0,
+        "DBInstanceArn": "arn:aws:rds:eu-central-1:111122223333:db:retail-store-ecs-orders-one",
+        "IAMDatabaseAuthenticationEnabled": false,
+        "DatabaseInsightsMode": "standard",
+        "PerformanceInsightsEnabled": false,
+        "DeletionProtection": false,
+        "AssociatedRoles": [],
+        "TagList": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "CustomerOwnedIpEnabled": false,
+        "NetworkType": "IPV4",
+        "BackupTarget": "region",
+        "CertificateDetails": {
+          "CAIdentifier": "rds-ca-rsa2048-g1",
+          "ValidTill": "2027-10-09 14:53:05+00:00"
+        },
+        "DedicatedLogVolume": false,
+        "EngineLifecycleSupport": "open-source-rds-extended-support"
+      }
+    ],
+    "DynamoDb": {
+      "Table": {
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "customerId",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "id",
+            "AttributeType": "S"
+          }
+        ],
+        "TableName": "retail-store-ecs-carts",
+        "KeySchema": [
+          {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+          }
+        ],
+        "TableStatus": "ACTIVE",
+        "CreationDateTime": "2026-10-09 17:48:19.551000+03:00",
+        "ProvisionedThroughput": {
+          "NumberOfDecreasesToday": 0,
+          "ReadCapacityUnits": 0,
+          "WriteCapacityUnits": 0
+        },
+        "TableSizeBytes": 0,
+        "ItemCount": 0,
+        "TableArn": "arn:aws:dynamodb:eu-central-1:111122223333:table/retail-store-ecs-carts",
+        "TableId": "e75b7d1b-78aa-4bab-a45f-8cae854986aa",
+        "BillingModeSummary": {
+          "BillingMode": "PAY_PER_REQUEST",
+          "LastUpdateToPayPerRequestDateTime": "2026-10-09 17:48:19.551000+03:00"
+        },
+        "GlobalSecondaryIndexes": [
+          {
+            "IndexName": "idx_global_customerId",
+            "KeySchema": [
+              {
+                "AttributeName": "customerId",
+                "KeyType": "HASH"
+              }
+            ],
+            "Projection": {
+              "ProjectionType": "ALL"
+            },
+            "IndexStatus": "ACTIVE",
+            "ProvisionedThroughput": {
+              "NumberOfDecreasesToday": 0,
+              "ReadCapacityUnits": 0,
+              "WriteCapacityUnits": 0
+            },
+            "IndexSizeBytes": 0,
+            "ItemCount": 0,
+            "IndexArn": "arn:aws:dynamodb:eu-central-1:111122223333:table/retail-store-ecs-carts/index/idx_global_customerId",
+            "WarmThroughput": {
+              "ReadUnitsPerSecond": 12000,
+              "WriteUnitsPerSecond": 4000,
+              "Status": "ACTIVE"
+            }
+          }
+        ],
+        "DeletionProtectionEnabled": false,
+        "WarmThroughput": {
+          "ReadUnitsPerSecond": 12000,
+          "WriteUnitsPerSecond": 4000,
+          "Status": "ACTIVE"
+        }
+      },
+      "Backups": {
+        "ContinuousBackupsStatus": "ENABLED",
+        "PointInTimeRecoveryDescription": {
+          "PointInTimeRecoveryStatus": "DISABLED"
+        }
+      }
+    },
+    "ElastiCacheReplicationGroups": [
+      {
+        "ReplicationGroupId": "retail-store-ecs-checkout",
+        "Description": "retail-store-ecs-checkout",
+        "GlobalReplicationGroupInfo": {},
+        "Status": "available",
+        "PendingModifiedValues": {},
+        "MemberClusters": [
+          "retail-store-ecs-checkout-001"
+        ],
+        "NodeGroups": [
+          {
+            "NodeGroupId": "0001",
+            "Status": "available",
+            "PrimaryEndpoint": {
+              "Address": "retail-store-ecs-checkout.xxxxxx.ng.0001.euc1.cache.amazonaws.com",
+              "Port": 6379
+            },
+            "ReaderEndpoint": {
+              "Address": "retail-store-ecs-checkout-ro.xxxxxx.ng.0001.euc1.cache.amazonaws.com",
+              "Port": 6379
+            },
+            "NodeGroupMembers": [
+              {
+                "CacheClusterId": "retail-store-ecs-checkout-001",
+                "CacheNodeId": "0001",
+                "ReadEndpoint": {
+                  "Address": "retail-store-ecs-checkout-001.xxxxxx.0001.euc1.cache.amazonaws.com",
+                  "Port": 6379
+                },
+                "PreferredAvailabilityZone": "eu-central-1a",
+                "CurrentRole": "primary"
+              }
+            ]
+          }
+        ],
+        "AutomaticFailover": "disabled",
+        "MultiAZ": "disabled",
+        "SnapshotRetentionLimit": 0,
+        "SnapshotWindow": "06:30-07:30",
+        "ClusterEnabled": false,
+        "CacheNodeType": "cache.t3.micro",
+        "AuthTokenEnabled": false,
+        "TransitEncryptionEnabled": false,
+        "AtRestEncryptionEnabled": false,
+        "StorageEncryptionType": "none",
+        "ARN": "arn:aws:elasticache:eu-central-1:111122223333:replicationgroup:retail-store-ecs-checkout",
+        "LogDeliveryConfigurations": [],
+        "ReplicationGroupCreateTime": "2026-10-09 14:50:25.291000+00:00",
+        "DataTiering": "disabled",
+        "AutoMinorVersionUpgrade": true,
+        "NetworkType": "ipv4",
+        "IpDiscovery": "ipv4",
+        "ClusterMode": "disabled",
+        "Engine": "redis"
+      }
+    ],
+    "ElastiCacheClusters": [
+      {
+        "CacheClusterId": "retail-store-ecs-checkout-001",
+        "ClientDownloadLandingPage": "https://console.aws.amazon.com/elasticache/home#client-download:",
+        "CacheNodeType": "cache.t3.micro",
+        "Engine": "redis",
+        "EngineVersion": "4.0.10",
+        "CacheClusterStatus": "available",
+        "NumCacheNodes": 1,
+        "PreferredAvailabilityZone": "eu-central-1a",
+        "CacheClusterCreateTime": "2026-10-09 14:57:37.520000+00:00",
+        "PreferredMaintenanceWindow": "wed:03:00-wed:04:00",
+        "PendingModifiedValues": {},
+        "CacheSecurityGroups": [],
+        "CacheParameterGroup": {
+          "CacheParameterGroupName": "retail-store-ecs-checkout",
+          "ParameterApplyStatus": "in-sync",
+          "CacheNodeIdsToReboot": []
+        },
+        "CacheSubnetGroupName": "retail-store-ecs-checkout",
+        "CacheNodes": [
+          {
+            "CacheNodeId": "0001",
+            "CacheNodeStatus": "available",
+            "CacheNodeCreateTime": "2026-10-09 14:57:37.520000+00:00",
+            "Endpoint": {
+              "Address": "retail-store-ecs-checkout-001.xxxxxx.0001.euc1.cache.amazonaws.com",
+              "Port": 6379
+            },
+            "ParameterGroupStatus": "in-sync",
+            "CustomerAvailabilityZone": "eu-central-1a"
+          }
+        ],
+        "AutoMinorVersionUpgrade": true,
+        "SecurityGroups": [
+          {
+            "SecurityGroupId": "sg-0f71c87c4e6803b4d",
+            "Status": "active"
+          }
+        ],
+        "ReplicationGroupId": "retail-store-ecs-checkout",
+        "SnapshotRetentionLimit": 0,
+        "SnapshotWindow": "06:30-07:30",
+        "AuthTokenEnabled": false,
+        "TransitEncryptionEnabled": false,
+        "AtRestEncryptionEnabled": false,
+        "ARN": "arn:aws:elasticache:eu-central-1:111122223333:cluster:retail-store-ecs-checkout-001",
+        "ReplicationGroupLogDeliveryEnabled": false,
+        "LogDeliveryConfigurations": [],
+        "NetworkType": "ipv4",
+        "IpDiscovery": "ipv4"
+      }
+    ],
+    "MqBrokers": [
+      {
+        "AuthenticationStrategy": "simple",
+        "AutoMinorVersionUpgrade": true,
+        "BrokerArn": "arn:aws:mq:eu-central-1:111122223333:broker:retail-store-ecs-orders-broker:b-263acd88-67fd-4d03-8bf1-3d61d191b25d",
+        "BrokerId": "b-263acd88-67fd-4d03-8bf1-3d61d191b25d",
+        "BrokerInstances": [
+          {
+            "ConsoleURL": "https://b-263acd88-67fd-4d03-8bf1-3d61d191b25d.mq.eu-central-1.on.aws",
+            "Endpoints": [
+              "amqps://b-263acd88-67fd-4d03-8bf1-3d61d191b25d.mq.eu-central-1.on.aws:5671"
+            ]
+          }
+        ],
+        "BrokerName": "retail-store-ecs-orders-broker",
+        "BrokerState": "RUNNING",
+        "Configurations": {
+          "Current": {
+            "Id": "c-2d1ec72b-0c35-4d3c-9e66-d04ea30906dc",
+            "Revision": 1
+          },
+          "History": []
+        },
+        "Created": "2026-10-09 14:50:23.863254+00:00",
+        "DeploymentMode": "SINGLE_INSTANCE",
+        "EncryptionOptions": {
+          "UseAwsOwnedKey": true
+        },
+        "EngineType": "RabbitMQ",
+        "EngineVersion": "3.13.7",
+        "HostInstanceType": "mq.m5.large",
+        "Logs": {
+          "General": false,
+          "GeneralLogGroup": "/aws/amazonmq/broker/b-263acd88-67fd-4d03-8bf1-3d61d191b25d/general"
+        },
+        "MaintenanceWindowStartTime": {
+          "DayOfWeek": "WEDNESDAY",
+          "TimeOfDay": "18:00",
+          "TimeZone": "UTC"
+        },
+        "PubliclyAccessible": false,
+        "SecurityGroups": [
+          "sg-065189381aa8e7c39"
+        ],
+        "StorageType": "ebs",
+        "SubnetIds": [
+          "subnet-07e1b5ad204e73d39"
+        ],
+        "Tags": {
+          "environment-name": "retail-store-ecs",
+          "created-by": "retail-store-sample-app"
+        },
+        "Users": []
+      }
+    ],
+    "OpenSearchDomain": {
+      "DomainId": "111122223333/retail-store-ecs-catalog",
+      "DomainName": "retail-store-ecs-catalog",
+      "ARN": "arn:aws:es:eu-central-1:111122223333:domain/retail-store-ecs-catalog",
+      "Created": true,
+      "Deleted": false,
+      "Endpoints": {
+        "vpc": "vpc-retail-store-ecs-catalog-xxxxxxxxxxxxxxxxxxxxxxxxxx.eu-central-1.es.amazonaws.com"
+      },
+      "Processing": false,
+      "UpgradeProcessing": false,
+      "EngineVersion": "OpenSearch_3.3",
+      "ClusterConfig": {
+        "InstanceType": "r8g.medium.search",
+        "InstanceCount": 1,
+        "DedicatedMasterEnabled": false,
+        "ZoneAwarenessEnabled": false,
+        "WarmEnabled": false,
+        "ColdStorageOptions": {
+          "Enabled": false
+        },
+        "MultiAZWithStandbyEnabled": false
+      },
+      "EBSOptions": {
+        "EBSEnabled": true,
+        "VolumeType": "gp3",
+        "VolumeSize": 50,
+        "Iops": 3000,
+        "Throughput": 125
+      },
+      "AccessPolicies": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":\"es:*\",\"Resource\":\"arn:aws:es:eu-central-1:111122223333:domain/retail-store-ecs-catalog/*\"}]}",
+      "IPAddressType": "ipv4",
+      "SnapshotOptions": {
+        "AutomatedSnapshotStartHour": 0
+      },
+      "VPCOptions": {
+        "VPCId": "vpc-017ca4c95f83c00a0",
+        "SubnetIds": [
+          "subnet-07e1b5ad204e73d39"
+        ],
+        "AvailabilityZones": [
+          "eu-central-1a"
+        ],
+        "SecurityGroupIds": [
+          "sg-0f311a84fbd640ebb"
+        ]
+      },
+      "CognitoOptions": {
+        "Enabled": false
+      },
+      "EncryptionAtRestOptions": {
+        "Enabled": true,
+        "KmsKeyId": "arn:aws:kms:eu-central-1:111122223333:key/ad2566cf-82d7-4c22-91ad-7ef0a3351784",
+        "EncryptionMode": "DISK"
+      },
+      "NodeToNodeEncryptionOptions": {
+        "Enabled": true
+      },
+      "AdvancedOptions": {
+        "override_main_response_version": "false",
+        "rest.action.multi.allow_explicit_index": "true"
+      },
+      "ServiceSoftwareOptions": {
+        "CurrentVersion": "OpenSearch_3_3_R20260929",
+        "NewVersion": "",
+        "UpdateAvailable": false,
+        "Cancellable": false,
+        "UpdateStatus": "COMPLETED",
+        "Description": "There is no software update available for this domain.",
+        "AutomatedUpdateDate": "1970-01-01 02:00:00+02:00",
+        "OptionalDeployment": true
+      },
+      "DomainEndpointOptions": {
+        "EnforceHTTPS": true,
+        "TLSSecurityPolicy": "Policy-Min-TLS-1-2-2019-07",
+        "CustomEndpointEnabled": false
+      },
+      "AdvancedSecurityOptions": {
+        "Enabled": true,
+        "InternalUserDatabaseEnabled": true,
+        "AnonymousAuthEnabled": false
+      },
+      "IdentityCenterOptions": {},
+      "AutoTuneOptions": {
+        "State": "ENABLED",
+        "UseOffPeakWindow": false
+      },
+      "ChangeProgressDetails": {
+        "ChangeId": "a55c851c-27af-4613-a502-54e59fdc4829",
+        "ConfigChangeStatus": "Completed",
+        "InitiatedBy": "CUSTOMER",
+        "StartTime": "2026-10-09 18:16:07.914000+03:00",
+        "LastUpdatedTime": "2026-10-09 18:16:27.112000+03:00"
+      },
+      "OffPeakWindowOptions": {
+        "Enabled": true,
+        "OffPeakWindow": {
+          "WindowStartTime": {
+            "Hours": 20,
+            "Minutes": 0
+          }
+        }
+      },
+      "SoftwareUpdateOptions": {
+        "AutoSoftwareUpdateEnabled": false,
+        "UseLatestServiceSoftwareForBlueGreen": true
+      },
+      "DomainProcessingStatus": "Active",
+      "ModifyingProperties": [],
+      "AIMLOptions": {
+        "NaturalLanguageQueryGenerationOptions": {
+          "DesiredState": "ENABLED",
+          "CurrentState": "ENABLE_COMPLETE"
+        },
+        "S3VectorsEngine": {
+          "Enabled": false
+        },
+        "ServerlessVectorAcceleration": {
+          "Enabled": false
+        }
+      },
+      "DeploymentStrategyOptions": {
+        "DeploymentStrategy": "CapacityOptimized"
+      },
+      "AutomatedSnapshotPauseOptions": {
+        "Enabled": false,
+        "State": "Disabled"
+      },
+      "UseCase": "MIXED",
+      "EngineMode": "GENERAL"
+    }
+  },
+  "Platform": {
+    "Secrets": [
+      {
+        "Name": "retail-store-ecs-orders-db-w9tI",
+        "ARN": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-orders-db-w9tI-RPybW7",
+        "KmsKeyId": null,
+        "RotationEnabled": null,
+        "LastChangedDate": "2026-10-09 17:50:54.832000+03:00",
+        "Description": null
+      },
+      {
+        "Name": "retail-store-ecs-mq-1ehc",
+        "ARN": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-mq-1ehc-w1ROcP",
+        "KmsKeyId": null,
+        "RotationEnabled": null,
+        "LastChangedDate": "2026-10-09 18:00:24.197000+03:00",
+        "Description": null
+      },
+      {
+        "Name": "retail-store-ecs-catalog-opensearch-PxNs",
+        "ARN": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-catalog-opensearch-PxNs-1lKy7s",
+        "KmsKeyId": "6afe1868-fcf5-4e68-aef8-61a315a1995e",
+        "RotationEnabled": null,
+        "LastChangedDate": "2026-10-09 17:48:21.929000+03:00",
+        "Description": null
+      },
+      {
+        "Name": "retail-store-ecs-catalog-db-PxNs",
+        "ARN": "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-catalog-db-PxNs-aS0lpg",
+        "KmsKeyId": "6afe1868-fcf5-4e68-aef8-61a315a1995e",
+        "RotationEnabled": null,
+        "LastChangedDate": "2026-10-09 17:50:55.370000+03:00",
+        "Description": null
+      }
+    ],
+    "SsmParameters": [],
+    "LogGroups": [
+      {
+        "logGroupName": "retail-store-ecs-tasks",
+        "creationTime": 1791559821504,
+        "metricFilterCount": 0,
+        "arn": "arn:aws:logs:eu-central-1:111122223333:log-group:retail-store-ecs-tasks:*",
+        "storedBytes": 0,
+        "logGroupClass": "STANDARD",
+        "logGroupArn": "arn:aws:logs:eu-central-1:111122223333:log-group:retail-store-ecs-tasks",
+        "deletionProtectionEnabled": false,
+        "bearerTokenAuthenticationEnabled": false
+      },
+      {
+        "logGroupName": "/aws/ecs/containerinsights/retail-store-ecs-cluster/performance",
+        "creationTime": 1791559896073,
+        "retentionInDays": 1,
+        "metricFilterCount": 0,
+        "arn": "arn:aws:logs:eu-central-1:111122223333:log-group:/aws/ecs/containerinsights/retail-store-ecs-cluster/performance:*",
+        "storedBytes": 0,
+        "logGroupClass": "STANDARD",
+        "logGroupArn": "arn:aws:logs:eu-central-1:111122223333:log-group:/aws/ecs/containerinsights/retail-store-ecs-cluster/performance",
+        "deletionProtectionEnabled": false,
+        "bearerTokenAuthenticationEnabled": false
+      }
+    ],
+    "Alarms": [],
+    "Dashboards": [],
+    "ScalableTargets": [],
+    "ScalingPolicies": [],
+    "CloudMapNamespaces": [
+      {
+        "Id": "ns-kramyhdavda6vfjs",
+        "Arn": "arn:aws:servicediscovery:eu-central-1:111122223333:namespace/ns-kramyhdavda6vfjs",
+        "ResourceOwner": "111122223333",
+        "Name": "retailstore.local",
+        "Type": "DNS_PRIVATE",
+        "Description": "Service discovery namespace",
+        "Properties": {
+          "DnsProperties": {
+            "HostedZoneId": "Z05488623NRPVALP3S1JA",
+            "SOA": {
+              "TTL": 15
+            }
+          },
+          "HttpProperties": {
+            "HttpName": "retailstore.local"
+          }
+        },
+        "CreateDate": "2026-10-09 17:50:56.492000+03:00"
+      }
+    ],
+    "CloudMapServices": [
+      {
+        "Id": "srv-7rqnr4bto2z6dwaw",
+        "Arn": "arn:aws:servicediscovery:eu-central-1:111122223333:service/srv-7rqnr4bto2z6dwaw",
+        "ResourceOwner": "111122223333",
+        "Name": "orders",
+        "Type": "HTTP",
+        "Description": "Managed by arn:aws:ecs:eu-central-1:111122223333:service/retail-store-ecs-cluster/orders",
+        "DnsConfig": {},
+        "CreateDate": "2026-10-09 18:30:22.275000+03:00",
+        "CreatedByAccount": "111122223333"
+      },
+      {
+        "Id": "srv-dzbpqnt2ewliggdn",
+        "Arn": "arn:aws:servicediscovery:eu-central-1:111122223333:service/srv-dzbpqnt2ewliggdn",
+        "ResourceOwner": "111122223333",
+        "Name": "checkout",
+        "Type": "HTTP",
+        "Description": "Managed by arn:aws:ecs:eu-central-1:111122223333:service/retail-store-ecs-cluster/checkout",
+        "DnsConfig": {},
+        "CreateDate": "2026-10-09 18:32:50.095000+03:00",
+        "CreatedByAccount": "111122223333"
+      },
+      {
+        "Id": "srv-j5yqxt47rt33jni5",
+        "Arn": "arn:aws:servicediscovery:eu-central-1:111122223333:service/srv-j5yqxt47rt33jni5",
+        "ResourceOwner": "111122223333",
+        "Name": "ui",
+        "Type": "HTTP",
+        "Description": "Managed by arn:aws:ecs:eu-central-1:111122223333:service/retail-store-ecs-cluster/ui",
+        "DnsConfig": {},
+        "CreateDate": "2026-10-09 18:34:57.813000+03:00",
+        "CreatedByAccount": "111122223333"
+      },
+      {
+        "Id": "srv-ptqpyv4tlnrjq2do",
+        "Arn": "arn:aws:servicediscovery:eu-central-1:111122223333:service/srv-ptqpyv4tlnrjq2do",
+        "ResourceOwner": "111122223333",
+        "Name": "carts",
+        "Type": "HTTP",
+        "Description": "Managed by arn:aws:ecs:eu-central-1:111122223333:service/retail-store-ecs-cluster/carts",
+        "DnsConfig": {},
+        "CreateDate": "2026-10-09 18:30:22.274000+03:00",
+        "CreatedByAccount": "111122223333"
+      },
+      {
+        "Id": "srv-zhnisf4kuruenooq",
+        "Arn": "arn:aws:servicediscovery:eu-central-1:111122223333:service/srv-zhnisf4kuruenooq",
+        "ResourceOwner": "111122223333",
+        "Name": "catalog",
+        "Type": "HTTP",
+        "Description": "Managed by arn:aws:ecs:eu-central-1:111122223333:service/retail-store-ecs-cluster/catalog",
+        "DnsConfig": {},
+        "CreateDate": "2026-10-09 18:30:22.264000+03:00",
+        "CreatedByAccount": "111122223333"
+      }
+    ]
+  },
+  "Iam": {
+    "retail-store-ecs-carts-task": {
+      "Role": {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-carts-task",
+        "RoleId": "AROA36I76U7W6AL6JIEQL",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-carts-task",
+        "CreateDate": "2026-10-09 14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600,
+        "Tags": [
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          }
+        ],
+        "RoleLastUsed": {
+          "LastUsedDate": "2026-10-09 15:37:38+00:00",
+          "Region": "eu-central-1"
+        }
+      },
+      "Attached": [
+        {
+          "PolicyName": "retail-store-ecs-carts-exec",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-carts-exec",
+          "Document": {
+            "Statement": [
+              {
+                "Action": [
+                  "ssmmessages:CreateControlChannel",
+                  "ssmmessages:CreateDataChannel",
+                  "ssmmessages:OpenControlChannel",
+                  "ssmmessages:OpenDataChannel"
+                ],
+                "Effect": "Allow",
+                "Resource": "*"
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        },
+        {
+          "PolicyName": "retail-store-ecs-carts-dynamo",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-carts-dynamo",
+          "Document": {
+            "Statement": [
+              {
+                "Action": "dynamodb:*",
+                "Effect": "Allow",
+                "Resource": [
+                  "arn:aws:dynamodb:eu-central-1:111122223333:table/retail-store-ecs-carts",
+                  "arn:aws:dynamodb:eu-central-1:111122223333:table/retail-store-ecs-carts/index/*"
+                ],
+                "Sid": "AllAPIActionsOnCart"
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        },
+        {
+          "PolicyName": "retail-store-ecs-carts-cloudwatch-logs",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-carts-cloudwatch-logs",
+          "Document": {
+            "Statement": [
+              {
+                "Action": [
+                  "logs:PutLogEvents",
+                  "logs:CreateLogStream",
+                  "logs:CreateLogGroup",
+                  "logs:DescribeLogStreams",
+                  "logs:DescribeLogGroups"
+                ],
+                "Effect": "Allow",
+                "Resource": [
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:retail-store-ecs-tasks:*",
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:retail-store-ecs-tasks:log-stream:*",
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:/aws/ecs/containerinsights/retail-store-ecs*:*"
+                ]
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        }
+      ],
+      "Inline": {}
+    },
+    "retail-store-ecs-carts-te": {
+      "Role": {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-carts-te",
+        "RoleId": "AROA36I76U7WR4WWOOZF7",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-carts-te",
+        "CreateDate": "2026-10-09 14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600,
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "RoleLastUsed": {
+          "LastUsedDate": "2026-10-09 15:32:21+00:00",
+          "Region": "eu-central-1"
+        }
+      },
+      "Attached": [
+        {
+          "PolicyName": "AmazonECSTaskExecutionRolePolicy",
+          "PolicyArn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+        }
+      ],
+      "Inline": {}
+    },
+    "retail-store-ecs-catalog-task": {
+      "Role": {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-catalog-task",
+        "RoleId": "AROA36I76U7WSMMCBJ7UJ",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-catalog-task",
+        "CreateDate": "2026-10-09 14:48:19+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600,
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "RoleLastUsed": {
+          "LastUsedDate": "2026-10-09 15:31:44+00:00",
+          "Region": "eu-central-1"
+        }
+      },
+      "Attached": [
+        {
+          "PolicyName": "retail-store-ecs-catalog-cloudwatch-logs",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-catalog-cloudwatch-logs",
+          "Document": {
+            "Statement": [
+              {
+                "Action": [
+                  "logs:PutLogEvents",
+                  "logs:CreateLogStream",
+                  "logs:CreateLogGroup",
+                  "logs:DescribeLogStreams",
+                  "logs:DescribeLogGroups"
+                ],
+                "Effect": "Allow",
+                "Resource": [
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:retail-store-ecs-tasks:*",
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:retail-store-ecs-tasks:log-stream:*",
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:/aws/ecs/containerinsights/retail-store-ecs*:*"
+                ]
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        },
+        {
+          "PolicyName": "retail-store-ecs-catalog-exec",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-catalog-exec",
+          "Document": {
+            "Statement": [
+              {
+                "Action": [
+                  "ssmmessages:CreateControlChannel",
+                  "ssmmessages:CreateDataChannel",
+                  "ssmmessages:OpenControlChannel",
+                  "ssmmessages:OpenDataChannel"
+                ],
+                "Effect": "Allow",
+                "Resource": "*"
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        }
+      ],
+      "Inline": {}
+    },
+    "retail-store-ecs-catalog-te": {
+      "Role": {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-catalog-te",
+        "RoleId": "AROA36I76U7W7PDCEOT22",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-catalog-te",
+        "CreateDate": "2026-10-09 14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600,
+        "Tags": [
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          },
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          }
+        ],
+        "RoleLastUsed": {
+          "LastUsedDate": "2026-10-09 15:37:52+00:00",
+          "Region": "eu-central-1"
+        }
+      },
+      "Attached": [
+        {
+          "PolicyName": "AmazonECSTaskExecutionRolePolicy",
+          "PolicyArn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+        },
+        {
+          "PolicyName": "retail-store-ecs-catalog",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-catalog",
+          "Document": {
+            "Statement": [
+              {
+                "Action": [
+                  "secretsmanager:GetSecretValue",
+                  "kms:Decrypt*"
+                ],
+                "Effect": "Allow",
+                "Resource": [
+                  "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-catalog-opensearch-PxNs-1lKy7s",
+                  "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-catalog-db-PxNs-aS0lpg",
+                  "arn:aws:kms:eu-central-1:111122223333:key/6afe1868-fcf5-4e68-aef8-61a315a1995e"
+                ]
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        }
+      ],
+      "Inline": {}
+    },
+    "retail-store-ecs-checkout-task": {
+      "Role": {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-checkout-task",
+        "RoleId": "AROA36I76U7WV3XJQR4G2",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-checkout-task",
+        "CreateDate": "2026-10-09 14:48:21+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600,
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "RoleLastUsed": {
+          "LastUsedDate": "2026-10-09 15:34:19+00:00",
+          "Region": "eu-central-1"
+        }
+      },
+      "Attached": [
+        {
+          "PolicyName": "retail-store-ecs-carts-dynamo",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-carts-dynamo",
+          "Document": {
+            "Statement": [
+              {
+                "Action": "dynamodb:*",
+                "Effect": "Allow",
+                "Resource": [
+                  "arn:aws:dynamodb:eu-central-1:111122223333:table/retail-store-ecs-carts",
+                  "arn:aws:dynamodb:eu-central-1:111122223333:table/retail-store-ecs-carts/index/*"
+                ],
+                "Sid": "AllAPIActionsOnCart"
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        },
+        {
+          "PolicyName": "retail-store-ecs-checkout-cloudwatch-logs",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-checkout-cloudwatch-logs",
+          "Document": {
+            "Statement": [
+              {
+                "Action": [
+                  "logs:PutLogEvents",
+                  "logs:CreateLogStream",
+                  "logs:CreateLogGroup",
+                  "logs:DescribeLogStreams",
+                  "logs:DescribeLogGroups"
+                ],
+                "Effect": "Allow",
+                "Resource": [
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:retail-store-ecs-tasks:*",
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:retail-store-ecs-tasks:log-stream:*",
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:/aws/ecs/containerinsights/retail-store-ecs*:*"
+                ]
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        },
+        {
+          "PolicyName": "retail-store-ecs-checkout-exec",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-checkout-exec",
+          "Document": {
+            "Statement": [
+              {
+                "Action": [
+                  "ssmmessages:CreateControlChannel",
+                  "ssmmessages:CreateDataChannel",
+                  "ssmmessages:OpenControlChannel",
+                  "ssmmessages:OpenDataChannel"
+                ],
+                "Effect": "Allow",
+                "Resource": "*"
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        }
+      ],
+      "Inline": {}
+    },
+    "retail-store-ecs-checkout-te": {
+      "Role": {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-checkout-te",
+        "RoleId": "AROA36I76U7WY37P4KJEO",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-checkout-te",
+        "CreateDate": "2026-10-09 14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600,
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "RoleLastUsed": {
+          "LastUsedDate": "2026-10-09 15:34:22+00:00",
+          "Region": "eu-central-1"
+        }
+      },
+      "Attached": [
+        {
+          "PolicyName": "AmazonECSTaskExecutionRolePolicy",
+          "PolicyArn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+        }
+      ],
+      "Inline": {}
+    },
+    "retail-store-ecs-orders-task": {
+      "Role": {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-orders-task",
+        "RoleId": "AROA36I76U7W6S7GCMCLT",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-orders-task",
+        "CreateDate": "2026-10-09 14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600,
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "RoleLastUsed": {
+          "LastUsedDate": "2026-10-09 15:31:49+00:00",
+          "Region": "eu-central-1"
+        }
+      },
+      "Attached": [
+        {
+          "PolicyName": "retail-store-ecs-orders-cloudwatch-logs",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-orders-cloudwatch-logs",
+          "Document": {
+            "Statement": [
+              {
+                "Action": [
+                  "logs:PutLogEvents",
+                  "logs:CreateLogStream",
+                  "logs:CreateLogGroup",
+                  "logs:DescribeLogStreams",
+                  "logs:DescribeLogGroups"
+                ],
+                "Effect": "Allow",
+                "Resource": [
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:retail-store-ecs-tasks:*",
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:retail-store-ecs-tasks:log-stream:*",
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:/aws/ecs/containerinsights/retail-store-ecs*:*"
+                ]
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        },
+        {
+          "PolicyName": "retail-store-ecs-orders-exec",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-orders-exec",
+          "Document": {
+            "Statement": [
+              {
+                "Action": [
+                  "ssmmessages:CreateControlChannel",
+                  "ssmmessages:CreateDataChannel",
+                  "ssmmessages:OpenControlChannel",
+                  "ssmmessages:OpenDataChannel"
+                ],
+                "Effect": "Allow",
+                "Resource": "*"
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        }
+      ],
+      "Inline": {}
+    },
+    "retail-store-ecs-orders-te": {
+      "Role": {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-orders-te",
+        "RoleId": "AROA36I76U7W357DCKPWU",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-orders-te",
+        "CreateDate": "2026-10-09 14:48:21+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600,
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "RoleLastUsed": {
+          "LastUsedDate": "2026-10-09 15:31:52+00:00",
+          "Region": "eu-central-1"
+        }
+      },
+      "Attached": [
+        {
+          "PolicyName": "AmazonECSTaskExecutionRolePolicy",
+          "PolicyArn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+        },
+        {
+          "PolicyName": "retail-store-ecs-orders",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-orders",
+          "Document": {
+            "Statement": [
+              {
+                "Action": [
+                  "secretsmanager:GetSecretValue",
+                  "kms:Decrypt*"
+                ],
+                "Effect": "Allow",
+                "Resource": [
+                  "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-orders-db-w9tI-RPybW7",
+                  "arn:aws:secretsmanager:eu-central-1:111122223333:secret:retail-store-ecs-mq-1ehc-w1ROcP",
+                  "arn:aws:kms:eu-central-1:111122223333:key/6afe1868-fcf5-4e68-aef8-61a315a1995e"
+                ]
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        }
+      ],
+      "Inline": {}
+    },
+    "retail-store-ecs-ui-task": {
+      "Role": {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-ui-task",
+        "RoleId": "AROA36I76U7WWZU57AEQD",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-ui-task",
+        "CreateDate": "2026-10-09 14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600,
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "RoleLastUsed": {
+          "LastUsedDate": "2026-10-09 15:36:24+00:00",
+          "Region": "eu-central-1"
+        }
+      },
+      "Attached": [
+        {
+          "PolicyName": "retail-store-ecs-ui-exec",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-ui-exec",
+          "Document": {
+            "Statement": [
+              {
+                "Action": [
+                  "ssmmessages:CreateControlChannel",
+                  "ssmmessages:CreateDataChannel",
+                  "ssmmessages:OpenControlChannel",
+                  "ssmmessages:OpenDataChannel"
+                ],
+                "Effect": "Allow",
+                "Resource": "*"
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        },
+        {
+          "PolicyName": "retail-store-ecs-ui-cloudwatch-logs",
+          "PolicyArn": "arn:aws:iam::111122223333:policy/retail-store-ecs-ui-cloudwatch-logs",
+          "Document": {
+            "Statement": [
+              {
+                "Action": [
+                  "logs:PutLogEvents",
+                  "logs:CreateLogStream",
+                  "logs:CreateLogGroup",
+                  "logs:DescribeLogStreams",
+                  "logs:DescribeLogGroups"
+                ],
+                "Effect": "Allow",
+                "Resource": [
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:retail-store-ecs-tasks:*",
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:retail-store-ecs-tasks:log-stream:*",
+                  "arn:aws:logs:eu-central-1:111122223333:log-group:/aws/ecs/containerinsights/retail-store-ecs*:*"
+                ]
+              }
+            ],
+            "Version": "2012-10-17"
+          }
+        }
+      ],
+      "Inline": {}
+    },
+    "retail-store-ecs-ui-te": {
+      "Role": {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-ui-te",
+        "RoleId": "AROA36I76U7W72LMIPCUO",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-ui-te",
+        "CreateDate": "2026-10-09 14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600,
+        "Tags": [
+          {
+            "Key": "environment-name",
+            "Value": "retail-store-ecs"
+          },
+          {
+            "Key": "created-by",
+            "Value": "retail-store-sample-app"
+          }
+        ],
+        "RoleLastUsed": {
+          "LastUsedDate": "2026-10-09 15:37:42+00:00",
+          "Region": "eu-central-1"
+        }
+      },
+      "Attached": [
+        {
+          "PolicyName": "AmazonECSTaskExecutionRolePolicy",
+          "PolicyArn": "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+        }
+      ],
+      "Inline": {}
+    }
+  }
+}

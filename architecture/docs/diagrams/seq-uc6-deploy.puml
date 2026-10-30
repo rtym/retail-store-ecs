@@ -1,0 +1,18 @@
+@startuml seq-uc6-deploy
+!include plantuml-theme.puml
+title UC-6 Deploy a new service version (ECS rolling deployment)
+autonumber
+actor "Operator\n(Terraform)" as T
+participant "ECS service\nscheduler" as E
+participant "Amazon ECR\nPublic" as R
+participant "New task" as N
+participant "Load balancer\n(ui only)" as L
+participant "Old task" as X
+T -> E : register task definition revision, update service
+E -> N : start task (maximum 200 %)
+N -> R : pull image via NAT Gateway
+N --> E : container health check passes
+E -> L : register new target, wait for healthy
+E -> X : deregister and stop old task (minimum healthy 100 %)
+note over E, N : if the new task never becomes healthy, the circuit breaker is OFF,\nso ECS keeps retrying with no rollback
+@enduml

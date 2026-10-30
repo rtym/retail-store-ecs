@@ -1,0 +1,22 @@
+@startuml system-context
+!include plantuml-theme.puml
+left to right direction
+skinparam node {
+  BackgroundColor #FBFCFE
+  BorderColor #9AA7B4
+}
+title Context — retail-store-ecs (UML component diagram, system level)
+actor "Shopper\n<size:11>web browser, public internet</size>" as shopper
+actor "Operator\n<size:11>AWS console / CLI, Terraform</size>" as operator
+node "AWS account 111122223333 · eu-central-1" as acct {
+  component "retail-store-ecs\n<size:11>5 services on ECS Fargate + managed data stores</size>" <<system>> as sys
+}
+component "Amazon ECR Public\n<size:11>hosts the upstream images 1.6.3</size>" <<external system>> as ecr #F5EEE3
+component "AWS regional services\n<size:11>CloudWatch, Secrets Manager, Systems Manager</size>" <<external system>> as aws #F5EEE3
+component "Downstream order consumers\n<size:11>none deployed today</size>" <<external system>> as cons #F5EEE3
+shopper --> sys : browses and buys\nHTTP 80
+operator --> sys : deploys and diagnoses\nECS API, Terraform
+sys --> ecr : pulls container images\nHTTPS
+sys --> aws : sends logs and metrics,\nreads secrets · HTTPS
+sys --> cons : publishes order events\nAMQPS
+@enduml

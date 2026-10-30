@@ -1,0 +1,19 @@
+@startuml seq-uc7-diagnose
+!include plantuml-theme.puml
+title UC-7 Diagnose a running service (manual, no alarm)
+autonumber
+actor "Shopper" as S
+actor "Operator" as O
+participant "Container Insights" as C
+participant "CloudWatch Logs" as L
+participant "Systems Manager\n(ECS Exec)" as M
+participant "Failing task" as T
+S ->> O : reports the store is broken (no alarm fired)
+O -> C : inspect service CPU, memory, task restarts
+C --> O : metrics for the last 24 h only
+O -> L : Logs Insights query on retail-store-ecs-tasks
+L --> O : error lines
+O -> M : start ECS Exec session
+M -> T : interactive shell in the container
+T --> O : process and network state
+@enduml

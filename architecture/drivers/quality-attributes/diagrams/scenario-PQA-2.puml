@@ -1,0 +1,17 @@
+@startuml scenario-PQA-2
+!include plantuml-theme.puml
+left to right direction
+hide stereotype
+title Quality attribute scenario — PQA-2 — Performance efficiency / resource utilisation
+rectangle "<b>Source of stimulus</b>\nAccount owner (cost review)" as SRC #E7E3F3
+rectangle "<b>Stimulus</b>\nMonthly review of provisioned versus used capacity" as STIM #E7E3F3
+rectangle "<b>Artifact</b>\nECS tasks and managed data services" as ART #EDF2F8
+rectangle "<b>Response</b>\nOver-provisioned resources are identified and right-sized" as RESP #E4F0E9
+rectangle "<b>Response measure</b>\nProposed — confirm: average CPU utilisation ≥ 40 % on tasks and data nodes, or a documented reason why not" as MEAS #E4F0E9
+rectangle "<b>Environment</b>\nNormal (low) demonstration load" as ENV #F5EEE3
+SRC  --> STIM : generates
+STIM --> ART  : arrives at
+ART  --> RESP : produces
+RESP --> MEAS : measured by
+ENV  ..> ART
+@enduml

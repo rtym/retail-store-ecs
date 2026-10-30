@@ -1,0 +1,15 @@
+@startuml UC-7
+!include plantuml-theme.puml
+skinparam actorStyle awesome
+left to right direction
+title Use case diagram — UC-7 Diagnose a running service
+actor "Operator" as primary
+rectangle "Amazon CloudWatch\n<size:10>Logs + Container Insights</size>" << system >> as supp0
+rectangle "AWS Systems Manager\n<size:10>ECS Exec sessions</size>" << system >> as supp1
+rectangle "retail-store-ecs" {
+  usecase "UC-7\nDiagnose a running service" as uc
+}
+primary --> uc
+uc --> supp0
+uc --> supp1
+@enduml

@@ -1,0 +1,71 @@
+@startuml reconstruction-components
+!include plantuml-theme.puml
+skinparam componentStyle uml2
+skinparam dpi 300
+skinparam defaultFontSize 13
+skinparam nodesep 35
+skinparam ranksep 50
+skinparam ArrowFontSize 12
+top to bottom direction
+title UML component diagram — tool-supported architecture reconstruction of an observed system
+
+actor "Reconstruction\narchitect" as architect
+
+component "AI reconstruction agent\n(Claude Code)" <<orchestrator>> as agent
+
+component "Secret\nredactor" <<script>> as redact
+
+component "AWS analysis plugin\n(aws-well-architected-and-analysis)" <<plugin>> as awsPlugin {
+  component "Architecture\ndiscovery" as discovery
+  component "Well-Architected\nreview" as wa
+  component "Security\nreview" as sec
+}
+
+
+component "Supplemental\ncollector" <<script>> as supp
+
+database "Evidence store\n(inventory, findings:\nJSON / MD / HTML / PDF)" as evidence
+
+component "SEI architecture plugin\n(sei-architecture-methodology)" <<plugin>> as seiPlugin {
+  component "Architectural\ndrivers" as drivers
+  component "Views and Beyond\ndocumentation, ATAM" as vnb
+  component "SEI diagrams" as diag
+  component "Report builder" as report
+}
+
+component "PlantUML\nrenderer" <<tool>> as plantuml
+database "Architecture package\n(drivers, views, ADRs,\nUML sources + PNG, reports)" as pkg
+component "Version control\n(private Git repository)" <<external system>> as git #F5EEE3
+
+interface "Read-only\ncloud API" as api
+component "Observed system\n(deployed cloud workload)" <<external system>> as observed #F5EEE3
+
+architect --> agent : prompts,\nreviews
+agent --> redact : secret scan
+agent --> seiPlugin : invokes skills
+agent --> awsPlugin : runs skills
+agent --> supp : runs
+agent --> git : commits
+
+awsPlugin --( api : Describe/List/Get\n(boto3)
+supp --( api : Describe/List/Get\n(AWS CLI)
+api -right- observed
+
+awsPlugin --> evidence : writes
+supp --> evidence : writes
+redact ..> evidence : redacts
+
+evidence --> seiPlugin : evidence\nas input
+drivers --> vnb : traces
+vnb --> diag : requests
+vnb --> report : assembles
+diag --> plantuml : renders
+diag --> pkg : writes
+report --> pkg : writes
+drivers --> pkg : writes
+
+discovery -[hidden]right- wa
+wa -[hidden]right- sec
+redact -[hidden]right- awsPlugin
+awsPlugin -[hidden]right- supp
+@enduml

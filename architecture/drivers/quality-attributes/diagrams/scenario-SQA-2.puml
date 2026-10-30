@@ -1,0 +1,17 @@
+@startuml scenario-SQA-2
+!include plantuml-theme.puml
+left to right direction
+hide stereotype
+title Quality attribute scenario — SQA-2 — Security / integrity
+rectangle "<b>Source of stimulus</b>\nAttacker who gained code execution in the ui container" as SRC #E7E3F3
+rectangle "<b>Stimulus</b>\nAttempts to reach other services' data stores and secrets" as STIM #E7E3F3
+rectangle "<b>Artifact</b>\nSecurity groups, task IAM roles and secret scoping" as ART #EDF2F8
+rectangle "<b>Response</b>\nOnly the intended call graph is reachable; other stores and secrets are denied" as RESP #E4F0E9
+rectangle "<b>Response measure</b>\nProposed — confirm: 0 network paths outside the intended graph (verified by VPC Reachability Analyzer); 0 secrets readable by a non-owning task role" as MEAS #E4F0E9
+rectangle "<b>Environment</b>\nNormal operation" as ENV #F5EEE3
+SRC  --> STIM : generates
+STIM --> ART  : arrives at
+ART  --> RESP : produces
+RESP --> MEAS : measured by
+ENV  ..> ART
+@enduml

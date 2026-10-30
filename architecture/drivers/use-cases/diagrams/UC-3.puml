@@ -1,0 +1,11 @@
+@startuml UC-3
+!include plantuml-theme.puml
+skinparam actorStyle awesome
+left to right direction
+title Use case diagram — UC-3 Manage shopping cart
+actor "Shopper" as primary
+rectangle "retail-store-ecs" {
+  usecase "UC-3\nManage shopping cart" as uc
+}
+primary --> uc
+@enduml

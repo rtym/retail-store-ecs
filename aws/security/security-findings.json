@@ -1,0 +1,2765 @@
+{
+  "Regions": {
+    "eu-central-1": {
+      "Security": {
+        "Region": "eu-central-1",
+        "GuardDuty": {
+          "Region": "eu-central-1",
+          "Enabled": false,
+          "DetectorIds": []
+        },
+        "GuardDutyFindings": [],
+        "SecurityHub": {
+          "Enabled": false
+        },
+        "SecurityHubFindings": [],
+        "SecurityHubStandardsSummary": [],
+        "AccessAnalyzerFindings": [],
+        "ConfigRuleCompliance": [],
+        "ConfigRecorder": {
+          "Recorders": [],
+          "Statuses": [],
+          "Recording": false
+        }
+      },
+      "WideOpenSecurityGroups": [
+        {
+          "GroupId": "sg-089fe6fbd4d9a9033",
+          "GroupName": "retail-store-ecs-ui-2026100914502131600000001e",
+          "VpcId": "vpc-017ca4c95f83c00a0",
+          "FromPort": 80,
+          "ToPort": 80,
+          "IpProtocol": "tcp",
+          "OpenRanges": [
+            "0.0.0.0/0"
+          ]
+        },
+        {
+          "GroupId": "sg-0acded8061f612a60",
+          "GroupName": "RDP",
+          "VpcId": "vpc-017b197a59e11705f",
+          "FromPort": 3389,
+          "ToPort": 3389,
+          "IpProtocol": "tcp",
+          "OpenRanges": [
+            "0.0.0.0/0"
+          ]
+        },
+        {
+          "GroupId": "sg-0ad6c494b0abe97dd",
+          "GroupName": "windows-security-group",
+          "VpcId": "vpc-017b197a59e11705f",
+          "FromPort": 3389,
+          "ToPort": 3389,
+          "IpProtocol": "tcp",
+          "OpenRanges": [
+            "0.0.0.0/0"
+          ]
+        },
+        {
+          "GroupId": "sg-01179a77728a504c6",
+          "GroupName": "SSH Security Group",
+          "VpcId": "vpc-017b197a59e11705f",
+          "FromPort": 22,
+          "ToPort": 22,
+          "IpProtocol": "tcp",
+          "OpenRanges": [
+            "0.0.0.0/0"
+          ]
+        },
+        {
+          "GroupId": "sg-040b3a46ff959179a",
+          "GroupName": "retail-store-ecs-catalog-task",
+          "VpcId": "vpc-017ca4c95f83c00a0",
+          "FromPort": 8080,
+          "ToPort": 8080,
+          "IpProtocol": "tcp",
+          "OpenRanges": [
+            "0.0.0.0/0"
+          ]
+        },
+        {
+          "GroupId": "sg-07200dd8c1cd91664",
+          "GroupName": "retail-store-ecs-orders-task",
+          "VpcId": "vpc-017ca4c95f83c00a0",
+          "FromPort": 8080,
+          "ToPort": 8080,
+          "IpProtocol": "tcp",
+          "OpenRanges": [
+            "0.0.0.0/0"
+          ]
+        },
+        {
+          "GroupId": "sg-0da8eca938cda3bab",
+          "GroupName": "retail-store-ecs-carts-task",
+          "VpcId": "vpc-017ca4c95f83c00a0",
+          "FromPort": 8080,
+          "ToPort": 8080,
+          "IpProtocol": "tcp",
+          "OpenRanges": [
+            "0.0.0.0/0"
+          ]
+        },
+        {
+          "GroupId": "sg-0ca08510903503c64",
+          "GroupName": "HTTP acccess security group",
+          "VpcId": "vpc-017b197a59e11705f",
+          "FromPort": 80,
+          "ToPort": 80,
+          "IpProtocol": "tcp",
+          "OpenRanges": [
+            "0.0.0.0/0"
+          ]
+        },
+        {
+          "GroupId": "sg-0e0e2272b9ea01935",
+          "GroupName": "retail-store-ecs-ui-task",
+          "VpcId": "vpc-017ca4c95f83c00a0",
+          "FromPort": 8080,
+          "ToPort": 8080,
+          "IpProtocol": "tcp",
+          "OpenRanges": [
+            "0.0.0.0/0"
+          ]
+        },
+        {
+          "GroupId": "sg-0095c5c4e962d6d3c",
+          "GroupName": "retail-store-ecs-checkout-task",
+          "VpcId": "vpc-017ca4c95f83c00a0",
+          "FromPort": 8080,
+          "ToPort": 8080,
+          "IpProtocol": "tcp",
+          "OpenRanges": [
+            "0.0.0.0/0"
+          ]
+        }
+      ],
+      "Compute": {
+        "Region": "eu-central-1",
+        "Instances": [
+          {
+            "Architecture": "arm64",
+            "BlockDeviceMappings": [
+              {
+                "DeviceName": "/dev/sda1",
+                "Ebs": {
+                  "AttachTime": "2026-05-27T17:51:42+00:00",
+                  "DeleteOnTermination": true,
+                  "Status": "attached",
+                  "VolumeId": "vol-0411d124526a9c1d3",
+                  "EbsCardIndex": 0
+                }
+              }
+            ],
+            "ClientToken": "9044c9b8-a2a2-4e36-b284-a691429db14d",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "IamInstanceProfile": {
+              "Arn": "arn:aws:iam::111122223333:instance-profile/terra-adguard-profile",
+              "Id": "AIPA36I76U7WWZFZ53XX7"
+            },
+            "NetworkInterfaces": [
+              {
+                "Attachment": {
+                  "AttachTime": "2026-05-27T17:51:41+00:00",
+                  "AttachmentId": "eni-attach-07c8447e5f93e2fda",
+                  "DeleteOnTermination": true,
+                  "DeviceIndex": 0,
+                  "Status": "attached",
+                  "NetworkCardIndex": 0
+                },
+                "Description": "",
+                "Groups": [
+                  {
+                    "GroupId": "sg-09f55f4e7ba73dfa3",
+                    "GroupName": "terra-adguard-sg"
+                  }
+                ],
+                "Ipv6Addresses": [],
+                "MacAddress": "0a:60:e7:82:8c:a9",
+                "NetworkInterfaceId": "eni-0b9b216ed591fe6ef",
+                "OwnerId": "111122223333",
+                "PrivateDnsName": "ip-10-10-13-125.eu-central-1.compute.internal",
+                "PrivateIpAddress": "10.10.13.125",
+                "PrivateIpAddresses": [
+                  {
+                    "Primary": true,
+                    "PrivateDnsName": "ip-10-10-13-125.eu-central-1.compute.internal",
+                    "PrivateIpAddress": "10.10.13.125"
+                  }
+                ],
+                "SourceDestCheck": true,
+                "Status": "in-use",
+                "SubnetId": "subnet-058e744ffc4ace4ce",
+                "VpcId": "vpc-016d1475e602df57f",
+                "InterfaceType": "interface",
+                "Operator": {
+                  "Managed": false
+                }
+              }
+            ],
+            "RootDeviceName": "/dev/sda1",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+              {
+                "GroupId": "sg-09f55f4e7ba73dfa3",
+                "GroupName": "terra-adguard-sg"
+              }
+            ],
+            "SourceDestCheck": true,
+            "Tags": [
+              {
+                "Key": "aws:ec2launchtemplate:version",
+                "Value": "3"
+              },
+              {
+                "Key": "Name",
+                "Value": "terra-adguard"
+              },
+              {
+                "Key": "Project",
+                "Value": "Terra"
+              },
+              {
+                "Key": "aws:ec2launchtemplate:id",
+                "Value": "lt-0c01d10b69adf559a"
+              }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+              "CoreCount": 2,
+              "ThreadsPerCore": 1
+            },
+            "CapacityReservationSpecification": {
+              "CapacityReservationPreference": "open"
+            },
+            "HibernationOptions": {
+              "Configured": false
+            },
+            "MetadataOptions": {
+              "State": "applied",
+              "HttpTokens": "required",
+              "HttpPutResponseHopLimit": 2,
+              "HttpEndpoint": "enabled",
+              "HttpProtocolIpv6": "disabled",
+              "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+              "Enabled": false
+            },
+            "BootMode": "uefi",
+            "PlatformDetails": "Linux/UNIX",
+            "UsageOperation": "RunInstances",
+            "UsageOperationUpdateTime": "2026-05-27T17:51:41+00:00",
+            "PrivateDnsNameOptions": {
+              "HostnameType": "ip-name",
+              "EnableResourceNameDnsARecord": false,
+              "EnableResourceNameDnsAAAARecord": false
+            },
+            "MaintenanceOptions": {
+              "AutoRecovery": "default",
+              "RebootMigration": "default"
+            },
+            "CurrentInstanceBootMode": "uefi",
+            "NetworkPerformanceOptions": {
+              "BandwidthWeighting": "default"
+            },
+            "Operator": {
+              "Managed": false,
+              "HiddenByDefault": false
+            },
+            "InstanceId": "i-0ff13bb327c22dd75",
+            "ImageId": "ami-0abed25eed793978d",
+            "State": {
+              "Code": 16,
+              "Name": "running"
+            },
+            "PrivateDnsName": "ip-10-10-13-125.eu-central-1.compute.internal",
+            "PublicDnsName": "",
+            "StateTransitionReason": "",
+            "KeyName": "adguard",
+            "AmiLaunchIndex": 0,
+            "ProductCodes": [],
+            "InstanceType": "t4g.micro",
+            "LaunchTime": "2026-05-27T17:51:41+00:00",
+            "Placement": {
+              "AvailabilityZoneId": "euc1-az1",
+              "GroupName": "",
+              "Tenancy": "default",
+              "AvailabilityZone": "eu-central-1c"
+            },
+            "Monitoring": {
+              "State": "enabled"
+            },
+            "SubnetId": "subnet-058e744ffc4ace4ce",
+            "VpcId": "vpc-016d1475e602df57f",
+            "PrivateIpAddress": "10.10.13.125"
+          },
+          {
+            "Architecture": "arm64",
+            "BlockDeviceMappings": [
+              {
+                "DeviceName": "/dev/sda1",
+                "Ebs": {
+                  "AttachTime": "2026-07-05T05:58:28+00:00",
+                  "DeleteOnTermination": true,
+                  "Status": "attached",
+                  "VolumeId": "vol-02443bce13eee6461",
+                  "EbsCardIndex": 0
+                }
+              }
+            ],
+            "ClientToken": "26e67cc3-6d35-df84-ba26-85da3ca25195",
+            "EbsOptimized": false,
+            "EnaSupport": true,
+            "Hypervisor": "xen",
+            "IamInstanceProfile": {
+              "Arn": "arn:aws:iam::111122223333:instance-profile/terra-wireguard-role",
+              "Id": "AIPA36I76U7W6TK25HGD7"
+            },
+            "NetworkInterfaces": [
+              {
+                "Association": {
+                  "IpOwnerId": "111122223333",
+                  "PublicDnsName": "ec2-3-66-148-237.eu-central-1.compute.amazonaws.com",
+                  "PublicIp": "198.51.100.10"
+                },
+                "Attachment": {
+                  "AttachTime": "2026-07-05T05:58:27+00:00",
+                  "AttachmentId": "eni-attach-05d1427d0c380d8f4",
+                  "DeleteOnTermination": true,
+                  "DeviceIndex": 0,
+                  "Status": "attached",
+                  "NetworkCardIndex": 0
+                },
+                "Description": "",
+                "Groups": [
+                  {
+                    "GroupId": "sg-0913ecc0b9304eee6",
+                    "GroupName": "terra-wireguard-sg"
+                  }
+                ],
+                "Ipv6Addresses": [],
+                "MacAddress": "0a:82:ad:8f:eb:b5",
+                "NetworkInterfaceId": "eni-0439f93593b6c72d9",
+                "OwnerId": "111122223333",
+                "PrivateDnsName": "ip-10-10-3-243.eu-central-1.compute.internal",
+                "PrivateIpAddress": "10.10.3.243",
+                "PrivateIpAddresses": [
+                  {
+                    "Association": {
+                      "IpOwnerId": "111122223333",
+                      "PublicDnsName": "ec2-3-66-148-237.eu-central-1.compute.amazonaws.com",
+                      "PublicIp": "198.51.100.10"
+                    },
+                    "Primary": true,
+                    "PrivateDnsName": "ip-10-10-3-243.eu-central-1.compute.internal",
+                    "PrivateIpAddress": "10.10.3.243"
+                  }
+                ],
+                "SourceDestCheck": false,
+                "Status": "in-use",
+                "SubnetId": "subnet-04a0fe7cbfedeb43c",
+                "VpcId": "vpc-016d1475e602df57f",
+                "InterfaceType": "interface",
+                "Operator": {
+                  "Managed": false
+                }
+              }
+            ],
+            "RootDeviceName": "/dev/sda1",
+            "RootDeviceType": "ebs",
+            "SecurityGroups": [
+              {
+                "GroupId": "sg-0913ecc0b9304eee6",
+                "GroupName": "terra-wireguard-sg"
+              }
+            ],
+            "SourceDestCheck": false,
+            "Tags": [
+              {
+                "Key": "aws:autoscaling:groupName",
+                "Value": "terra-wireguard-asg"
+              },
+              {
+                "Key": "aws:ec2launchtemplate:version",
+                "Value": "15"
+              },
+              {
+                "Key": "aws:ec2launchtemplate:id",
+                "Value": "lt-074ca3c35c7d8b9ce"
+              },
+              {
+                "Key": "Project",
+                "Value": "Terra"
+              },
+              {
+                "Key": "Name",
+                "Value": "terra-wireguard-gateway"
+              }
+            ],
+            "VirtualizationType": "hvm",
+            "CpuOptions": {
+              "CoreCount": 2,
+              "ThreadsPerCore": 1
+            },
+            "CapacityReservationSpecification": {
+              "CapacityReservationPreference": "open"
+            },
+            "HibernationOptions": {
+              "Configured": false
+            },
+            "MetadataOptions": {
+              "State": "applied",
+              "HttpTokens": "required",
+              "HttpPutResponseHopLimit": 2,
+              "HttpEndpoint": "enabled",
+              "HttpProtocolIpv6": "disabled",
+              "InstanceMetadataTags": "disabled"
+            },
+            "EnclaveOptions": {
+              "Enabled": false
+            },
+            "BootMode": "uefi",
+            "PlatformDetails": "Linux/UNIX",
+            "UsageOperation": "RunInstances",
+            "UsageOperationUpdateTime": "2026-07-05T05:58:27+00:00",
+            "PrivateDnsNameOptions": {
+              "HostnameType": "ip-name",
+              "EnableResourceNameDnsARecord": false,
+              "EnableResourceNameDnsAAAARecord": false
+            },
+            "MaintenanceOptions": {
+              "AutoRecovery": "default",
+              "RebootMigration": "default"
+            },
+            "CurrentInstanceBootMode": "uefi",
+            "NetworkPerformanceOptions": {
+              "BandwidthWeighting": "default"
+            },
+            "Operator": {
+              "Managed": false,
+              "HiddenByDefault": false
+            },
+            "InstanceId": "i-0481ba5179b8beb40",
+            "ImageId": "ami-042f11a836094cda0",
+            "State": {
+              "Code": 16,
+              "Name": "running"
+            },
+            "PrivateDnsName": "ip-10-10-3-243.eu-central-1.compute.internal",
+            "PublicDnsName": "ec2-3-66-148-237.eu-central-1.compute.amazonaws.com",
+            "StateTransitionReason": "",
+            "KeyName": "WireGuard-machine",
+            "AmiLaunchIndex": 0,
+            "ProductCodes": [],
+            "InstanceType": "t4g.nano",
+            "LaunchTime": "2026-07-05T05:58:27+00:00",
+            "Placement": {
+              "AvailabilityZoneId": "euc1-az1",
+              "GroupName": "",
+              "Tenancy": "default",
+              "AvailabilityZone": "eu-central-1c"
+            },
+            "Monitoring": {
+              "State": "disabled"
+            },
+            "SubnetId": "subnet-04a0fe7cbfedeb43c",
+            "VpcId": "vpc-016d1475e602df57f",
+            "PrivateIpAddress": "10.10.3.243",
+            "PublicIpAddress": "198.51.100.10"
+          }
+        ],
+        "AutoScalingGroups": [
+          {
+            "AutoScalingGroupName": "terra-wireguard-asg",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:eu-central-1:111122223333:autoScalingGroup:62f31638-6d74-4704-b113-75f940facfc4:autoScalingGroupName/terra-wireguard-asg",
+            "LaunchTemplate": {
+              "LaunchTemplateId": "lt-074ca3c35c7d8b9ce",
+              "LaunchTemplateName": "terra-wireguard-lt",
+              "Version": "$Latest"
+            },
+            "MinSize": 1,
+            "MaxSize": 1,
+            "DesiredCapacity": 1,
+            "DefaultCooldown": 300,
+            "AvailabilityZones": [
+              "eu-central-1a",
+              "eu-central-1c",
+              "eu-central-1b"
+            ],
+            "AvailabilityZoneIds": [
+              "euc1-az2",
+              "euc1-az1",
+              "euc1-az3"
+            ],
+            "LoadBalancerNames": [],
+            "TargetGroupARNs": [],
+            "HealthCheckType": "EC2",
+            "HealthCheckGracePeriod": 420,
+            "Instances": [
+              {
+                "InstanceId": "i-0481ba5179b8beb40",
+                "InstanceType": "t4g.nano",
+                "AvailabilityZone": "eu-central-1c",
+                "AvailabilityZoneId": "euc1-az1",
+                "LifecycleState": "InService",
+                "HealthStatus": "Healthy",
+                "LaunchTemplate": {
+                  "LaunchTemplateId": "lt-074ca3c35c7d8b9ce",
+                  "LaunchTemplateName": "terra-wireguard-lt",
+                  "Version": "15"
+                },
+                "ProtectedFromScaleIn": false
+              }
+            ],
+            "CreatedTime": "2026-05-25T09:28:15.184000+00:00",
+            "SuspendedProcesses": [],
+            "VPCZoneIdentifier": "subnet-04a0fe7cbfedeb43c,subnet-046af3a944344dc5d,subnet-0b5a24a5b533fe0c0",
+            "EnabledMetrics": [],
+            "Tags": [
+              {
+                "ResourceId": "terra-wireguard-asg",
+                "ResourceType": "auto-scaling-group",
+                "Key": "Name",
+                "Value": "terra-wireguard-gateway",
+                "PropagateAtLaunch": true
+              },
+              {
+                "ResourceId": "terra-wireguard-asg",
+                "ResourceType": "auto-scaling-group",
+                "Key": "Project",
+                "Value": "Terra",
+                "PropagateAtLaunch": true
+              }
+            ],
+            "TerminationPolicies": [
+              "Default"
+            ],
+            "NewInstancesProtectedFromScaleIn": false,
+            "ServiceLinkedRoleARN": "arn:aws:iam::111122223333:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+            "TrafficSources": [],
+            "DeletionProtection": "none",
+            "AvailabilityZoneDistribution": {
+              "CapacityDistributionStrategy": "balanced-best-effort"
+            },
+            "CapacityReservationSpecification": {
+              "CapacityReservationPreference": "default"
+            },
+            "InstanceLifecyclePolicy": {
+              "RetentionTriggers": {
+                "TerminateHookAbandon": "terminate"
+              }
+            }
+          }
+        ],
+        "Volumes": [
+          {
+            "AvailabilityZoneId": "euc1-az1",
+            "Iops": 3000,
+            "VolumeType": "gp3",
+            "MultiAttachEnabled": false,
+            "Throughput": 125,
+            "Operator": {
+              "Managed": false,
+              "HiddenByDefault": false
+            },
+            "VolumeArn": "arn:aws:ec2:eu-central-1:111122223333:volume/vol-0411d124526a9c1d3",
+            "OwnerId": "111122223333",
+            "VolumeId": "vol-0411d124526a9c1d3",
+            "Size": 8,
+            "SnapshotId": "snap-0561d8011c1620769",
+            "AvailabilityZone": "eu-central-1c",
+            "State": "in-use",
+            "CreateTime": "2026-05-27T17:51:42.440000+00:00",
+            "Attachments": [
+              {
+                "DeleteOnTermination": true,
+                "EbsCardIndex": 0,
+                "VolumeId": "vol-0411d124526a9c1d3",
+                "InstanceId": "i-0ff13bb327c22dd75",
+                "Device": "/dev/sda1",
+                "State": "attached",
+                "AttachTime": "2026-05-27T17:51:42+00:00"
+              }
+            ],
+            "Encrypted": false
+          },
+          {
+            "AvailabilityZoneId": "euc1-az1",
+            "Iops": 3000,
+            "Tags": [
+              {
+                "Key": "Project",
+                "Value": "Terra"
+              }
+            ],
+            "VolumeType": "gp3",
+            "MultiAttachEnabled": false,
+            "Throughput": 125,
+            "Operator": {
+              "Managed": false,
+              "HiddenByDefault": false
+            },
+            "VolumeArn": "arn:aws:ec2:eu-central-1:111122223333:volume/vol-02443bce13eee6461",
+            "OwnerId": "111122223333",
+            "VolumeId": "vol-02443bce13eee6461",
+            "Size": 8,
+            "SnapshotId": "snap-085bca81b62000b00",
+            "AvailabilityZone": "eu-central-1c",
+            "State": "in-use",
+            "CreateTime": "2026-07-05T05:58:28.343000+00:00",
+            "Attachments": [
+              {
+                "DeleteOnTermination": true,
+                "EbsCardIndex": 0,
+                "VolumeId": "vol-02443bce13eee6461",
+                "InstanceId": "i-0481ba5179b8beb40",
+                "Device": "/dev/sda1",
+                "State": "attached",
+                "AttachTime": "2026-07-05T05:58:28+00:00"
+              }
+            ],
+            "Encrypted": false
+          }
+        ],
+        "Addresses": [
+          {
+            "AllocationId": "eipalloc-0f0dad86560f6d056",
+            "AssociationId": "eipassoc-0a36849fd6d6fe41a",
+            "Domain": "vpc",
+            "NetworkInterfaceId": "eni-07f15b6db116169b1",
+            "NetworkInterfaceOwnerId": "111122223333",
+            "PrivateIpAddress": "10.0.2.209",
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "eu-central-1",
+            "ServiceManaged": "alb",
+            "PublicIp": "198.51.100.13"
+          },
+          {
+            "AllocationId": "eipalloc-07cf6a940f4a456a5",
+            "AssociationId": "eipassoc-0a868119794249cd8",
+            "Domain": "vpc",
+            "NetworkInterfaceId": "eni-0ac3f3b10a3f67535",
+            "NetworkInterfaceOwnerId": "111122223333",
+            "PrivateIpAddress": "10.0.1.231",
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "eu-central-1",
+            "ServiceManaged": "alb",
+            "PublicIp": "198.51.100.12"
+          },
+          {
+            "AllocationId": "eipalloc-0d67e76a49af84afb",
+            "AssociationId": "eipassoc-05397313ace5c6caf",
+            "Domain": "vpc",
+            "NetworkInterfaceId": "eni-0439f93593b6c72d9",
+            "NetworkInterfaceOwnerId": "111122223333",
+            "PrivateIpAddress": "10.10.3.243",
+            "Tags": [
+              {
+                "Key": "Project",
+                "Value": "Terra"
+              }
+            ],
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "eu-central-1",
+            "InstanceId": "i-0481ba5179b8beb40",
+            "PublicIp": "198.51.100.10"
+          },
+          {
+            "AllocationId": "eipalloc-0fcad4b9b6ec3d198",
+            "AssociationId": "eipassoc-03e2cb292e1205fc0",
+            "Domain": "vpc",
+            "NetworkInterfaceId": "eni-0fc20a25420bfcfe3",
+            "NetworkInterfaceOwnerId": "111122223333",
+            "PrivateIpAddress": "10.0.0.222",
+            "Tags": [
+              {
+                "Key": "created-by",
+                "Value": "retail-store-sample-app"
+              },
+              {
+                "Key": "Name",
+                "Value": "retail-store-ecs-eu-central-1a"
+              },
+              {
+                "Key": "environment-name",
+                "Value": "retail-store-ecs"
+              }
+            ],
+            "PublicIpv4Pool": "amazon",
+            "NetworkBorderGroup": "eu-central-1",
+            "PublicIp": "198.51.100.11"
+          }
+        ],
+        "LoadBalancersV2": [
+          {
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:loadbalancer/app/retail-store-ecs-ui/673a8ff8fafd121d",
+            "DNSName": "retail-store-ecs-ui-0000000000.eu-central-1.elb.amazonaws.com",
+            "CanonicalHostedZoneId": "Z215JYRZR1TBD5",
+            "CreatedTime": "2026-10-09T14:50:24.034000+00:00",
+            "LoadBalancerName": "retail-store-ecs-ui",
+            "Scheme": "internet-facing",
+            "VpcId": "vpc-017ca4c95f83c00a0",
+            "State": {
+              "Code": "active"
+            },
+            "Type": "application",
+            "AvailabilityZones": [
+              {
+                "ZoneName": "eu-central-1a",
+                "SubnetId": "subnet-0401eea22adf8e451",
+                "LoadBalancerAddresses": []
+              },
+              {
+                "ZoneName": "eu-central-1c",
+                "SubnetId": "subnet-0f20ee5dff6606cd1",
+                "LoadBalancerAddresses": []
+              },
+              {
+                "ZoneName": "eu-central-1b",
+                "SubnetId": "subnet-0fce95bd1339941f7",
+                "LoadBalancerAddresses": []
+              }
+            ],
+            "SecurityGroups": [
+              "sg-0796835a07e6dc412",
+              "sg-089fe6fbd4d9a9033"
+            ],
+            "IpAddressType": "ipv4",
+            "EnablePrefixForIpv6SourceNat": "off",
+            "_TargetGroups": [
+              {
+                "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:targetgroup/ui-application/de0587869440dfdd",
+                "TargetGroupName": "ui-application",
+                "Protocol": "HTTP",
+                "Port": 8080,
+                "VpcId": "vpc-017ca4c95f83c00a0",
+                "HealthCheckProtocol": "HTTP",
+                "HealthCheckPort": "traffic-port",
+                "HealthCheckEnabled": true,
+                "HealthCheckIntervalSeconds": 30,
+                "HealthCheckTimeoutSeconds": 5,
+                "HealthyThresholdCount": 2,
+                "UnhealthyThresholdCount": 3,
+                "HealthCheckPath": "/actuator/health",
+                "Matcher": {
+                  "HttpCode": "200"
+                },
+                "LoadBalancerArns": [
+                  "arn:aws:elasticloadbalancing:eu-central-1:111122223333:loadbalancer/app/retail-store-ecs-ui/673a8ff8fafd121d"
+                ],
+                "TargetType": "ip",
+                "ProtocolVersion": "HTTP1",
+                "IpAddressType": "ipv4"
+              }
+            ],
+            "_Listeners": [
+              {
+                "ListenerArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:listener/app/retail-store-ecs-ui/673a8ff8fafd121d/e81573c186553483",
+                "LoadBalancerArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:loadbalancer/app/retail-store-ecs-ui/673a8ff8fafd121d",
+                "Port": 80,
+                "Protocol": "HTTP",
+                "DefaultActions": [
+                  {
+                    "Type": "forward",
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:targetgroup/ui-application/de0587869440dfdd",
+                    "Order": 1,
+                    "ForwardConfig": {
+                      "TargetGroups": [
+                        {
+                          "TargetGroupArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:targetgroup/ui-application/de0587869440dfdd",
+                          "Weight": 1
+                        }
+                      ],
+                      "TargetGroupStickinessConfig": {
+                        "Enabled": false
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "ClassicLoadBalancers": [],
+        "AcmCertificates": [],
+        "Snapshots": [],
+        "UnattachedVolumes": [],
+        "UnassociatedEips": [],
+        "StoppedInstances": [],
+        "InstancesAllowingImdsv1": [],
+        "PlaintextListeners": [
+          {
+            "LoadBalancerArn": "arn:aws:elasticloadbalancing:eu-central-1:111122223333:loadbalancer/app/retail-store-ecs-ui/673a8ff8fafd121d",
+            "LoadBalancerName": "retail-store-ecs-ui",
+            "Port": 80,
+            "Protocol": "HTTP"
+          }
+        ],
+        "ExpiringCertificates": []
+      }
+    }
+  },
+  "Global": {
+    "IamUsers": [
+      {
+        "Path": "/",
+        "UserName": "iam-user-3",
+        "UserId": "AIDA36I76U7WR63I3FRPM",
+        "Arn": "arn:aws:iam::111122223333:user/iam-user-3",
+        "CreateDate": "2026-10-01T07:40:14+00:00",
+        "PasswordLastUsed": "2026-10-08T09:15:48+00:00",
+        "_MfaDevices": [],
+        "_AttachedPolicies": [
+          {
+            "PolicyName": "IAMUserChangePassword",
+            "PolicyArn": "arn:aws:iam::aws:policy/IAMUserChangePassword"
+          },
+          {
+            "PolicyName": "EC2-S3-us-east-1-only",
+            "PolicyArn": "arn:aws:iam::111122223333:policy/EC2-S3-us-east-1-only"
+          }
+        ],
+        "_AccessKeys": []
+      },
+      {
+        "Path": "/",
+        "UserName": "iam-user-4",
+        "UserId": "AIDA36I76U7WY4QQGB7UN",
+        "Arn": "arn:aws:iam::111122223333:user/iam-user-4",
+        "CreateDate": "2025-07-15T08:37:44+00:00",
+        "_MfaDevices": [],
+        "_AttachedPolicies": [
+          {
+            "PolicyName": "IamUser4BackupUploadPolicy",
+            "PolicyArn": "arn:aws:iam::111122223333:policy/IamUser4BackupUploadPolicy"
+          }
+        ],
+        "_AccessKeys": [
+          {
+            "UserName": "iam-user-4",
+            "AccessKeyId": "AKIAREDACTED00000001",
+            "Status": "Active",
+            "CreateDate": "2025-07-25T21:51:42+00:00"
+          }
+        ]
+      },
+      {
+        "Path": "/",
+        "UserName": "iam-user-1",
+        "UserId": "AIDA36I76U7WTDTMKPCCC",
+        "Arn": "arn:aws:iam::111122223333:user/iam-user-1",
+        "CreateDate": "2025-06-11T11:18:15+00:00",
+        "PasswordLastUsed": "2026-10-09T15:44:32+00:00",
+        "_MfaDevices": [
+          {
+            "UserName": "iam-user-1",
+            "SerialNumber": "arn:aws:iam::111122223333:mfa/iam-user-1-Phone",
+            "EnableDate": "2025-06-11T11:21:10+00:00"
+          }
+        ],
+        "_AttachedPolicies": [
+          {
+            "PolicyName": "IAMUserChangePassword",
+            "PolicyArn": "arn:aws:iam::aws:policy/IAMUserChangePassword"
+          }
+        ],
+        "_AccessKeys": [
+          {
+            "UserName": "iam-user-1",
+            "AccessKeyId": "AKIAREDACTED00000002",
+            "Status": "Inactive",
+            "CreateDate": "2026-04-20T13:54:52+00:00"
+          },
+          {
+            "UserName": "iam-user-1",
+            "AccessKeyId": "AKIAREDACTED00000003",
+            "Status": "Active",
+            "CreateDate": "2026-05-25T06:28:27+00:00"
+          }
+        ]
+      },
+      {
+        "Path": "/",
+        "UserName": "iam-user-5",
+        "UserId": "AIDA36I76U7WQ5HVDXGUS",
+        "Arn": "arn:aws:iam::111122223333:user/iam-user-5",
+        "CreateDate": "2026-05-28T19:14:30+00:00",
+        "_MfaDevices": [],
+        "_AttachedPolicies": [
+          {
+            "PolicyName": "iam-user-5-policy",
+            "PolicyArn": "arn:aws:iam::111122223333:policy/iam-user-5-policy"
+          }
+        ],
+        "_AccessKeys": [
+          {
+            "UserName": "iam-user-5",
+            "AccessKeyId": "AKIAREDACTED00000004",
+            "Status": "Active",
+            "CreateDate": "2026-05-28T19:14:32+00:00"
+          }
+        ]
+      },
+      {
+        "Path": "/",
+        "UserName": "iam-user-2",
+        "UserId": "AIDA36I76U7W54RDQST55",
+        "Arn": "arn:aws:iam::111122223333:user/iam-user-2",
+        "CreateDate": "2025-07-06T11:06:31+00:00",
+        "PasswordLastUsed": "2025-10-29T14:17:15+00:00",
+        "_MfaDevices": [],
+        "_AttachedPolicies": [
+          {
+            "PolicyName": "ContaboBackupS3ReadPolicy",
+            "PolicyArn": "arn:aws:iam::111122223333:policy/ContaboBackupS3ReadPolicy"
+          },
+          {
+            "PolicyName": "IAMUserChangePassword",
+            "PolicyArn": "arn:aws:iam::aws:policy/IAMUserChangePassword"
+          }
+        ],
+        "_AccessKeys": []
+      }
+    ],
+    "IamRoles": [
+      {
+        "Path": "/service-role/",
+        "RoleName": "accommodation-action-group-6dwze-role-Z4ORRMHGD1",
+        "RoleId": "AROA36I76U7WRGJRD4VIP",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/accommodation-action-group-6dwze-role-Z4ORRMHGD1",
+        "CreateDate": "2025-06-11T16:05:34+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "LambdaAssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "accommodation-action-group-6wv1q-role-Y0EH4UTPT9N",
+        "RoleId": "AROA36I76U7W25L5VWT5K",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/accommodation-action-group-6wv1q-role-Y0EH4UTPT9N",
+        "CreateDate": "2025-06-11T13:24:31+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "LambdaAssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "action_group_quick_start_07vg2-tmjdm-role-T39U9OBSPS",
+        "RoleId": "AROA36I76U7WVVN7YZD54",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/action_group_quick_start_07vg2-tmjdm-role-T39U9OBSPS",
+        "CreateDate": "2025-06-11T14:44:36+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "LambdaAssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "AmazonBedrockExecutionRoleForAgents_1AGTS0T4UGG",
+        "RoleId": "AROA36I76U7W5SW4X3KDL",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/AmazonBedrockExecutionRoleForAgents_1AGTS0T4UGG",
+        "CreateDate": "2025-06-11T16:20:14+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AmazonBedrockAgentBedrockFoundationModelPolicyProd",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "bedrock.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                },
+                "ArnLike": {
+                  "aws:SourceArn": "arn:aws:bedrock:us-west-2:111122223333:agent/*"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "AmazonBedrockExecutionRoleForAgents_78DI5U2CLA",
+        "RoleId": "AROA36I76U7W6ZMKRI2ZE",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/AmazonBedrockExecutionRoleForAgents_78DI5U2CLA",
+        "CreateDate": "2025-06-12T12:29:40+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AmazonBedrockAgentBedrockFoundationModelPolicyProd",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "bedrock.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                },
+                "ArnLike": {
+                  "aws:SourceArn": "arn:aws:bedrock:us-west-2:111122223333:agent/*"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "AmazonBedrockExecutionRoleForAgents_7YPW15GMCU6",
+        "RoleId": "AROA36I76U7WVGJWSMNJY",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/AmazonBedrockExecutionRoleForAgents_7YPW15GMCU6",
+        "CreateDate": "2025-06-12T11:48:36+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AmazonBedrockAgentBedrockFoundationModelPolicyProd",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "bedrock.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                },
+                "ArnLike": {
+                  "aws:SourceArn": "arn:aws:bedrock:us-west-2:111122223333:agent/*"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "AmazonBedrockExecutionRoleForAgents_C0XJD21Y9CL",
+        "RoleId": "AROA36I76U7WSKTV6INTY",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/AmazonBedrockExecutionRoleForAgents_C0XJD21Y9CL",
+        "CreateDate": "2025-06-11T13:24:50+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AmazonBedrockAgentBedrockFoundationModelPolicyProd",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "bedrock.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                },
+                "ArnLike": {
+                  "aws:SourceArn": "arn:aws:bedrock:us-east-1:111122223333:agent/*"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "AmazonBedrockExecutionRoleForAgents_QFHSWPG8Y9",
+        "RoleId": "AROA36I76U7WW3YBOB4ZK",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/AmazonBedrockExecutionRoleForAgents_QFHSWPG8Y9",
+        "CreateDate": "2025-06-11T14:45:00+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AmazonBedrockAgentBedrockFoundationModelPolicyProd",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "bedrock.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                },
+                "ArnLike": {
+                  "aws:SourceArn": "arn:aws:bedrock:us-west-2:111122223333:agent/*"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "AmazonBedrockExecutionRoleForAgents_QUDNU40FMCO",
+        "RoleId": "AROA36I76U7WYCMLULAMC",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/AmazonBedrockExecutionRoleForAgents_QUDNU40FMCO",
+        "CreateDate": "2025-06-11T14:38:53+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AmazonBedrockAgentBedrockFoundationModelPolicyProd",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "bedrock.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                },
+                "ArnLike": {
+                  "aws:SourceArn": "arn:aws:bedrock:us-east-1:111122223333:agent/*"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "AmazonBedrockExecutionRoleForAgents_TRUKFLK54F8",
+        "RoleId": "AROA36I76U7WXCVNHBBY3",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/AmazonBedrockExecutionRoleForAgents_TRUKFLK54F8",
+        "CreateDate": "2025-07-27T20:25:16+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AmazonBedrockAgentBedrockFoundationModelPolicyProd",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "bedrock.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                },
+                "ArnLike": {
+                  "aws:SourceArn": "arn:aws:bedrock:eu-central-1:111122223333:agent/*"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "AmazonBedrockExecutionRoleForAgents_V157XAY78SO",
+        "RoleId": "AROA36I76U7WX6P6KG4VN",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/AmazonBedrockExecutionRoleForAgents_V157XAY78SO",
+        "CreateDate": "2025-06-11T16:06:15+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AmazonBedrockAgentBedrockFoundationModelPolicyProd",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "bedrock.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                },
+                "ArnLike": {
+                  "aws:SourceArn": "arn:aws:bedrock:us-west-2:111122223333:agent/*"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "AmazonBedrockExecutionRoleForAgents_V8CIPYAK1NG",
+        "RoleId": "AROA36I76U7W7C6TVGRII",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/AmazonBedrockExecutionRoleForAgents_V8CIPYAK1NG",
+        "CreateDate": "2025-06-12T09:05:11+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AmazonBedrockAgentBedrockFoundationModelPolicyProd",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "bedrock.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                },
+                "ArnLike": {
+                  "aws:SourceArn": "arn:aws:bedrock:us-west-2:111122223333:agent/*"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "AmazonBedrockExecutionRoleForAgents_WWZNKQMXQHE",
+        "RoleId": "AROA36I76U7WV2AQSCGVT",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/AmazonBedrockExecutionRoleForAgents_WWZNKQMXQHE",
+        "CreateDate": "2025-06-11T11:39:56+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AmazonBedrockAgentBedrockFoundationModelPolicyProd",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "bedrock.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                },
+                "ArnLike": {
+                  "aws:SourceArn": "arn:aws:bedrock:us-east-1:111122223333:agent/*"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "AmazonBedrockExecutionRoleForKnowledgeBase_buwcm",
+        "RoleId": "AROA36I76U7W2VTVXBQDU",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/AmazonBedrockExecutionRoleForKnowledgeBase_buwcm",
+        "CreateDate": "2025-06-17T11:17:27+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "AmazonBedrockKnowledgeBaseTrustPolicy",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "bedrock.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                },
+                "ArnLike": {
+                  "aws:SourceArn": "arn:aws:bedrock:us-west-2:111122223333:knowledge-base/*"
+                }
+              }
+            }
+          ]
+        },
+        "Description": "Bedrock Knowledge Base access",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/mq.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForAmazonMQ",
+        "RoleId": "AROA36I76U7WT6ILOZ7KT",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/mq.amazonaws.com/AWSServiceRoleForAmazonMQ",
+        "CreateDate": "2026-10-09T14:50:22+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "mq.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "Allows Amazon MQ to call AWS services on your behalf",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/observability.aoss.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForAmazonOpenSearchServerless",
+        "RoleId": "AROA36I76U7WSW34ZHURF",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/observability.aoss.amazonaws.com/AWSServiceRoleForAmazonOpenSearchServerless",
+        "CreateDate": "2025-06-17T11:13:47+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "observability.aoss.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/opensearchservice.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForAmazonOpenSearchService",
+        "RoleId": "AROA36I76U7W73KWW6I3R",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService",
+        "CreateDate": "2026-10-09T14:50:22+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "opensearchservice.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/ops.apigateway.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForAPIGateway",
+        "RoleId": "AROA36I76U7WQ5MJDWBZG",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/ops.apigateway.amazonaws.com/AWSServiceRoleForAPIGateway",
+        "CreateDate": "2025-06-11T20:27:17+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ops.apigateway.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "The Service Linked Role is used by Amazon API Gateway.",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/autoscaling.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForAutoScaling",
+        "RoleId": "AROA36I76U7W3MALINAJY",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+        "CreateDate": "2026-05-25T09:28:14+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "autoscaling.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/ec2-instance-connect.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForEc2InstanceConnect",
+        "RoleId": "AROA36I76U7WZA6QKRQ5M",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/ec2-instance-connect.amazonaws.com/AWSServiceRoleForEc2InstanceConnect",
+        "CreateDate": "2026-05-25T14:54:55+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ec2-instance-connect.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "The Service Linked Role used by EC2 Instance Connect Endpoint.",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/spot.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForEC2Spot",
+        "RoleId": "AROA36I76U7WWEXBKJNOJ",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/spot.amazonaws.com/AWSServiceRoleForEC2Spot",
+        "CreateDate": "2026-05-04T06:23:18+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "spot.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "Default EC2 Spot Service Linked Role",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/ecs.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForECS",
+        "RoleId": "AROA36I76U7W4XYIOZODW",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "CreateDate": "2026-10-09T14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "Policy to enable Amazon ECS to manage your EC2 instances and related resources.",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/elasticache.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForElastiCache",
+        "RoleId": "AROA36I76U7W4PXB5GM4V",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/elasticache.amazonaws.com/AWSServiceRoleForElastiCache",
+        "CreateDate": "2026-10-09T14:48:19+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "elasticache.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "This policy allows ElastiCache to manage AWS resources on your behalf as necessary for managing your cache.",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForElasticLoadBalancing",
+        "RoleId": "AROA36I76U7W5QN3MKNWT",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+        "CreateDate": "2026-04-28T19:51:59+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "elasticloadbalancing.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "Allows ELB to call AWS services on your behalf.",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/rds.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForRDS",
+        "RoleId": "AROA36I76U7W7AW3EAF4R",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+        "CreateDate": "2026-10-09T14:50:22+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "rds.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "Allows Amazon RDS to manage AWS resources on your behalf",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/resource-explorer-2.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForResourceExplorer",
+        "RoleId": "AROA36I76U7W3OZLBOQ4C",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+        "CreateDate": "2025-10-05T14:13:18+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "resource-explorer-2.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/servicequotas.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForServiceQuotas",
+        "RoleId": "AROA36I76U7WQVH7AJCII",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/servicequotas.amazonaws.com/AWSServiceRoleForServiceQuotas",
+        "CreateDate": "2025-06-11T16:46:10+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "servicequotas.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "A service-linked role is required for Service Quotas to access your service limits.",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/support.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForSupport",
+        "RoleId": "AROA36I76U7WTTB2U4SAO",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+        "CreateDate": "2025-06-11T11:02:28+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "support.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "Enables resource access for AWS to provide billing, administrative and support services",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+        "RoleName": "AWSServiceRoleForTrustedAdvisor",
+        "RoleId": "AROA36I76U7W5DUU7TUF7",
+        "Arn": "arn:aws:iam::111122223333:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+        "CreateDate": "2025-06-11T11:02:28+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "trustedadvisor.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "courses-action-group-82kq3-role-5RZ9FZ8RU9O",
+        "RoleId": "AROA36I76U7WTAOI3BN2U",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/courses-action-group-82kq3-role-5RZ9FZ8RU9O",
+        "CreateDate": "2025-06-12T09:08:07+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "LambdaAssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "ec2-ssm-access",
+        "RoleId": "AROA36I76U7W52ZKJA46G",
+        "Arn": "arn:aws:iam::111122223333:role/ec2-ssm-access",
+        "CreateDate": "2026-04-20T14:01:45+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ec2.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "Allows EC2 instances to call AWS services on your behalf.",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "exam-results-action-group-splef-role-GHYM9K7MRWI",
+        "RoleId": "AROA36I76U7WSZ74AMEK5",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/exam-results-action-group-splef-role-GHYM9K7MRWI",
+        "CreateDate": "2025-06-12T11:51:06+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "LambdaAssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "happy-nmt-dev-lambda-exec",
+        "RoleId": "AROA36I76U7W6CRYRSW2G",
+        "Arn": "arn:aws:iam::111122223333:role/happy-nmt-dev-lambda-exec",
+        "CreateDate": "2026-08-05T10:36:09+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "invoke-supervisor-agent-role-lnse5svh",
+        "RoleId": "AROA36I76U7W5HLCN2YFM",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/invoke-supervisor-agent-role-lnse5svh",
+        "CreateDate": "2025-06-11T20:16:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "invoke-university-supervisor-agent-role-0oe5djub",
+        "RoleId": "AROA36I76U7WXZXW4W3VM",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/invoke-university-supervisor-agent-role-0oe5djub",
+        "CreateDate": "2025-06-12T12:36:48+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "LambdaDynamoDBInvoicesTableRole",
+        "RoleId": "AROA36I76U7WWD63WMWWH",
+        "Arn": "arn:aws:iam::111122223333:role/LambdaDynamoDBInvoicesTableRole",
+        "CreateDate": "2025-07-19T19:55:52+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "Allows Lambda functions to call AWS services on your behalf.",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "iam-user-4-backup-lambda-role",
+        "RoleId": "AROA36I76U7WQM4JEWOBI",
+        "Arn": "arn:aws:iam::111122223333:role/iam-user-4-backup-lambda-role",
+        "CreateDate": "2025-09-25T08:56:02+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "quiz-apigw-logs-role-quiz-scanner",
+        "RoleId": "AROA36I76U7W7KEYKZ5HS",
+        "Arn": "arn:aws:iam::111122223333:role/quiz-apigw-logs-role-quiz-scanner",
+        "CreateDate": "2026-05-17T19:55:28+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "apigateway.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "quiz-get-answers-role-quiz-scanner",
+        "RoleId": "AROA36I76U7W34PSZU5VM",
+        "Arn": "arn:aws:iam::111122223333:role/quiz-get-answers-role-quiz-scanner",
+        "CreateDate": "2026-05-17T19:55:43+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "quiz-post-answer-role-quiz-scanner",
+        "RoleId": "AROA36I76U7W6VVG4RSJT",
+        "Arn": "arn:aws:iam::111122223333:role/quiz-post-answer-role-quiz-scanner",
+        "CreateDate": "2026-05-17T19:55:43+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "restaurant-action-group-dxjeh-role-BYD2ASE1D8J",
+        "RoleId": "AROA36I76U7WUQU7452XA",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/restaurant-action-group-dxjeh-role-BYD2ASE1D8J",
+        "CreateDate": "2025-06-11T11:39:31+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "LambdaAssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "restaurant_action_group_5jvp1-l6h7g-role-6FJAGJRKTT8",
+        "RoleId": "AROA36I76U7W3ZJDPXUKM",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/restaurant_action_group_5jvp1-l6h7g-role-6FJAGJRKTT8",
+        "CreateDate": "2025-06-11T14:47:26+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Sid": "LambdaAssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole",
+              "Condition": {
+                "StringEquals": {
+                  "aws:SourceAccount": "111122223333"
+                }
+              }
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-carts-task",
+        "RoleId": "AROA36I76U7W6AL6JIEQL",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-carts-task",
+        "CreateDate": "2026-10-09T14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-carts-te",
+        "RoleId": "AROA36I76U7WR4WWOOZF7",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-carts-te",
+        "CreateDate": "2026-10-09T14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-catalog-task",
+        "RoleId": "AROA36I76U7WSMMCBJ7UJ",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-catalog-task",
+        "CreateDate": "2026-10-09T14:48:19+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-catalog-te",
+        "RoleId": "AROA36I76U7W7PDCEOT22",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-catalog-te",
+        "CreateDate": "2026-10-09T14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-checkout-task",
+        "RoleId": "AROA36I76U7WV3XJQR4G2",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-checkout-task",
+        "CreateDate": "2026-10-09T14:48:21+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-checkout-te",
+        "RoleId": "AROA36I76U7WY37P4KJEO",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-checkout-te",
+        "CreateDate": "2026-10-09T14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-orders-task",
+        "RoleId": "AROA36I76U7W6S7GCMCLT",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-orders-task",
+        "CreateDate": "2026-10-09T14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-orders-te",
+        "RoleId": "AROA36I76U7W357DCKPWU",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-orders-te",
+        "CreateDate": "2026-10-09T14:48:21+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-ui-task",
+        "RoleId": "AROA36I76U7WWZU57AEQD",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-ui-task",
+        "CreateDate": "2026-10-09T14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "retail-store-ecs-ui-te",
+        "RoleId": "AROA36I76U7W72LMIPCUO",
+        "Arn": "arn:aws:iam::111122223333:role/retail-store-ecs-ui-te",
+        "CreateDate": "2026-10-09T14:48:20+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "sklad-kontrol-api-lambda",
+        "RoleId": "AROA36I76U7WYZNXJF2K6",
+        "Arn": "arn:aws:iam::111122223333:role/sklad-kontrol-api-lambda",
+        "CreateDate": "2026-08-01T17:41:07+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "sklad-kontrol-bot-lambda",
+        "RoleId": "AROA36I76U7WRNMOIO2RM",
+        "Arn": "arn:aws:iam::111122223333:role/sklad-kontrol-bot-lambda",
+        "CreateDate": "2026-08-01T17:41:04+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "sklad-kontrol-notifier-lambda",
+        "RoleId": "AROA36I76U7WQ5S56KSRE",
+        "Arn": "arn:aws:iam::111122223333:role/sklad-kontrol-notifier-lambda",
+        "CreateDate": "2026-08-01T17:41:08+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "terra-adguard-role",
+        "RoleId": "AROA36I76U7WZMZQQZFRZ",
+        "Arn": "arn:aws:iam::111122223333:role/terra-adguard-role",
+        "CreateDate": "2026-08-15T06:18:38+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ec2.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "Allows SSM Session Manager access to terra-adguard EC2 instance",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/",
+        "RoleName": "terra-wireguard-role",
+        "RoleId": "AROA36I76U7WSPMQLOVK6",
+        "Arn": "arn:aws:iam::111122223333:role/terra-wireguard-role",
+        "CreateDate": "2026-05-25T09:04:15+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ec2.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "Description": "WireGuard gateway role for Terra VPC",
+        "MaxSessionDuration": 3600
+      },
+      {
+        "Path": "/service-role/",
+        "RoleName": "TransactionsStorageFunction-role-zg86jb3y",
+        "RoleId": "AROA36I76U7WVIISPKGNC",
+        "Arn": "arn:aws:iam::111122223333:role/service-role/TransactionsStorageFunction-role-zg86jb3y",
+        "CreateDate": "2025-07-27T19:44:10+00:00",
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+            }
+          ]
+        },
+        "MaxSessionDuration": 3600
+      }
+    ],
+    "IamCredentialReport": [
+      {
+        "user": "<root_account>",
+        "arn": "arn:aws:iam::111122223333:root",
+        "user_creation_time": "2025-06-11T11:02:27Z",
+        "password_enabled": "true",
+        "password_last_used": "2026-09-24T07:47:18Z",
+        "password_last_changed": "2025-12-21T08:34:12Z",
+        "password_next_rotation": "not_supported",
+        "mfa_active": "true",
+        "access_key_1_active": "false",
+        "access_key_1_last_rotated": "N/A",
+        "access_key_1_last_used_date": "N/A",
+        "access_key_1_last_used_region": "N/A",
+        "access_key_1_last_used_service": "N/A",
+        "access_key_2_active": "false",
+        "access_key_2_last_rotated": "N/A",
+        "access_key_2_last_used_date": "N/A",
+        "access_key_2_last_used_region": "N/A",
+        "access_key_2_last_used_service": "N/A",
+        "cert_1_active": "false",
+        "cert_1_last_rotated": "N/A",
+        "cert_2_active": "false",
+        "cert_2_last_rotated": "N/A"
+      },
+      {
+        "user": "iam-user-3",
+        "arn": "arn:aws:iam::111122223333:user/iam-user-3",
+        "user_creation_time": "2026-10-01T07:40:14Z",
+        "password_enabled": "true",
+        "password_last_used": "2026-10-08T09:15:48Z",
+        "password_last_changed": "2026-10-01T07:46:45Z",
+        "password_next_rotation": "N/A",
+        "mfa_active": "false",
+        "access_key_1_active": "false",
+        "access_key_1_last_rotated": "N/A",
+        "access_key_1_last_used_date": "N/A",
+        "access_key_1_last_used_region": "N/A",
+        "access_key_1_last_used_service": "N/A",
+        "access_key_2_active": "false",
+        "access_key_2_last_rotated": "N/A",
+        "access_key_2_last_used_date": "N/A",
+        "access_key_2_last_used_region": "N/A",
+        "access_key_2_last_used_service": "N/A",
+        "cert_1_active": "false",
+        "cert_1_last_rotated": "N/A",
+        "cert_2_active": "false",
+        "cert_2_last_rotated": "N/A"
+      },
+      {
+        "user": "iam-user-4",
+        "arn": "arn:aws:iam::111122223333:user/iam-user-4",
+        "user_creation_time": "2025-07-15T08:37:44Z",
+        "password_enabled": "false",
+        "password_last_used": "N/A",
+        "password_last_changed": "N/A",
+        "password_next_rotation": "N/A",
+        "mfa_active": "false",
+        "access_key_1_active": "true",
+        "access_key_1_last_rotated": "2025-07-25T21:51:42Z",
+        "access_key_1_last_used_date": "2026-10-09T15:30:00Z",
+        "access_key_1_last_used_region": "eu-central-1",
+        "access_key_1_last_used_service": "s3",
+        "access_key_2_active": "false",
+        "access_key_2_last_rotated": "N/A",
+        "access_key_2_last_used_date": "N/A",
+        "access_key_2_last_used_region": "N/A",
+        "access_key_2_last_used_service": "N/A",
+        "cert_1_active": "false",
+        "cert_1_last_rotated": "N/A",
+        "cert_2_active": "false",
+        "cert_2_last_rotated": "N/A"
+      },
+      {
+        "user": "iam-user-1",
+        "arn": "arn:aws:iam::111122223333:user/iam-user-1",
+        "user_creation_time": "2025-06-11T11:18:15Z",
+        "password_enabled": "true",
+        "password_last_used": "2026-10-09T15:44:32Z",
+        "password_last_changed": "2026-04-27T20:00:06Z",
+        "password_next_rotation": "N/A",
+        "mfa_active": "true",
+        "access_key_1_active": "false",
+        "access_key_1_last_rotated": "2026-04-20T13:54:52Z",
+        "access_key_1_last_used_date": "2026-05-19T07:16:00Z",
+        "access_key_1_last_used_region": "eu-central-1",
+        "access_key_1_last_used_service": "s3",
+        "access_key_2_active": "true",
+        "access_key_2_last_rotated": "2026-05-25T06:28:27Z",
+        "access_key_2_last_used_date": "2026-10-09T15:37:00Z",
+        "access_key_2_last_used_region": "eu-central-1",
+        "access_key_2_last_used_service": "ecs",
+        "cert_1_active": "false",
+        "cert_1_last_rotated": "N/A",
+        "cert_2_active": "false",
+        "cert_2_last_rotated": "N/A"
+      },
+      {
+        "user": "iam-user-5",
+        "arn": "arn:aws:iam::111122223333:user/iam-user-5",
+        "user_creation_time": "2026-05-28T19:14:30Z",
+        "password_enabled": "false",
+        "password_last_used": "N/A",
+        "password_last_changed": "N/A",
+        "password_next_rotation": "N/A",
+        "mfa_active": "false",
+        "access_key_1_active": "true",
+        "access_key_1_last_rotated": "2026-05-28T19:14:32Z",
+        "access_key_1_last_used_date": "2026-09-03T08:17:00Z",
+        "access_key_1_last_used_region": "eu-central-1",
+        "access_key_1_last_used_service": "kinesisvideo",
+        "access_key_2_active": "false",
+        "access_key_2_last_rotated": "N/A",
+        "access_key_2_last_used_date": "N/A",
+        "access_key_2_last_used_region": "N/A",
+        "access_key_2_last_used_service": "N/A",
+        "cert_1_active": "false",
+        "cert_1_last_rotated": "N/A",
+        "cert_2_active": "false",
+        "cert_2_last_rotated": "N/A"
+      },
+      {
+        "user": "iam-user-2",
+        "arn": "arn:aws:iam::111122223333:user/iam-user-2",
+        "user_creation_time": "2025-07-06T11:06:31Z",
+        "password_enabled": "true",
+        "password_last_used": "2025-10-29T14:17:15Z",
+        "password_last_changed": "2025-10-29T14:19:18Z",
+        "password_next_rotation": "N/A",
+        "mfa_active": "false",
+        "access_key_1_active": "false",
+        "access_key_1_last_rotated": "N/A",
+        "access_key_1_last_used_date": "N/A",
+        "access_key_1_last_used_region": "N/A",
+        "access_key_1_last_used_service": "N/A",
+        "access_key_2_active": "false",
+        "access_key_2_last_rotated": "N/A",
+        "access_key_2_last_used_date": "N/A",
+        "access_key_2_last_used_region": "N/A",
+        "access_key_2_last_used_service": "N/A",
+        "cert_1_active": "false",
+        "cert_1_last_rotated": "N/A",
+        "cert_2_active": "false",
+        "cert_2_last_rotated": "N/A"
+      }
+    ],
+    "IamPasswordPolicy": null,
+    "IamFindings": {
+      "ConsoleUsersWithoutMfa": [
+        "iam-user-3",
+        "iam-user-2"
+      ],
+      "AccessKeysToReview": [
+        {
+          "user": "iam-user-4",
+          "key": "1",
+          "last_rotated": "2025-07-25T21:51:42Z"
+        },
+        {
+          "user": "iam-user-1",
+          "key": "2",
+          "last_rotated": "2026-05-25T06:28:27Z"
+        },
+        {
+          "user": "iam-user-5",
+          "key": "1",
+          "last_rotated": "2026-05-28T19:14:32Z"
+        }
+      ],
+      "RootAccountRisks": [],
+      "PasswordPolicySet": false
+    },
+    "DataStores": {
+      "S3Buckets": [
+        {
+          "Name": "cf-templates-1onvjxbmubfad-eu-central-1",
+          "CreationDate": "2026-04-29T23:52:07+00:00",
+          "BucketArn": "arn:aws:s3:::cf-templates-1onvjxbmubfad-eu-central-1",
+          "_Region": "eu-central-1",
+          "_PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+          },
+          "_Encryption": {
+            "Rules": [
+              {
+                "ApplyServerSideEncryptionByDefault": {
+                  "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": false,
+                "BlockedEncryptionTypes": {
+                  "EncryptionType": [
+                    "SSE-C"
+                  ]
+                }
+              }
+            ]
+          },
+          "_Versioning": null,
+          "_Replication": null
+        },
+        {
+          "Name": "contabo-data-backup-rt",
+          "CreationDate": "2026-04-29T22:50:58+00:00",
+          "BucketArn": "arn:aws:s3:::contabo-data-backup-rt",
+          "_Region": "eu-central-1",
+          "_PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+          },
+          "_Encryption": {
+            "Rules": [
+              {
+                "ApplyServerSideEncryptionByDefault": {
+                  "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": true,
+                "BlockedEncryptionTypes": {
+                  "EncryptionType": [
+                    "SSE-C"
+                  ]
+                }
+              }
+            ]
+          },
+          "_Versioning": null,
+          "_Replication": null
+        },
+        {
+          "Name": "happy-nmt-dev-frontend-111122223333",
+          "CreationDate": "2026-08-05T10:39:21+00:00",
+          "BucketArn": "arn:aws:s3:::happy-nmt-dev-frontend-111122223333",
+          "_Region": "eu-central-1",
+          "_PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+          },
+          "_Encryption": {
+            "Rules": [
+              {
+                "ApplyServerSideEncryptionByDefault": {
+                  "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": false,
+                "BlockedEncryptionTypes": {
+                  "EncryptionType": [
+                    "SSE-C"
+                  ]
+                }
+              }
+            ]
+          },
+          "_Versioning": null,
+          "_Replication": null
+        },
+        {
+          "Name": "iam-user-4-backup",
+          "CreationDate": "2026-04-29T19:33:23+00:00",
+          "BucketArn": "arn:aws:s3:::iam-user-4-backup",
+          "_Region": "eu-central-1",
+          "_PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+          },
+          "_Encryption": {
+            "Rules": [
+              {
+                "ApplyServerSideEncryptionByDefault": {
+                  "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": true,
+                "BlockedEncryptionTypes": {
+                  "EncryptionType": [
+                    "SSE-C"
+                  ]
+                }
+              }
+            ]
+          },
+          "_Versioning": null,
+          "_Replication": null
+        },
+        {
+          "Name": "quiz-scanner-sam-deploy-111122223333-eu-central-1",
+          "CreationDate": "2026-05-17T19:55:03+00:00",
+          "BucketArn": "arn:aws:s3:::quiz-scanner-sam-deploy-111122223333-eu-central-1",
+          "_Region": "eu-central-1",
+          "_PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+          },
+          "_Encryption": {
+            "Rules": [
+              {
+                "ApplyServerSideEncryptionByDefault": {
+                  "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": false,
+                "BlockedEncryptionTypes": {
+                  "EncryptionType": [
+                    "SSE-C"
+                  ]
+                }
+              }
+            ]
+          },
+          "_Versioning": null,
+          "_Replication": null
+        },
+        {
+          "Name": "quiz-scanner-ui-111122223333-eu-central-1",
+          "CreationDate": "2026-05-17T19:55:42+00:00",
+          "BucketArn": "arn:aws:s3:::quiz-scanner-ui-111122223333-eu-central-1",
+          "_Region": "eu-central-1",
+          "_PublicAccessBlock": {
+            "BlockPublicAcls": false,
+            "IgnorePublicAcls": false,
+            "BlockPublicPolicy": false,
+            "RestrictPublicBuckets": false
+          },
+          "_Encryption": {
+            "Rules": [
+              {
+                "ApplyServerSideEncryptionByDefault": {
+                  "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": false,
+                "BlockedEncryptionTypes": {
+                  "EncryptionType": [
+                    "SSE-C"
+                  ]
+                }
+              }
+            ]
+          },
+          "_Versioning": null,
+          "_Replication": null
+        },
+        {
+          "Name": "iam-user-1-googledrive-backup",
+          "CreationDate": "2026-04-30T03:00:30+00:00",
+          "BucketArn": "arn:aws:s3:::iam-user-1-googledrive-backup",
+          "_Region": "eu-central-1",
+          "_PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+          },
+          "_Encryption": {
+            "Rules": [
+              {
+                "ApplyServerSideEncryptionByDefault": {
+                  "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": true,
+                "BlockedEncryptionTypes": {
+                  "EncryptionType": [
+                    "SSE-C"
+                  ]
+                }
+              }
+            ]
+          },
+          "_Versioning": null,
+          "_Replication": null
+        },
+        {
+          "Name": "sklad-kontrol-frontend-111122223333",
+          "CreationDate": "2026-08-01T17:43:52+00:00",
+          "BucketArn": "arn:aws:s3:::sklad-kontrol-frontend-111122223333",
+          "_Region": "eu-central-1",
+          "_PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+          },
+          "_Encryption": {
+            "Rules": [
+              {
+                "ApplyServerSideEncryptionByDefault": {
+                  "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": false,
+                "BlockedEncryptionTypes": {
+                  "EncryptionType": [
+                    "SSE-C"
+                  ]
+                }
+              }
+            ]
+          },
+          "_Versioning": null,
+          "_Replication": null
+        },
+        {
+          "Name": "sklad-kontrol-photos-111122223333",
+          "CreationDate": "2026-08-01T17:41:10+00:00",
+          "BucketArn": "arn:aws:s3:::sklad-kontrol-photos-111122223333",
+          "_Region": "eu-central-1",
+          "_PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+          },
+          "_Encryption": {
+            "Rules": [
+              {
+                "ApplyServerSideEncryptionByDefault": {
+                  "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": true,
+                "BlockedEncryptionTypes": {
+                  "EncryptionType": [
+                    "SSE-C"
+                  ]
+                }
+              }
+            ]
+          },
+          "_Versioning": "Enabled",
+          "_Replication": null
+        },
+        {
+          "Name": "sklad-kontrol-reports-111122223333",
+          "CreationDate": "2026-08-01T17:41:12+00:00",
+          "BucketArn": "arn:aws:s3:::sklad-kontrol-reports-111122223333",
+          "_Region": "eu-central-1",
+          "_PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+          },
+          "_Encryption": {
+            "Rules": [
+              {
+                "ApplyServerSideEncryptionByDefault": {
+                  "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": true,
+                "BlockedEncryptionTypes": {
+                  "EncryptionType": [
+                    "SSE-C"
+                  ]
+                }
+              }
+            ]
+          },
+          "_Versioning": null,
+          "_Replication": null
+        },
+        {
+          "Name": "iam-user-2-backup",
+          "CreationDate": "2026-04-29T16:00:28+00:00",
+          "BucketArn": "arn:aws:s3:::iam-user-2-backup",
+          "_Region": "eu-central-1",
+          "_PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+          },
+          "_Encryption": {
+            "Rules": [
+              {
+                "ApplyServerSideEncryptionByDefault": {
+                  "SSEAlgorithm": "AES256"
+                },
+                "BucketKeyEnabled": true,
+                "BlockedEncryptionTypes": {
+                  "EncryptionType": [
+                    "SSE-C"
+                  ]
+                }
+              }
+            ]
+          },
+          "_Versioning": null,
+          "_Replication": null
+        }
+      ],
+      "PubliclyAccessibleBuckets": [
+        {
+          "Name": "quiz-scanner-ui-111122223333-eu-central-1",
+          "PublicAccessBlock": {
+            "BlockPublicAcls": false,
+            "IgnorePublicAcls": false,
+            "BlockPublicPolicy": false,
+            "RestrictPublicBuckets": false
+          }
+        }
+      ],
+      "UnencryptedBuckets": []
+    },
+    "CloudTrail": {
+      "Trails": [],
+      "HasMultiRegionTrail": false,
+      "HasLoggingTrail": false,
+      "HasLogFileValidation": false
+    }
+  }
+}

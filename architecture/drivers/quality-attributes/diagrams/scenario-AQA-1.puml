@@ -1,0 +1,17 @@
+@startuml scenario-AQA-1
+!include plantuml-theme.puml
+left to right direction
+hide stereotype
+title Quality attribute scenario — AQA-1 — Reliability / availability
+rectangle "<b>Source of stimulus</b>\nFargate platform or application fault" as SRC #E7E3F3
+rectangle "<b>Stimulus</b>\nThe only running ui task crashes or fails its health check" as STIM #E7E3F3
+rectangle "<b>Artifact</b>\nui ECS service (desiredCount 1) behind the Application Load Balancer" as ART #EDF2F8
+rectangle "<b>Response</b>\nTraffic is routed only to healthy tasks while ECS replaces the failed one" as RESP #E4F0E9
+rectangle "<b>Response measure</b>\nProposed — confirm: 0 failed shopper requests and < 1 % 5xx over the 5 min after a single-task failure" as MEAS #E4F0E9
+rectangle "<b>Environment</b>\nNormal operation" as ENV #F5EEE3
+SRC  --> STIM : generates
+STIM --> ART  : arrives at
+ART  --> RESP : produces
+RESP --> MEAS : measured by
+ENV  ..> ART
+@enduml

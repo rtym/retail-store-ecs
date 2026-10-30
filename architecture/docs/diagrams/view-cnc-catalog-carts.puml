@@ -1,0 +1,18 @@
+@startuml view-cnc-catalog-carts
+!include plantuml-theme.puml
+left to right direction
+title C&C view — catalogue and cart data paths (UML component diagram)
+component "ui\n<size:11>Java / Spring Boot</size>" <<service>> as ui
+package "retail-store-ecs" {
+  component "catalog\n<size:11>Go</size>" <<service>> as catalog
+  component "carts\n<size:11>Java / Spring Boot</size>" <<service>> as carts
+  database "Aurora MySQL 8.0\n<size:11>retail-store-ecs-catalog · db.t3.medium ×1</size>" as mysql
+  database "OpenSearch 3.3\n<size:11>1 node · index products</size>" as os
+  database "DynamoDB\n<size:11>retail-store-ecs-carts · on-demand</size>" as ddb
+}
+ui --> catalog : gets products · HTTP
+ui --> carts : updates cart · HTTP
+catalog --> mysql : reads products\nMySQL TCP 3306, TLS not enforced
+catalog --> os : searches\nHTTPS 443, fine-grained access control
+carts --> ddb : reads and writes items\nHTTPS 443 via NAT Gateway
+@enduml

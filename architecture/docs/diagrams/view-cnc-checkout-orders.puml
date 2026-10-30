@@ -1,0 +1,20 @@
+@startuml view-cnc-checkout-orders
+!include plantuml-theme.puml
+left to right direction
+title C&C view — checkout and order data paths (UML component diagram)
+component "ui\n<size:11>Java / Spring Boot</size>" <<service>> as ui
+package "retail-store-ecs" {
+  component "checkout\n<size:11>Node.js</size>" <<service>> as checkout
+  database "ElastiCache Redis 4.0.10\n<size:11>retail-store-ecs-checkout · cache.t3.micro ×1</size>" as redis
+  component "orders\n<size:11>Java / Spring Boot</size>" <<service>> as orders
+  database "Aurora PostgreSQL 15.10\n<size:11>retail-store-ecs-orders · db.t3.medium ×1</size>" as pg
+  queue "Amazon MQ RabbitMQ 3.13\n<size:11>mq.m5.large · single instance</size>" as mq
+}
+component "Downstream order consumers\n<size:11>none deployed</size>" <<external system>> as cons #F5EEE3
+ui --> checkout : runs checkout · HTTP
+checkout --> redis : stores checkout session\nRedis TCP 6379, no TLS, no AUTH
+checkout --> orders : submits order · HTTP
+orders --> pg : writes order\nPostgreSQL TCP 5432, TLS not enforced
+orders --> mq : publishes order event\nAMQPS 5671
+mq --> cons : delivers events\nAMQPS 5671
+@enduml

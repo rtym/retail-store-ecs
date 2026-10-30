@@ -1,0 +1,24 @@
+@startuml seq-uc1-browse
+!include plantuml-theme.puml
+title UC-1 Browse product catalogue (with UC-2 search extension)
+autonumber
+actor "Shopper" as B
+participant "Load balancer" as L
+participant "ui" as U
+participant "catalog" as C
+database "Aurora MySQL" as M
+database "OpenSearch" as O
+B -> L : GET /catalog (HTTP 80)
+L -> U : forward (HTTP 8080)
+U -> C : GET products (http://catalog via Service Connect)
+C -> M : SELECT products (TCP 3306)
+M --> C : rows
+opt UC-2 search term present
+  U -> C : GET search?q=term
+  C -> O : query index products (HTTPS 443)
+  O --> C : hits
+end
+C --> U : products JSON
+U --> L : HTML page
+L --> B : 200 OK
+@enduml

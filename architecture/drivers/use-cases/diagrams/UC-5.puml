@@ -1,0 +1,15 @@
+@startuml UC-5
+!include plantuml-theme.puml
+skinparam actorStyle awesome
+left to right direction
+title Use case diagram — UC-5 Place order
+actor "Shopper" as primary
+rectangle "Downstream order consumers\n<size:10>none deployed today</size>" << system >> as supp0
+rectangle "retail-store-ecs" {
+  usecase "UC-5\nPlace order" as uc
+  usecase "UC-4\nCheck out" as UC4ext
+}
+primary --> UC4ext
+UC4ext ..> uc : <<include>>
+uc --> supp0
+@enduml

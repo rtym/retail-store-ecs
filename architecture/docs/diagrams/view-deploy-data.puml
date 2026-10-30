@@ -1,0 +1,28 @@
+@startuml view-deploy-data
+!include plantuml-theme.puml
+left to right direction
+skinparam node {
+  BackgroundColor #FBFCFE
+  BorderColor #9AA7B4
+}
+title Deployment view — data tier placement by Availability Zone (UML deployment diagram)
+node "ECS Fargate\n<size:11>5 services × 1 task, private subnets 1a/1b/1c</size>" <<execution environment>> as tasks #EDF2F8
+node "eu-central-1a" <<availability zone>> as az1a {
+  database "ElastiCache Redis\n<size:11>1 node, no replica</size>" as redis
+  queue "Amazon MQ RabbitMQ\n<size:11>single instance</size>" as mq
+  database "OpenSearch\n<size:11>1 data node</size>" as os
+}
+node "eu-central-1c" <<availability zone>> as az1c {
+  database "Aurora MySQL writer\n<size:11>no reader</size>" as mysql
+  database "Aurora PostgreSQL writer\n<size:11>no reader</size>" as pg
+}
+node "Regional (multi-AZ by AWS)" <<region service>> as reg {
+  database "DynamoDB\n<size:11>retail-store-ecs-carts</size>" as ddb
+}
+tasks --> redis : checkout · TCP 6379
+tasks --> mq : orders · AMQPS 5671
+tasks --> os : catalog · HTTPS 443
+tasks --> mysql : catalog · TCP 3306
+tasks --> pg : orders · TCP 5432
+tasks --> ddb : carts · HTTPS 443 via NAT
+@enduml

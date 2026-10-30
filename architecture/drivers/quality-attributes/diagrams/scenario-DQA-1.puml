@@ -1,0 +1,17 @@
+@startuml scenario-DQA-1
+!include plantuml-theme.puml
+left to right direction
+hide stereotype
+title Quality attribute scenario — DQA-1 — Flexibility / installability (deployability)
+rectangle "<b>Source of stimulus</b>\nOperator" as SRC #E7E3F3
+rectangle "<b>Stimulus</b>\nDeploys a new service version that fails its health check" as STIM #E7E3F3
+rectangle "<b>Artifact</b>\nECS rolling deployment of one service" as ART #EDF2F8
+rectangle "<b>Response</b>\nRollout stops and the previous version keeps serving" as RESP #E4F0E9
+rectangle "<b>Response measure</b>\nProposed — confirm: 0 shopper-visible errors; automatic rollback within 10 min" as MEAS #E4F0E9
+rectangle "<b>Environment</b>\nNormal operation, shoppers active" as ENV #F5EEE3
+SRC  --> STIM : generates
+STIM --> ART  : arrives at
+ART  --> RESP : produces
+RESP --> MEAS : measured by
+ENV  ..> ART
+@enduml

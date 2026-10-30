@@ -1,0 +1,17 @@
+@startuml scenario-INQA-1
+!include plantuml-theme.puml
+left to right direction
+hide stereotype
+title Quality attribute scenario — INQA-1 — Integrability (cross-cutting) / integrability
+rectangle "<b>Source of stimulus</b>\nNew downstream team (e.g. fulfilment)" as SRC #E7E3F3
+rectangle "<b>Stimulus</b>\nNeeds to react to every new order" as STIM #E7E3F3
+rectangle "<b>Artifact</b>\nAmazon MQ (RabbitMQ) broker and the orders service" as ART #EDF2F8
+rectangle "<b>Response</b>\nThe consumer subscribes to the existing order events without changes to orders" as RESP #E4F0E9
+rectangle "<b>Response measure</b>\nProposed — confirm: 0 changes to the orders service; consumer receiving events within 2 days of effort" as MEAS #E4F0E9
+rectangle "<b>Environment</b>\nNormal operation" as ENV #F5EEE3
+SRC  --> STIM : generates
+STIM --> ART  : arrives at
+ART  --> RESP : produces
+RESP --> MEAS : measured by
+ENV  ..> ART
+@enduml

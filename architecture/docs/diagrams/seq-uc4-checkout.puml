@@ -1,0 +1,25 @@
+@startuml seq-uc4-checkout
+!include plantuml-theme.puml
+title UC-4 Check out, including UC-5 Place order
+autonumber
+actor "Shopper" as B
+participant "ui" as U
+participant "checkout" as H
+database "Redis" as R
+participant "orders" as O
+database "Aurora PostgreSQL" as P
+queue "Amazon MQ" as Q
+B -> U : submit shipping and delivery
+U -> H : POST checkout (http://checkout)
+H -> R : SET checkout session (TCP 6379, plaintext)
+B -> U : confirm order
+U -> H : POST submit
+group UC-5 Place order
+  H -> O : POST order (http://orders)
+  O -> P : INSERT order (TCP 5432)
+  O ->> Q : publish order event (AMQPS 5671)
+  O --> H : order id
+end
+H --> U : confirmation
+U --> B : order confirmation page
+@enduml

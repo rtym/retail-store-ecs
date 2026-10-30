@@ -1,0 +1,17 @@
+@startuml scenario-SQA-1
+!include plantuml-theme.puml
+left to right direction
+hide stereotype
+title Quality attribute scenario — SQA-1 — Security / confidentiality
+rectangle "<b>Source of stimulus</b>\nAttacker on the network path" as SRC #E7E3F3
+rectangle "<b>Stimulus</b>\nIntercepts storefront traffic carrying shopper PII during checkout" as STIM #E7E3F3
+rectangle "<b>Artifact</b>\nApplication Load Balancer listener and internal service-to-service and service-to-store hops" as ART #EDF2F8
+rectangle "<b>Response</b>\nAll external and internal traffic carrying PII is encrypted" as RESP #E4F0E9
+rectangle "<b>Response measure</b>\nProposed — confirm: 100 % of external requests on TLS 1.2+; 0 plaintext listeners; 0 plaintext connections to stores holding PII" as MEAS #E4F0E9
+rectangle "<b>Environment</b>\nNormal operation, internet-facing" as ENV #F5EEE3
+SRC  --> STIM : generates
+STIM --> ART  : arrives at
+ART  --> RESP : produces
+RESP --> MEAS : measured by
+ENV  ..> ART
+@enduml

@@ -1,0 +1,22 @@
+@startuml view-observability
+!include plantuml-theme.puml
+title Observability view — telemetry flows (UML component diagram)
+actor "Operator" as op
+package "retail-store-ecs" {
+  component "Load balancer\n<size:11>metrics only, access logs off</size>" <<AWS ELB>> as alb
+  component "Fargate tasks ×5\n<size:11>awslogs driver, health checks</size>" <<service>> as tasks
+}
+package "Amazon CloudWatch" {
+  component "Alarms and dashboards\n<size:11>none configured</size>" <<missing control>> as alarms #F6E4E4
+  database "Container Insights (enhanced)\n<size:11>performance logs, retention 1 day</size>" as ci
+  database "Log group retail-store-ecs-tasks\n<size:11>retention: never expire</size>" as logs
+}
+alb -[hidden]right- tasks
+alarms -[hidden]right- ci
+ci -[hidden]right- logs
+op --> tasks : shell via ECS Exec
+op --> logs : reads manually
+alb --> alarms : request and 5xx metrics\n(nothing consumes them)
+tasks --> ci : task and container metrics
+tasks --> logs : stdout and stderr\nper service stream prefix
+@enduml

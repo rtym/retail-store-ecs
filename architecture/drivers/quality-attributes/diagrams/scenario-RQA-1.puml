@@ -1,0 +1,17 @@
+@startuml scenario-RQA-1
+!include plantuml-theme.puml
+left to right direction
+hide stereotype
+title Quality attribute scenario — RQA-1 — Reliability / recoverability
+rectangle "<b>Source of stimulus</b>\nOperator error or faulty release" as SRC #E7E3F3
+rectangle "<b>Stimulus</b>\nOrder data in Aurora PostgreSQL or cart data in DynamoDB is deleted or corrupted" as STIM #E7E3F3
+rectangle "<b>Artifact</b>\nAurora PostgreSQL retail-store-ecs-orders, Aurora MySQL retail-store-ecs-catalog, DynamoDB retail-store-ecs-carts" as ART #EDF2F8
+rectangle "<b>Response</b>\nData restored to a point before the incident and services repointed" as RESP #E4F0E9
+rectangle "<b>Response measure</b>\nProposed — confirm: orders RPO ≤ 5 min and RTO ≤ 4 h; carts RPO ≤ 24 h" as MEAS #E4F0E9
+rectangle "<b>Environment</b>\nNormal operation" as ENV #F5EEE3
+SRC  --> STIM : generates
+STIM --> ART  : arrives at
+ART  --> RESP : produces
+RESP --> MEAS : measured by
+ENV  ..> ART
+@enduml

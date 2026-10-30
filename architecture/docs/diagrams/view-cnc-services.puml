@@ -1,0 +1,37 @@
+@startuml view-cnc-services
+!include plantuml-theme.puml
+left to right direction
+skinparam node {
+  BackgroundColor #FBFCFE
+  BorderColor #9AA7B4
+}
+title C&C view — runtime services and their interfaces (UML component diagram)
+actor "Shopper" as shopper
+node "retail-store-ecs · ECS cluster retail-store-ecs-cluster · Service Connect namespace retailstore.local" as cl {
+  interface "HTTP :80" as i80
+  component "Application Load Balancer\n<size:11>retail-store-ecs-ui · internet-facing, no TLS</size>" <<AWS ELB>> as alb
+  interface "HTML :8080" as iui
+  component "ui\n<size:11>1 Fargate task · Java / Spring Boot</size>" <<service>> as ui
+  interface "Product API\ncatalog:80" as icat
+  interface "Cart API\ncarts:80" as icarts
+  interface "Checkout API\ncheckout:80" as ichk
+  interface "Order API\norders:80" as iord
+  component "catalog\n<size:11>1 task · Go</size>" <<service>> as catalog
+  component "carts\n<size:11>1 task · Java / Spring Boot</size>" <<service>> as carts
+  component "checkout\n<size:11>1 task · Node.js</size>" <<service>> as checkout
+  component "orders\n<size:11>1 task · Java / Spring Boot</size>" <<service>> as orders
+}
+alb -up- i80
+ui -up- iui
+catalog -up- icat
+carts -up- icarts
+checkout -up- ichk
+orders -up- iord
+shopper --> i80 : requests pages
+alb --> iui : forwards · target group ui-application
+ui --> icat : HTTP via Service Connect
+ui --> icarts : HTTP via Service Connect
+ui --> ichk : HTTP via Service Connect
+ui --> iord : HTTP via Service Connect
+checkout --> iord : submits order
+@enduml

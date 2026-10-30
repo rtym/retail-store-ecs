@@ -1,0 +1,17 @@
+@startuml seq-uc3-cart
+!include plantuml-theme.puml
+title UC-3 Manage shopping cart
+autonumber
+actor "Shopper" as B
+participant "ui" as U
+participant "carts" as K
+participant "NAT Gateway\n(eu-central-1a)" as N
+database "DynamoDB" as D
+B -> U : POST add item (via load balancer)
+U -> K : POST /carts/{id}/items (http://carts)
+K -> N : PutItem (HTTPS 443)
+N -> D : PutItem retail-store-ecs-carts
+D --> K : OK
+K --> U : cart JSON
+U --> B : updated cart page
+@enduml

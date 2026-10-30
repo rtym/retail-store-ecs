@@ -1,0 +1,21 @@
+@startuml overview-operator
+!include plantuml-theme.puml
+skinparam actorStyle awesome
+left to right direction
+title Use case overview — Operator (UC-6, UC-7)
+actor "Operator" as op
+rectangle "retail-store-ecs" {
+  usecase "UC-6\nDeploy a new service version" as UC6
+  usecase "UC-7\nDiagnose a running service" as UC7
+}
+rectangle "Amazon ECR Public\n<size:10>image registry</size>" << system >> as ecr
+rectangle "Terraform\n<size:10>infrastructure as code</size>" << system >> as tf
+rectangle "Amazon CloudWatch\n<size:10>Logs + Container Insights</size>" << system >> as cw
+rectangle "AWS Systems Manager\n<size:10>ECS Exec sessions</size>" << system >> as ssm
+op --> UC6
+op --> UC7
+UC6 --> ecr
+UC6 --> tf
+UC7 --> cw
+UC7 --> ssm
+@enduml

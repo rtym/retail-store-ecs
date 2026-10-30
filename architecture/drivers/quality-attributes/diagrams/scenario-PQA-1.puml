@@ -1,0 +1,17 @@
+@startuml scenario-PQA-1
+!include plantuml-theme.puml
+left to right direction
+hide stereotype
+title Quality attribute scenario — PQA-1 — Performance efficiency / time behaviour
+rectangle "<b>Source of stimulus</b>\nShoppers" as SRC #E7E3F3
+rectangle "<b>Stimulus</b>\n50 concurrent shoppers browse catalogue pages (UC-1)" as STIM #E7E3F3
+rectangle "<b>Artifact</b>\nui → catalog → Aurora MySQL request path" as ART #EDF2F8
+rectangle "<b>Response</b>\nPages are served" as RESP #E4F0E9
+rectangle "<b>Response measure</b>\nProposed — confirm: Application Load Balancer TargetResponseTime p95 ≤ 1 s, 0 % 5xx" as MEAS #E4F0E9
+rectangle "<b>Environment</b>\nNormal operation" as ENV #F5EEE3
+SRC  --> STIM : generates
+STIM --> ART  : arrives at
+ART  --> RESP : produces
+RESP --> MEAS : measured by
+ENV  ..> ART
+@enduml

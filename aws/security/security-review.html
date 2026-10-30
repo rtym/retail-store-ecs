@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AWS Security Review</title>
+<style>
+  :root {
+    --bg: #ffffff; --text: #1f2937; --muted: #6b7280; --border: #e5e7eb; --accent: #2563eb;
+  }
+  body {
+    background: var(--bg); color: var(--text); margin: 0 auto; max-width: 960px;
+    padding: 2.5rem 2rem 4rem; font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  h1 { font-size: 1.9rem; border-bottom: 3px solid var(--accent); padding-bottom: .4rem; }
+  h2 { font-size: 1.4rem; margin-top: 2.2rem; border-bottom: 1px solid var(--border); padding-bottom: .3rem; }
+  h3 { font-size: 1.15rem; margin-top: 1.6rem; color: #111827; }
+  em { color: var(--muted); }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.92rem; }
+  th, td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; vertical-align: top; }
+  th { background: #f3f4f6; }
+  tr:nth-child(even) { background: #fafafa; }
+  img { max-width: 100%; height: auto; display: block; margin: 1rem auto; }
+  code, pre { background: #f3f4f6; border-radius: 4px; }
+  pre { padding: 10px; overflow-x: auto; }
+  ul { margin: 0.3rem 0; }
+  @media print {
+    body { max-width: none; }
+    h2 { page-break-before: auto; }
+  }
+</style>
+</head>
+<body>
+<h1 id="aws-security-review">AWS Security Review</h1>
+<p><em>GuardDuty, Security Hub, IAM, and network exposure findings</em></p>
+<p>Generated: 2026-10-09T15:52:28+00:00</p>
+<h2 id="cloudtrail">CloudTrail</h2>
+<ul>
+<li><strong>Multi-region trail configured:</strong> NO -- gap</li>
+<li><strong>A trail is actively logging:</strong> NO -- gap</li>
+<li><strong>Log file validation enabled:</strong> no</li>
+<li><strong>Trails found:</strong> 0</li>
+</ul>
+<h2 id="iam-hygiene">IAM Hygiene</h2>
+<ul>
+<li><strong>Console users without MFA:</strong> 2</li>
+<li><strong>Access keys to review (active, rotation age tracked):</strong> 3</li>
+<li><strong>Root account risks:</strong> none detected</li>
+<li><strong>Account password policy set:</strong> no</li>
+</ul>
+<h2 id="s3-exposure">S3 Exposure</h2>
+<table>
+<thead>
+<tr>
+<th>Bucket</th>
+<th>Issue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>quiz-scanner-ui-111122223333-eu-central-1</td>
+<td>Public access not fully blocked</td>
+</tr>
+</tbody>
+</table>
+<h2 id="regional-coverage">Regional Coverage</h2>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>GuardDuty</th>
+<th>Security Hub</th>
+<th>Config recorder</th>
+<th>GuardDuty findings</th>
+<th>Security Hub findings</th>
+<th>Open security groups</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eu-central-1</td>
+<td>NOT enabled</td>
+<td>NOT enabled</td>
+<td>NOT recording</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wide-open-security-group-rules">Wide-Open Security Group Rules</h2>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Group</th>
+<th>Port range</th>
+<th>Protocol</th>
+<th>Open to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eu-central-1</td>
+<td>sg-089fe6fbd4d9a9033</td>
+<td>80-80</td>
+<td>tcp</td>
+<td>0.0.0.0/0</td>
+</tr>
+<tr>
+<td>eu-central-1</td>
+<td>sg-0acded8061f612a60</td>
+<td>3389-3389</td>
+<td>tcp</td>
+<td>0.0.0.0/0</td>
+</tr>
+<tr>
+<td>eu-central-1</td>
+<td>sg-0ad6c494b0abe97dd</td>
+<td>3389-3389</td>
+<td>tcp</td>
+<td>0.0.0.0/0</td>
+</tr>
+<tr>
+<td>eu-central-1</td>
+<td>sg-01179a77728a504c6</td>
+<td>22-22</td>
+<td>tcp</td>
+<td>0.0.0.0/0</td>
+</tr>
+<tr>
+<td>eu-central-1</td>
+<td>sg-040b3a46ff959179a</td>
+<td>8080-8080</td>
+<td>tcp</td>
+<td>0.0.0.0/0</td>
+</tr>
+<tr>
+<td>eu-central-1</td>
+<td>sg-07200dd8c1cd91664</td>
+<td>8080-8080</td>
+<td>tcp</td>
+<td>0.0.0.0/0</td>
+</tr>
+<tr>
+<td>eu-central-1</td>
+<td>sg-0da8eca938cda3bab</td>
+<td>8080-8080</td>
+<td>tcp</td>
+<td>0.0.0.0/0</td>
+</tr>
+<tr>
+<td>eu-central-1</td>
+<td>sg-0ca08510903503c64</td>
+<td>80-80</td>
+<td>tcp</td>
+<td>0.0.0.0/0</td>
+</tr>
+<tr>
+<td>eu-central-1</td>
+<td>sg-0e0e2272b9ea01935</td>
+<td>8080-8080</td>
+<td>tcp</td>
+<td>0.0.0.0/0</td>
+</tr>
+<tr>
+<td>eu-central-1</td>
+<td>sg-0095c5c4e962d6d3c</td>
+<td>8080-8080</td>
+<td>tcp</td>
+<td>0.0.0.0/0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="load-balancer-listeners-without-tls">Load Balancer Listeners Without TLS</h2>
+<table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Load balancer</th>
+<th>Port</th>
+<th>Protocol</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>eu-central-1</td>
+<td>retail-store-ecs-ui</td>
+<td>80</td>
+<td>HTTP</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

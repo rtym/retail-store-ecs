@@ -1,0 +1,17 @@
+@startuml scenario-AQA-2
+!include plantuml-theme.puml
+left to right direction
+hide stereotype
+title Quality attribute scenario — AQA-2 — Reliability / availability / fault tolerance
+rectangle "<b>Source of stimulus</b>\nAWS infrastructure event" as SRC #E7E3F3
+rectangle "<b>Stimulus</b>\nAvailability Zone eu-central-1a becomes impaired" as STIM #E7E3F3
+rectangle "<b>Artifact</b>\nWhole environment — NAT Gateway, Redis node, Amazon MQ broker and OpenSearch node all sit in eu-central-1a" as ART #EDF2F8
+rectangle "<b>Response</b>\nBrowse and cart keep working from eu-central-1b/c; checkout degrades with a clear message; no committed order lost" as RESP #E4F0E9
+rectangle "<b>Response measure</b>\nProposed — confirm: browse + cart restored within 5 min; 0 committed orders lost" as MEAS #E4F0E9
+rectangle "<b>Environment</b>\nNormal operation, shoppers active" as ENV #F5EEE3
+SRC  --> STIM : generates
+STIM --> ART  : arrives at
+ART  --> RESP : produces
+RESP --> MEAS : measured by
+ENV  ..> ART
+@enduml

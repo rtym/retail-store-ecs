@@ -1,0 +1,14 @@
+@startuml UC-2
+!include plantuml-theme.puml
+skinparam actorStyle awesome
+left to right direction
+title Use case diagram — UC-2 Search products
+actor "Shopper" as primary
+rectangle "retail-store-ecs" {
+  usecase "UC-2\nSearch products" as uc
+  usecase "UC-1\nBrowse product catalogue" as UC1
+}
+primary --> uc
+primary --> UC1
+uc ..> UC1 : <<extend>>
+@enduml

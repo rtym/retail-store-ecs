@@ -1,0 +1,10 @@
+{
+  "CollectedAt": "2026-10-09",
+  "Note": "Additional read-only checks run with the AWS CLI after collect_retail_store.py",
+  "AuroraPostgresOrders_rds.force_ssl": {"value": "0", "source": "system"},
+  "AuroraMySqlCatalog_require_secure_transport": {"value": null, "source": "engine-default (OFF)"},
+  "CloudMapNamespace": {"name": "retailstore.local", "type": "DNS_PRIVATE", "hostedZone": "Z05488623NRPVALP3S1JA", "soaTtl": 15},
+  "ServiceConnectTls": "not configured on any service (no tls block in serviceConnectConfiguration)",
+  "CostExplorerByEnvironmentTag": "USD 0 for 2026-10-01..2026-10-09 -- tag environment-name is not an activated cost-allocation tag, or data not yet available (environment created 2026-10-09 ~14:48 UTC per parameter-group timestamps)",
+  "CloudFormation": "No stack owns these resources; naming (timestamp suffixes on security groups and parameter groups) and the created-by=retail-store-sample-app tag match the Terraform ECS deployment of github.com/aws-containers/retail-store-sample-app"
+}

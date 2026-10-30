@@ -1,0 +1,17 @@
+@startuml scenario-MQA-1
+!include plantuml-theme.puml
+left to right direction
+hide stereotype
+title Quality attribute scenario — MQA-1 — Maintainability / modifiability
+rectangle "<b>Source of stimulus</b>\nDeveloper / operator" as SRC #E7E3F3
+rectangle "<b>Stimulus</b>\nNeeds to change a service's persistence or messaging provider (e.g. orders messaging, checkout persistence) for a new environment" as STIM #E7E3F3
+rectangle "<b>Artifact</b>\nTask-definition configuration of one service" as ART #EDF2F8
+rectangle "<b>Response</b>\nProvider changed by configuration only" as RESP #E4F0E9
+rectangle "<b>Response measure</b>\nProposed — confirm: 0 lines of application code; ≤ 1 task-definition revision; done within 1 person-day" as MEAS #E4F0E9
+rectangle "<b>Environment</b>\nDesign / deployment time" as ENV #F5EEE3
+SRC  --> STIM : generates
+STIM --> ART  : arrives at
+ART  --> RESP : produces
+RESP --> MEAS : measured by
+ENV  ..> ART
+@enduml

@@ -1,0 +1,30 @@
+@startuml legend
+!include plantuml-theme.puml
+skinparam node {
+  BackgroundColor #FBFCFE
+  BorderColor #9AA7B4
+}
+title Legend — UML notation used in this package (SEI palette)
+actor "Actor\n<size:11>person or role</size>" as a
+component "Component «service»\n<size:11>runtime element / module</size>" as c
+interface "  Provided\n  interface" as i
+component "External system" <<external system>> as e #F5EEE3
+database "Data store" as d
+queue "Message queue" as q
+node "Node\n<size:11>execution environment, subnet, zone</size>" as n
+artifact "Artifact\n<size:11>deployed unit (task)</size>" as ar
+component "Risk / missing control" as r #F6E4E4
+a -[hidden]right- c
+c -[hidden]right- e
+e -[hidden]right- i
+d -[hidden]right- q
+q -[hidden]right- n
+n -[hidden]right- ar
+ar -[hidden]right- r
+a -[hidden]down- d
+legend bottom
+  solid arrow = call or communication path (label gives protocol and port)
+  dashed arrow «use» = module dependency
+  arrow into a lollipop = the caller requires that provided interface
+endlegend
+@enduml

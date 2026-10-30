@@ -1,0 +1,10 @@
+# Private material: access set-up, people, guides
+access/
+guide/
+
+# Plugin-generated PDFs still hold unredacted account data (MD/HTML versions are redacted)
+aws/**/*.pdf
+
+.idea/
+.DS_Store
+__pycache__/

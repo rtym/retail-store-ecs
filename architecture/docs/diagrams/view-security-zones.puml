@@ -1,0 +1,26 @@
+@startuml view-security-zones
+!include plantuml-theme.puml
+left to right direction
+skinparam node {
+  BackgroundColor #FBFCFE
+  BorderColor #9AA7B4
+}
+title Security view — trust zones and controls (UML deployment diagram)
+cloud "Public internet\n<size:11>any address</size>" as internet
+node "Public zone\n<size:11>security group sg-089fe6fbd4d9a9033</size>" <<trust zone>> as pz {
+  component "Load balancer\n<size:11>HTTP 80 open to 0.0.0.0/0, no TLS</size>" <<AWS ELB>> as alb #F6E4E4
+}
+node "Application zone\n<size:11>5 task security groups</size>" <<trust zone>> as az {
+  component "Fargate tasks ×5\n<size:11>TCP 8080 open to 0.0.0.0/0 in the VPC</size>" <<service>> as tasks
+}
+node "Data zone\n<size:11>one security group per store</size>" <<trust zone>> as dz {
+  database "Data stores ×6\n<size:11>each admits only its owning task group</size>" as stores
+}
+component "AWS Secrets Manager\n<size:11>4 secrets, read by execution roles</size>" <<external system>> as sm #F5EEE3
+component "Account detection\n<size:11>CloudTrail, GuardDuty, Config,</size>\n<size:11>Security Hub: all OFF</size>" <<missing control>> as det #F6E4E4
+internet --> alb : HTTP 80, plaintext
+alb --> tasks : HTTP 8080 to ui
+tasks --> stores : store protocols\nTLS only to MQ and OpenSearch
+sm --> tasks : injects credentials at task start
+tasks ..> det : no audit trail recorded
+@enduml

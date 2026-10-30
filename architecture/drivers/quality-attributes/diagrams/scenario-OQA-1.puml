@@ -1,0 +1,17 @@
+@startuml scenario-OQA-1
+!include plantuml-theme.puml
+left to right direction
+hide stereotype
+title Quality attribute scenario — OQA-1 — Observability (cross-cutting) / monitorability
+rectangle "<b>Source of stimulus</b>\nAny service fault" as SRC #E7E3F3
+rectangle "<b>Stimulus</b>\n5xx rate at the load balancer exceeds 5 % or a service has 0 healthy tasks" as STIM #E7E3F3
+rectangle "<b>Artifact</b>\nMonitoring and alerting of the environment" as ART #EDF2F8
+rectangle "<b>Response</b>\nThe on-call operator is notified with the failing service identified" as RESP #E4F0E9
+rectangle "<b>Response measure</b>\nProposed — confirm: notification within 5 min; 100 % of services covered by an alarm" as MEAS #E4F0E9
+rectangle "<b>Environment</b>\nNormal operation" as ENV #F5EEE3
+SRC  --> STIM : generates
+STIM --> ART  : arrives at
+ART  --> RESP : produces
+RESP --> MEAS : measured by
+ENV  ..> ART
+@enduml

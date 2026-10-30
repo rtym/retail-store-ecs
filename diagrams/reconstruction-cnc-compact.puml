@@ -1,0 +1,31 @@
+@startuml reconstruction-cnc-compact
+!include plantuml-theme.puml
+skinparam componentStyle uml2
+skinparam dpi 300
+skinparam defaultFontSize 13
+skinparam ArrowFontSize 12
+skinparam nodesep 50
+skinparam ranksep 45
+top to bottom direction
+title C&C view — architecture reconstruction of an observed system
+
+actor "Architect" as architect
+component "AI reconstruction agent" <<orchestrator>> as agent
+component "AWS analysis plugin" <<evidence collection>> as aws
+database "Evidence store" as evidence
+component "SEI architecture plugin" <<architecture recovery>> as sei
+cloud " " as awsCloud {
+  component "Observed system" <<external system>> as observed #F5EEE3
+  label "<b>AWS cloud</b>" as awsLabel
+}
+database "Architecture package" as pkg
+
+architect -right-> agent : prompts
+agent -down-> aws : invokes
+agent -down-> sei : invokes
+aws -right-> evidence : writes
+evidence -right-> sei : reads
+aws -down-> observed : read-only API
+sei -down-> pkg : writes
+observed -[hidden]right- awsLabel
+@enduml
