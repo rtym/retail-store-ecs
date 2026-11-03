@@ -5,9 +5,9 @@ same system. You rebuild the architecture of a running AWS workload from read-on
 with no design documents, source code or public documentation. Claude Code does the work through two
 plugins:
 
-- **`aws-well-architected-and-analysis`** collects read-only evidence from the AWS account: an
+- **[`aws-well-architected-and-analysis`](https://github.com/rtym/aws-well-architected-and-analysis)** collects read-only evidence from the AWS account: an
   inventory, Well-Architected evidence and the security posture.
-- **`sei-architecture-methodology`** turns that evidence into an SEI architecture package: a brownfield
+- **[`sei-architecture-methodology`](https://github.com/rtym/sei-architecture-methodology)** turns that evidence into an SEI architecture package: a brownfield
   intake, the architectural drivers, and Views and Beyond documentation with UML diagrams.
 
 The [`aws/`](aws/README.md) and [`architecture/`](architecture/README.md) folders in this repository
@@ -23,7 +23,6 @@ The guide uses these placeholders. Replace them everywhere, including in `CLAUDE
 | `<profile>` | AWS CLI profile used for the analysis | `recon` |
 | `<iam-user>` | Read-only IAM user of the analyst | `recon-analyst` |
 | `<env-name>` | Terraform environment name of the deployment (also the `environment-name` tag) | `retail-store-ecs` |
-| `<plugin-owner>` | GitHub owner of the two plugin repositories | ask the study coordinator |
 
 | # | Step | Who | Time (approx.) |
 |---|------|-----|----------------|
@@ -75,7 +74,9 @@ The guide uses these placeholders. Replace them everywhere, including in `CLAUDE
      starts with a prefix you choose.
 3. Tag everything you create for the analyst (for example `assigned-to`, `owner`, `purpose`), so it can
    be found and removed at the end.
-4. Give the analyst's GitHub account read access to the two plugin repositories.
+4. Give the analyst's GitHub account read access to the two private plugin repositories,
+   [`rtym/sei-architecture-methodology`](https://github.com/rtym/sei-architecture-methodology) and
+   [`rtym/aws-well-architected-and-analysis`](https://github.com/rtym/aws-well-architected-and-analysis).
 5. Send the sign-in details and the one-time password through **separate** channels.
 
 The rest of this guide is for the analyst.
@@ -243,14 +244,19 @@ sudo apt install -y nodejs npm   # optional, Mermaid only
 
 ### 3.2 Give git access to the plugin repositories
 
+The plugins are in two private GitHub repositories. Ask the coordinator for read access:
+
+- [github.com/rtym/sei-architecture-methodology](https://github.com/rtym/sei-architecture-methodology)
+- [github.com/rtym/aws-well-architected-and-analysis](https://github.com/rtym/aws-well-architected-and-analysis)
+
 Claude Code clones the plugins with the git credentials already on your machine and **never asks for
 a password**, so this must work first:
 
 ```bash
 gh auth login   # GitHub.com → HTTPS → "Authenticate Git with your GitHub credentials?" Yes → browser
 
-git ls-remote https://github.com/<plugin-owner>/sei-architecture-methodology.git
-git ls-remote https://github.com/<plugin-owner>/aws-well-architected-and-analysis.git
+git ls-remote https://github.com/rtym/sei-architecture-methodology.git
+git ls-remote https://github.com/rtym/aws-well-architected-and-analysis.git
 ```
 
 Each `ls-remote` must print a list of refs without prompting. If you get "Repository not found", the
@@ -259,9 +265,9 @@ repository access invitation hasn't been accepted yet (see https://github.com/no
 ### 3.3 Install the plugins (user scope, from any folder)
 
 ```bash
-claude plugin marketplace add <plugin-owner>/sei-architecture-methodology
+claude plugin marketplace add rtym/sei-architecture-methodology
 claude plugin install sei-architecture-methodology@sei-architecture-methodology
-claude plugin marketplace add <plugin-owner>/aws-well-architected-and-analysis
+claude plugin marketplace add rtym/aws-well-architected-and-analysis
 claude plugin install aws-analysis@aws-well-architected-and-analysis
 ```
 
