@@ -8,6 +8,7 @@ deployment in AWS region eu-central-1. Collected on 2026-10-09 with the
 |--------|----------|
 | [`aws/`](aws/README.md) | Read-only AWS evidence: discovery inventory, scoped workload evidence, Well-Architected review, security review |
 | [`architecture/`](architecture/README.md) | SEI architecture package: brownfield intake, drivers, Views and Beyond documentation, lightweight ATAM, HTML reports |
+| [`REPLICATION.md`](REPLICATION.md) | Process replication package: how to repeat the reconstruction on another deployment (setup, `CLAUDE.md`, prompts) |
 | [`diagrams/`](diagrams/) | UML figures of the reconstruction toolchain (PlantUML source, PNG, SVG, PDF) |
 
 ## Redaction
